@@ -6,7 +6,7 @@ This project is in development stage.
 You can see first functional prototype of basic editor at
 http://freeonlinewebdevelopereditor.kena23.cz/demo/
 
-Project npw finishing first phase. See project plan:
+Project now finishing first phase. See project plan:
 http://freeonlinewebdevelopereditor.kena23.cz/project-plan.html
 
 For more information see:
