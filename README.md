@@ -13,7 +13,7 @@ For more information see:
 http://freeonlinewebdevelopereditor.kena23.cz/
 
 
-# INSTALLL 
+# INSTALL
 
 Copy downloaded unpacked zip(folder) into existing web folder/webhosting with PHP 5.4+ support. No database is needed.
 
