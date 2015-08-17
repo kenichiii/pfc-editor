@@ -19,16 +19,26 @@ Copy downloaded unpacked zip(folder) into existing web folder/webhosting with PH
 
 Open this web address(your web folder + unpacked folder name) ie. http://somedomain.com/pfclite/ or http://somedomain.com/somefolder/otherfolder/pfclite/.
 
+---------------------------------------
+
 Use this account to login:
  - login: pfclogin
  - password: pfcpassword
  - pin: hours[hours]mins[minutes]sufix
+ 
     -> in 12:35:22 pin will be hours12mins35sufix
+
     -> in 12:05:21 pin will be hours12mins05sufix
+    
     -> in 2:05:21 pin will be hours2mins05sufix
+    
     -> in 0:05:21 pin will be hours0mins05sufix
+    
     -> in 16:55:21 pin will be hours16mins55sufix
+    
   => server time is printed for support on login page  
+
+----------------------------------------------
 
 After login in visit top right menu "config":
 - change basic section
@@ -43,6 +53,8 @@ After login in visit top right menu "config":
 
 Refresh/Reload page to get changes visible.
 
+------------------------------------------------
+
 Optionaly you can edit editor ./app/config/Sources.php to manage sources paths/main folders/left panel tabs.
 
 Some application settings(javascript) as sources, open files updaters and routes definitions are located at the end/bottom of editor ./app/layout/layout.php.
@@ -50,6 +62,8 @@ Some application settings(javascript) as sources, open files updaters and routes
 CodeMirror config is located at editor ./assets/pfc-editor/config/codeMirror.js. CodeMirror theme should be filename without extension from editor ./assets/libs/codemirror/themes/.
 
 Again reload page to get changes visible.
+
+------------------------------------------
 
 Enjoy working with pfc editor:
 - create or change files, folders in left panel sources using right click onto main folder/tab, folders, files
@@ -65,6 +79,7 @@ Enjoy working with pfc editor:
 - select mode inserting/normal from open file top menu buttons
 - save changed open files using key binding or open file top menu button Save
 
+====================================
 
 # LICENSE
 Project will be released under GNU AFFERO GENERAL PUBLIC LICENSE.
