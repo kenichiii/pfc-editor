@@ -1,0 +1,49 @@
+
+/*
+   color picker
+*/
+.colpick {
+  z-index:10900 !important;
+}
+
+
+/*
+   calculator
+*/
+.calc-holder {
+  position: absolute;
+  right: 150px;
+  top: 30px;
+  z-index:9000;
+  background-color:black;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;  
+  display:none;
+}
+
+.calc-help,
+.calc-key-back
+{
+  color: white;
+  display: block;
+  float: left;
+  padding-left: 13px;
+}
+
+a.calc-help:hover,
+a.calc-key-back:hover  
+{
+  color: lightskyblue;
+}
+
+.calc-close {
+  display: block;
+  padding: 2px;
+  color: white;
+  float: right;
+}
+
+a.calc-close:hover {
+  background-color: red;
+}
+

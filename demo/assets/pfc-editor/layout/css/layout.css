@@ -1,0 +1,457 @@
+
+*, html, body {
+    padding: 0;
+    margin: 0;   
+
+    
+}
+
+body {
+    overflow-y: hidden; 
+    overflow-x: hidden;    
+    font-size: 1em;
+}
+
+a { text-decoration: none }
+
+a:focus {
+    outline: none;
+} 
+
+.ui-dialog {
+  z-index:11000 !important;
+}
+
+.ui-dialog-content {
+  overflow:auto;
+}
+
+#pfc-editor-templates {
+    display: none;
+}
+
+#pfc-editor-booting {
+    position:absolute;left:0;top:0;z-index: 11000;width:100%;height:100%;
+}
+
+#pfc-editor-booting-holder {
+	padding: 5px;
+
+    margin: 10px;
+    width: 162px;
+}
+
+#pfc-editor-booting-inner {
+    width: 150px;
+}
+
+#pfc-editor-booting-prct {
+    width: 7px;
+    height: 30px;
+
+}
+
+
+#pfc-editor-waiting-box {
+    display: none;
+    position: absolute;
+    left: 300px;
+    top: 20px;
+
+    padding: 20px;
+
+    color: #ddd;
+    z-index:9000;
+}
+
+/* HEAD */
+
+#pfc-editor-head {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 5px;
+    max-height: 25px;
+   min-width: 880px;
+}
+
+#pfc-editor-head a.pfc-editor-active-section-href {
+    text-decoration: none;
+}
+
+a#pfc-editor-logo {
+    display: block;
+    margin-left: 5px;
+    padding: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;    
+    float: left;
+}
+
+#pfc-editor-menu li {
+    list-style: none;
+    float: left;
+}
+
+#pfc-editor-menu li a {
+    display: block;
+    padding: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+
+
+a#pfc-editor-logout-href,
+
+a#pfc-editor-help-href,
+
+a#pfc-editor-specchars-href,
+
+a#pfc-editor-config-href,
+
+a#pfc-editor-tools-href,
+a#pfc-editor-phpinfo-href,
+
+a#pfc-editor-admin-href,
+a#pfc-sources-editor-href
+{
+    display: block;
+    padding: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;       
+    float: right;    
+}
+
+/* LEFT PANEL */
+
+#pfc-editor-sections {
+    position: fixed;
+    left: 5px;
+    top: 35px;
+    /*width: 285px;*/
+    background-color: #0F0D4E;
+    border-radius: 5px;
+}
+
+.pfc-editor-section-header-inner {
+     min-width:280px;
+}
+
+.pfc-editor-section {
+      min-width: 285px;
+}
+
+.pfc-editor-section-header {
+    border-radius: 5px;
+    overflow: auto;
+    padding-left: 5px;
+    width: 280px;
+    background-color: #0F0D4E;   
+}
+
+.pfc-editor-section-header a.pfc-editor-section-minify-href {
+    display: block;
+    float: right;
+    font-size: 7px;
+    line-height: 7px;
+    color: gray;
+    border: 1px solid gray;
+    margin-right: 4px;
+    margin-top: 4px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.pfc-editor-section-header a.pfc-editor-section-minify-href:hover {
+    background-color: lightcyan;
+    color: black;
+}
+
+
+.pfc-editor-section-header a:hover {
+    color: lightgreen;    
+}
+
+.pfc-editor-section-header a.pfc-editor-section-active {
+    background-color: lightsteelblue;
+    color: black;
+}
+
+.pfc-editor-section-header li {
+    list-style: none;
+    float: left;
+}
+
+.pfc-editor-section-header li a {
+    display: block;
+    padding: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    color: lightcyan;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.pfc-editor-section-panel {
+    overflow: scroll;    
+    background-color: lightsteelblue;
+    padding: 10px;
+    padding-top:0px;
+    width:262px;
+}
+
+.pfc-editor-section-panel a {
+    color:#009900;
+}
+
+.pfc-editor-section-panel a:hover {
+     color: #005178;
+}
+
+
+/* TOOLS */
+
+#pfc-editor-tools {
+    position: fixed;
+    right: 5px;
+    top: 35px;
+    width: 275px;
+    border-radius: 5px;  
+    z-index:8000;
+}
+
+#pfc-editor-tools-body {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    overflow: auto;
+}
+
+.pfc-editor-tools-section {
+    padding: 10px;
+}
+
+.pfc-editor-tools-section button {
+    padding: 2px;
+    cursor: pointer;
+}
+
+.pfc-editor-tools-section b {
+    font-size:0.92em;
+}
+
+
+/* EDITOR */
+
+#pfc-editor {
+    margin-top: 35px;
+    margin-left: 295px;
+    margin-right: 295px; 
+    background-color: #303030;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    /*min-width: 1080px;*/
+}
+
+#pfc-editor-body a {
+    color: lightskyblue;  	
+}
+
+#pfc-editor-body a:hover {
+    color: lightgreen;    
+}
+
+#pfc-editor-body input, select, textarea {
+    border: 1px solid lightblue;    
+    background-color: lightgray;
+    color: black;
+}
+    
+#pfc-editor-dialogs-heads-holder {
+    
+    overflow-x: scroll;
+    background-color: #0F0D4E;     
+    border-radius: 5px;    
+}
+
+#pfc-editor-dialogs-heads {
+    width: 8000px;
+    padding-left: 10px;
+}
+
+.pfc-editor-dialog-tab {
+    float: left;
+    padding-left: 10px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-top: 2px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border: 1px solid gray;    
+    border-bottom: 0px;
+    margin-right: 5px;
+   padding-left:23px;
+}
+
+.pfc-editor-dialog-tab a { 
+    color: #ddd;
+}
+
+.pfc-editor-dialog-tab-active {
+    background-color: lightskyblue;
+    border-bottom: 0px;    
+}
+
+.pfc-editor-dialog-tab-close {
+    display: block;
+    float: right;
+    font-size: 0.55em;
+    margin-left: 5px;
+}
+
+.pfc-editor-dialog-tab-active a {
+    color: black;
+}
+
+a.pfc-editor-dialog-tab-close:hover {
+    color: white;
+    background-color: red;
+}
+
+
+#pfc-editor-body {
+    overflow: auto;
+}
+
+.pfc-editor-dialog-page {
+    padding: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #ddd;
+}
+
+.pfc-editor-unsaved-file {
+    background-color: red  !important;
+    color: white !important;
+}
+
+.pfc-editor-dialog-info {
+    position: absolute;
+    z-index: 8000;
+    left: 20px;
+    top: 20px;
+    padding:15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 3px;
+    background-color: lightskyblue;
+    display:none;
+}
+
+.pfc-editor-file {
+    position: relative;
+    margin-top: 27px;
+}
+
+.pfc-editor-file-actions-holder {
+      position:absolute;
+    left:0px;
+    top:-27px;
+    z-index: 100;
+  overflow:hidden;
+}
+
+.pfc-editor-file-actions {
+        min-width:1080px;
+  padding-left:23px;
+}
+
+
+.pfc-editor-file-actions button {
+  background-color: darkblue;
+  border:2px solid black;
+  color: #ddd; 
+  padding:2px;
+  padding-left:4px;
+  padding-right:4px;
+  border-radius: 5px;
+  cursor:pointer;
+}
+.pfc-editor-file-actions button:hover {
+  color:orange;
+  background-color: black;
+  
+  border:2px solid darkblue;
+}
+
+
+.page-preview-browser-holder {
+    padding:15px;
+    width:360px;
+    height:400px;
+    background-color: lightgreen;
+}
+
+.page-preview-browser {
+    background-color: white;
+        min-height:400px;
+  height:100%;
+}
+
+.page-preview-browser object {
+    width:100%;
+    height:100%;
+}
+
+
+
+/* FOOTER */
+
+#pfc-editor-footer {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 3px;
+    background-color: #303030;    
+    max-height: 15px;
+    font-size: 0.8em;    
+}
+
+#pfc-editor-footer a:hover {
+    color: orange;
+    background-color: black;    
+    text-decoration: none;
+}
+
+#pfc-editor-footer ul {
+    padding-left: 10px;
+}
+
+#pfc-editor-footer li {
+    list-style: none;
+    float: left;    
+    
+}
+
+#pfc-editor-footer li a {
+    display: block;
+    color: lightskyblue;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+#copy {
+    display: block;
+    float: right;
+    padding-right: 20px;
+    color: lightcyan;
+}
+
+#copy a {
+    color: lightskyblue;
+}
+
+
+
+
