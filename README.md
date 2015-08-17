@@ -54,7 +54,7 @@ After login in visit top right menu "config":
     -> if supported switch to Bcrypt password protection
     
 - you can edit php settings section
-- 
+
     -> add your server timezone
 
     -> more php settings are supported
