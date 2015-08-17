@@ -42,13 +42,21 @@ Use this account to login:
 
 After login in visit top right menu "config":
 - change basic section
+
     -> create some unique project SALT 
+    
     -> you can trun sounds on/off
+    
 - edit account section
+    
     -> change login, password, pin
+
     -> if supported switch to Bcrypt password protection
+    
 - you can edit php settings section
+- 
     -> add your server timezone
+
     -> more php settings are supported
 
 Refresh/Reload page to get changes visible.
@@ -66,8 +74,10 @@ Again reload page to get changes visible.
 ------------------------------------------
 
 Enjoy working with pfc editor:
-- create or change files, folders in left panel sources using right click onto main folder/tab, folders, files
+- create or change files, folders in left panel sources using right click on main folder/tab, folders, files
+
    -> double click on file to open it into code editor
+   
 - use right panel tools to help you with development
 - use Sandbox to create and run php/javascript codes/files
 - minimalize left/right panel to get bigger code editor
