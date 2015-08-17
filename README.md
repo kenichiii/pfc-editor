@@ -16,5 +16,6 @@ http://freeonlinewebdevelopereditor.kena23.cz/
 Project will be released under GNU AFFERO GENERAL PUBLIC LICENSE.
 
 # CONTACT
+Martin Königsmark
 martinkonigsmark@gmail.com
 
