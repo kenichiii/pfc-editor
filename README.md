@@ -45,7 +45,7 @@ After login in visit top right menu "config":
 
     -> create some unique project SALT 
     
-    -> you can trun sounds on/off
+    -> you can turn sounds on/off
     
 - edit account section
     
