@@ -33,7 +33,7 @@ defined('\PFC\Editor\APPLICATION_PATH')
 
 defined('\PFC\Editor\SANDBOX_PATH')
     || define('PFC\Editor\SANDBOX_PATH', realpath(dirname(__FILE__) ).
-            '/app/sandbox'
+            '/sandbox'
             );
 
 
