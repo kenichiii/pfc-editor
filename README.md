@@ -13,11 +13,11 @@ For more information see:
 http://freeonlinewebdevelopereditor.kena23.cz/
 
 
-# INSTALL
+# INSTALL DEMO
 
 Copy downloaded unpacked zip(folder) into existing web folder/webhosting with PHP 5.4+ and mod_rewrite support. No database is needed.
 
-Open this web address(your web folder + unpacked folder name) ie. http://somedomain.com/pfclite/ or http://somedomain.com/somefolder/otherfolder/pfclite/.
+Open this web address(your web folder + unpacked folder name) ie. http://somedomain.com/pfclite(demo)/ or http://somedomain.com/somefolder/otherfolder/pfclite(demo)/.
 
 ---------------------------------------
 
