@@ -40,7 +40,7 @@ date_default_timezone_set(\PFC\Editor\Config::$default_timezone);
  * SESSION
  */
 session_start();
-session_regenerate_id();
+//session_regenerate_id();
 
 //\PFC\Editor\AppSess::start();
 
