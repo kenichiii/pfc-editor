@@ -12,6 +12,8 @@ http://freeonlinewebdevelopereditor.kena23.cz/project-plan.html
 For more information see:
 http://freeonlinewebdevelopereditor.kena23.cz/
 
+You can support project at Pledgie:
+https://pledgie.com/campaigns/30171
 
 # INSTALL DEMO
 
@@ -93,6 +95,9 @@ Enjoy working with pfc editor:
 
 # LICENSE
 Project will be released under GNU AFFERO GENERAL PUBLIC LICENSE.
+
+#You can support project at Pledgie:
+https://pledgie.com/campaigns/30171
 
 # CONTACT
 Martin Königsmark
