@@ -1,0 +1,18 @@
+
+#vypnutí magic quotes
+php_flag magic_quotes_gpc Off
+
+RewriteEngine on
+
+
+
+# -- pravidlo na osetreni odkazu zadanych bez koncoveho lomitka --
+# pokud se nejedna o pozadavek na soubor
+RewriteCond %{REQUEST_URI} !\..*$
+# a pozadavek neni zakonceny lomitkem
+RewriteCond %{REQUEST_URI} [^/]$
+# k pozadavku se prida lomitko a presmeruje se
+RewriteRule ^(.+)$ /$1/ [L,R=301,QSA]
+
+#RewriteRule !^(assets)(.*)\.(js|gif|jpg|png|htm|css|ogg|aac|mp3)$ index.php
+RewriteRule !^(assets) index.php
