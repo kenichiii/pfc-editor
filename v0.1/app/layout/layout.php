@@ -146,7 +146,7 @@
                   $('#pfc-editor-booting-prct').css('width','18px')
       			</script>
       			
-      
+<?php if (\PFC\Editor\Config::editor === 'codemirrror') { ?>      
                 <script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/lib/codemirror.js"></script>
                 
       
@@ -227,9 +227,14 @@
                             <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/mode/loadmode.js"></script>
                             <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/mode/meta.js"></script>        
         
-      
+<?php } //codemirror 
+
+      elseif (\PFC\Editor\Config::editor === 'ace-editor') {
+?>
+
                             
                             
+<?php } //ace-editor ?>                            
                             
                             <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/pfc/functions.js"></script>        
                             <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/pfc/pfcss/pfcss.js"></script>        
@@ -250,7 +255,13 @@
             <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/editor.js" type="text/javascript"></script>
             <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/editor/codemirror.editor.js" type="text/javascript"></script>
             
+<?php if (\PFC\Editor\Config::editor === 'codemirrror') { ?>                  
             <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/config/codeMirror.js" type="text/javascript"></script>
+<?php } elseif (\PFC\Editor\Config::editor === 'ace-editor') { ?>
+                                                        
+<?php } //ace-editor ?>                            
+            
+            
             <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/tools/default/tools.js" type="text/javascript"></script>
             <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/tools/snippets/snippets.js" type="text/javascript"></script>
             
@@ -396,21 +407,27 @@ $.pfcEditor.addSection('#pfc-sources-include-href',$pfcEditorSources.factory({se
                         ?>                    
                 ];   
               
-                $.pfcEditor.getSection('pfc-sources-sources').config.updaterTimeout = 1700;
-                $.pfcEditor.getSection('pfc-sources-sources').config.lastModificationCheckerOn = true;
-                $.pfcEditor.getSection('pfc-sources-editor').config.updaterTimeout = 1700;
-                $.pfcEditor.getSection('pfc-sources-editor').config.lastModificationCheckerOn = true;
-              	$.pfcEditor.getSection('pfc-sources-sandbox').config.updaterTimeout = 1700;
-                $.pfcEditor.getSection('pfc-sources-sandbox').config.lastModificationCheckerOn = true;
-                
               
+              
+                $.pfcEditor.getSection('pfc-sources-sources').config.updaterTimeout = <?php echo \PFC\Editor\Config::SourcesLastModificationCheckerInterval; ?>;
+                $.pfcEditor.getSection('pfc-sources-sources').config.lastModificationCheckerOn = <?php echo \PFC\Editor\Config::SourcesLastModificationChecker ?  'true':'false'; ?>;
+                
+                $.pfcEditor.getSection('pfc-sources-editor').config.updaterTimeout = <?php echo \PFC\Editor\Config::SourcesLastModificationCheckerInterval; ?>;
+                $.pfcEditor.getSection('pfc-sources-editor').config.lastModificationCheckerOn = <?php echo \PFC\Editor\Config::SourcesLastModificationChecker ?  'true':'false'; ?>;;
+ 
+                $.pfcEditor.getSection('pfc-sources-sandbox').config.updaterTimeout = <?php echo \PFC\Editor\Config::SourcesLastModificationCheckerInterval; ?>;
+                $.pfcEditor.getSection('pfc-sources-sandbox').config.lastModificationCheckerOn = <?php echo \PFC\Editor\Config::SourcesLastModificationChecker ?  'true':'false'; ?>;;
+              
+              
+              
+                //deprecated
                 $.pfcEditor.editor.config.phpSyntaxCheckerDelay = 1900;
                 $.pfcEditor.editor.config.phpSyntaxCheckerOn = true;   
                           
-                $.pfcEditor.editor.config.lastModificationTimeCheckerDelay=8000;
-          		$.pfcEditor.editor.config.lastModificationCheckerOn = true;          
+                $.pfcEditor.editor.config.lastModificationTimeCheckerDelay = <?php echo \PFC\Editor\Config::EditorLastModificationCheckerInterval; ?>;
+                $.pfcEditor.editor.config.lastModificationCheckerOn = <?php echo \PFC\Editor\Config::EditorLastModificationChecker ?  'true':'false'; ?>;          
                 
-                pfcSoundsManager.on = <?php echo \PFC\Editor\Config::$sounds ?  'true':'false'; ?>;
+                pfcSoundsManager.on = <?php echo \PFC\Editor\Config::sounds ?  'true':'false'; ?>;
                 
                 //lets boot
                 $.pfcEditor.init();

@@ -31,6 +31,20 @@ class Config
  * THEME
  */
         const theme = "dark";
+/*
+ * SOURCES
+ */
+  const SourcesLastModificationChecker = true;
+  const SourcesLastModificationCheckerInterval = 1700;      
+        
+ /*
+  * EDITOR
+  */       
+   const editor =  "codemirror";
+   const EditorLastModificationChecker = true;
+   const EditorLastModificationCheckerInterval = 8000; //ms
+   
+   
     /*
     *  System passwords
     */
