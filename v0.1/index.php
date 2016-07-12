@@ -42,7 +42,7 @@ defined('\PFC\Editor\SANDBOX_PATH')
             );
 
 defined('\PFC\Editor\USER_DATA_PATH')
-    || define('PFC\Editor\SANDBOX_PATH', realpath(dirname(__FILE__) ).
+    || define('PFC\Editor\USER_DATA_PATH', realpath(dirname(__FILE__) ).
             '/_data'
             );
 
