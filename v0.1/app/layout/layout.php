@@ -7,49 +7,49 @@
         
         <!-- libraries css -->
         
-                <link type="text/css" href="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/jquery_ui/jquery-ui.min.css" rel="stylesheet">
+                <link type="text/css" href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/jquery_ui/jquery-ui.min.css" rel="stylesheet">
                                
                 
       
-      			<link href="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/colpick/css/colpick.css" rel="stylesheet" type="text/css"/>
+      			<link href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/colpick/css/colpick.css" rel="stylesheet" type="text/css"/>
       
-      			<link href="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/CalcSS3/CalcSS3.css" rel="stylesheet" type="text/css" />
+      			<link href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/CalcSS3/CalcSS3.css" rel="stylesheet" type="text/css" />
       
-                <link type="text/css" href="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/fileTree/jqueryFileTree.css" rel="stylesheet">
+                <link type="text/css" href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/fileTree/jqueryFileTree.css" rel="stylesheet">
       
-                <link type="text/css" href="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/hint/show-hint.css" rel="stylesheet">
-                <link type="text/css" href="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/fold/foldgutter.css" rel="stylesheet">
-                <!--link type="text/css" href="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/display/fullscreen.css" rel="stylesheet"-->      
+                <link type="text/css" href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/hint/show-hint.css" rel="stylesheet">
+                <link type="text/css" href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/fold/foldgutter.css" rel="stylesheet">
+                <!--link type="text/css" href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/display/fullscreen.css" rel="stylesheet"-->      
                 
       
-                <link type="text/css" href="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/lib/codemirror.css" rel="stylesheet">
+                <link type="text/css" href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/lib/codemirror.css" rel="stylesheet">
       
-                <link type="text/css" href="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/dialog/dialog.css" rel="stylesheet">
-                <link type="text/css" href="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/search/matchesonscrollbar.css" rel="stylesheet">
-                 <link rel="stylesheet" href="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/lint/lint.css">                 
+                <link type="text/css" href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/dialog/dialog.css" rel="stylesheet">
+                <link type="text/css" href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/search/matchesonscrollbar.css" rel="stylesheet">
+                 <link rel="stylesheet" href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/lint/lint.css">                 
                  
                  
                  
                  
                  
-                 <link rel="stylesheet" href="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/pfc/pfcss/pfcss.css">                 
-                 <link rel="stylesheet" href="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/pfc/ui/pfc-ui.css">                 
+                 <link rel="stylesheet" href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/pfc/pfcss/pfcss.css">                 
+                 <link rel="stylesheet" href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/pfc/ui/pfc-ui.css">                 
                  
         <!-- end libraries -->        
         
-        <link href="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/pfc-editor/layout/css/layout.css" rel="stylesheet" type="text/css"/>
-        <link href="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/pfc-editor/layout/css/skin.css" rel="stylesheet" type="text/css"/>
+        <link href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/layout/css/layout.css" rel="stylesheet" type="text/css"/>
+        <link href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/layout/css/theme/<?php echo \PFC\Editor\Config::theme; ?>.css" rel="stylesheet" type="text/css"/>
       
-        <link href="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/pfc-editor/pages/css/about.css" rel="stylesheet" type="text/css"/>
-        <link href="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/pfc-editor/pages/css/config.css" rel="stylesheet" type="text/css"/>
-        <link href="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/pfc-editor/pages/css/phpinfo.css" rel="stylesheet" type="text/css"/>
+        <link href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/pages/css/about.css" rel="stylesheet" type="text/css"/>
+        <link href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/pages/css/config.css" rel="stylesheet" type="text/css"/>
+        <link href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/pages/css/phpinfo.css" rel="stylesheet" type="text/css"/>
         
-        <link href="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/pfc-editor/editor/extensions.css" rel="stylesheet" type="text/css"/>
-        <link href="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/pfc-editor/editor/fileactions.css" rel="stylesheet" type="text/css"/>      
+        <link href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/editor/extensions.css" rel="stylesheet" type="text/css"/>
+        <link href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/editor/fileactions.css" rel="stylesheet" type="text/css"/>      
         
-        <link href="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/pfc-editor/tools/default/styles.css" rel="stylesheet" type="text/css"/>        
+        <link href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/tools/default/styles.css" rel="stylesheet" type="text/css"/>        
       
-        <link href="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/pfc-editor/sections/css/sources.css" rel="stylesheet" type="text/css"/>
+        <link href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/sections/css/sources.css" rel="stylesheet" type="text/css"/>
         
         
         
@@ -130,110 +130,110 @@
               
                 
       
-                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/jquery/jquery.js"></script>
-                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/jquery_ui/jquery-ui.min.js"></script>                           
+                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/jquery/jquery.js"></script>
+                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/jquery_ui/jquery-ui.min.js"></script>                           
               
-      			<script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/CalcSS3/CalcSS3.js"></script>
+      			<script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/CalcSS3/CalcSS3.js"></script>
     
-                <script src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/colpick/js/colpick.js" type="text/javascript"></script>
+                <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/colpick/js/colpick.js" type="text/javascript"></script>
     
-                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/jquery_form/jquery.form.js"></script>
+                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/jquery_form/jquery.form.js"></script>
                 
                    
-                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/fileTree/jqueryFileTree.js"></script>
+                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/fileTree/jqueryFileTree.js"></script>
       
       			<script  type="text/javascript">
                   $('#pfc-editor-booting-prct').css('width','18px')
       			</script>
       			
       
-                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/lib/codemirror.js"></script>
+                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/lib/codemirror.js"></script>
                 
       
       
       
-                <!--script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/fold/xml-fold.js"></script-->
+                <!--script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/fold/xml-fold.js"></script-->
       
-                <!--script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/fold/foldcode.js"></script>
-                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/fold/foldgutter.js"></script>
-                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/fold/brace-fold.js"></script>
-                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/fold/xml-fold.js"></script>
-                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/fold/markdown-fold.js"></script>
-                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/fold/comment-fold.js"></script-->
+                <!--script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/fold/foldcode.js"></script>
+                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/fold/foldgutter.js"></script>
+                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/fold/brace-fold.js"></script>
+                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/fold/xml-fold.js"></script>
+                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/fold/markdown-fold.js"></script>
+                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/fold/comment-fold.js"></script-->
 
-                <!--script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/mode/xml/xml.js"></script-->
+                <!--script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/mode/xml/xml.js"></script-->
 
                 
-                <!--script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/edit/matchbrackets.js"></script>
-                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/mode/htmlmixed/htmlmixed.js"></script>
-                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/mode/xml/xml.js"></script>
-                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/mode/javascript/javascript.js"></script>
-                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/mode/css/css.js"></script>
-                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/mode/clike/clike.js"></script>
-                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/mode/php/php.js"></script-->
+                <!--script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/edit/matchbrackets.js"></script>
+                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/mode/xml/xml.js"></script>
+                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/mode/javascript/javascript.js"></script>
+                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/mode/css/css.js"></script>
+                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/mode/clike/clike.js"></script>
+                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/mode/php/php.js"></script-->
    
                 <script src="//ajax.aspnetcdn.com/ajax/jshint/r07/jshint.js"></script>
                 <script src="https://rawgithub.com/zaach/jsonlint/79b553fb65c192add9066da64043458981b3972b/lib/jsonlint.js"></script>
                 <script src="https://rawgithub.com/stubbornella/csslint/master/release/csslint.js"></script>
-                <script src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/lint/lint.js"></script>
-                <script src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/lint/javascript-lint.js"></script>
-                <script src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/lint/json-lint.js"></script>
-                <script src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/lint/css-lint.js"></script>
+                <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/lint/lint.js"></script>
+                <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/lint/javascript-lint.js"></script>
+                <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/lint/json-lint.js"></script>
+                <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/lint/css-lint.js"></script>
                 
-                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/dialog/dialog.js"></script>
-                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/search/searchcursor.js"></script>
-                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/search/search.js"></script>
-                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/search/goto-line.js"></script>      
+                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/dialog/dialog.js"></script>
+                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/search/searchcursor.js"></script>
+                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/search/search.js"></script>
+                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/search/goto-line.js"></script>      
       
-                <!--script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/scroll/annotatescrollbar.js"></script-->
-                <!--script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/search/matchesonscrollbar.js"></script-->
+                <!--script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/scroll/annotatescrollbar.js"></script-->
+                <!--script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/search/matchesonscrollbar.js"></script-->
 
         <script  type="text/javascript">
                   $('#pfc-editor-booting-prct').css('width','38px')
         </script>
       
-               <script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/search/match-highlighter.js"></script>
-               <script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/selection/active-line.js"></script>
+               <script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/search/match-highlighter.js"></script>
+               <script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/selection/active-line.js"></script>
            
                        <!-- dont work with // key support -->
-                          <!--script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/edit/closetag.js"></script-->      						
-                          <!--script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/edit/matchtags.js"></script-->
+                          <!--script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/edit/closetag.js"></script-->      						
+                          <!--script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/edit/matchtags.js"></script-->
       				   <!-- dont work with // key support -->
       
       
-                          <script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/edit/matchbrackets.js"></script>
-                          <script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/edit/closebrackets.js"></script>
+                          <script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/edit/matchbrackets.js"></script>
+                          <script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/edit/closebrackets.js"></script>
            
 
-                          <!--script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/comment/continuecomment.js"></script-->
-                          <!--script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/display/fullscreen.js"></script-->
-                          <!--script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/comment/comment.js"></script-->
-                          <!--script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/fold/foldcode.js"></script-->
-                          <script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/hint/show-hint.js"></script>
-                          <!--script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/hint/javascript-hint.js"></script>
-                          <script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/hint/html-hint.js"></script-->
+                          <!--script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/comment/continuecomment.js"></script-->
+                          <!--script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/display/fullscreen.js"></script-->
+                          <!--script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/comment/comment.js"></script-->
+                          <!--script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/fold/foldcode.js"></script-->
+                          <script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/hint/show-hint.js"></script>
+                          <!--script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/hint/javascript-hint.js"></script>
+                          <script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/hint/html-hint.js"></script-->
   
               <script  type="text/javascript">
                   $('#pfc-editor-booting-prct').css('width','68px')
         </script>
       
       
-                          <!--script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/hint/css-hint.js"></script-->
+                          <!--script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/hint/css-hint.js"></script-->
 
-                          <script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/hint/anyword-hint.js"></script>
+                          <script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/hint/anyword-hint.js"></script>
 
-                          <!--script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/hint/sql-hint.js"></script-->
+                          <!--script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/hint/sql-hint.js"></script-->
     
-                            <script src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/addon/mode/loadmode.js"></script>
-                            <script src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/mode/meta.js"></script>        
+                            <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/mode/loadmode.js"></script>
+                            <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/mode/meta.js"></script>        
         
       
                             
                             
                             
-                            <script src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/pfc/functions.js"></script>        
-                            <script src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/pfc/pfcss/pfcss.js"></script>        
-                            <script src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/pfc/ui/pfc-ui.js"></script>        
+                            <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/pfc/functions.js"></script>        
+                            <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/pfc/pfcss/pfcss.js"></script>        
+                            <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/pfc/ui/pfc-ui.js"></script>        
           
         
         <!-- end libararies javascript -->
@@ -243,16 +243,16 @@
         </script>
         
         
-        <script src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/functions/functions.js" type="text/javascript"></script>
+        <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/functions/functions.js" type="text/javascript"></script>
             
-            <script src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/pfc-editor/sounds/manager.js" type="text/javascript"></script>
+            <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/sounds/manager.js" type="text/javascript"></script>
             
-            <script src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/pfc-editor/editor.js" type="text/javascript"></script>
-            <script src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/pfc-editor/editor/codemirror.editor.js" type="text/javascript"></script>
+            <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/editor.js" type="text/javascript"></script>
+            <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/editor/codemirror.editor.js" type="text/javascript"></script>
             
-            <script src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/pfc-editor/config/codeMirror.js" type="text/javascript"></script>
-            <script src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/pfc-editor/tools/default/tools.js" type="text/javascript"></script>
-            <script src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/pfc-editor/tools/snippets/snippets.js" type="text/javascript"></script>
+            <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/config/codeMirror.js" type="text/javascript"></script>
+            <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/tools/default/tools.js" type="text/javascript"></script>
+            <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/tools/snippets/snippets.js" type="text/javascript"></script>
             
             
             
@@ -261,18 +261,18 @@
         </script>
       
       
-            <script src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/pfc-editor/sections/sources.js" type="text/javascript"></script>
+            <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/sections/sources.js" type="text/javascript"></script>
       
                  <script  type="text/javascript">
                   $('#pfc-editor-booting-prct').css('width','128px')
         </script>
       
             
-            <script src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/pfc-editor/pages/editor-about.js" type="text/javascript"></script>
-            <script src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/pfc-editor/pages/editor-config.js" type="text/javascript"></script>
-            <script src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/pfc-editor/pages/editor-help.js" type="text/javascript"></script>
-            <script src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/pfc-editor/pages/editor-home.js" type="text/javascript"></script>
-            <script src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/pfc-editor/pages/phpinfo.js" type="text/javascript"></script>            
+            <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/pages/editor-about.js" type="text/javascript"></script>
+            <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/pages/editor-config.js" type="text/javascript"></script>
+            <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/pages/editor-help.js" type="text/javascript"></script>
+            <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/pages/editor-home.js" type="text/javascript"></script>
+            <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/pages/phpinfo.js" type="text/javascript"></script>            
             
          
             
@@ -308,10 +308,10 @@ $.pfcEditor.addSection('#pfc-sources-include-href',$pfcEditorSources.factory({se
               
                 $.pfcEditor.editor.config.sandboxUrl =  "?sandbox=";
               
-              	$.pfcEditor.editor.codeMirror.config.modeUrl =  "<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/mode";
+              	$.pfcEditor.editor.codeMirror.config.modeUrl =  "<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/mode";
                 
               if($.pfcEditor.editor.codeMirror.config.ui.theme)
-                $('head').append('<link type="text/css" href="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/codemirror/theme/'+$.pfcEditor.editor.codeMirror.config.ui.theme+'.css" rel="stylesheet">');
+                $('head').append('<link type="text/css" href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/theme/'+$.pfcEditor.editor.codeMirror.config.ui.theme+'.css" rel="stylesheet">');
               
                 //pages
                 $.pfcEditor.getPage('editor-about').config.url = '<?php echo \PFC\Editor\App::pagelink('editor-about'); ?>';

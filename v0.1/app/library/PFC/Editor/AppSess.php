@@ -19,22 +19,20 @@ class AppSess {
     }
     
     public static function getSessionName() {
-        return self::encodeSessionName(AppConfig::$name,AppConfig::$SALT);
+        return self::encodeSessionName(AppConfig::name,AppConfig::SALT);
     }
     
     public static function set($index,$value) {      
          $_SESSION[self::getSessionName()][$index]=$value;        
     }
     
-    public static function ins() {
-       
+    public static function ins() {       
         return $_SESSION[self::getSessionName()];
     }
     
     public static function start() {
-        if(!isset($_SESSION[self::getSessionName()]))                    
-           $_SESSION[self::getSessionName()]=array(
-               'pfc-login'=>false
-           );
+        if (!isset($_SESSION[self::getSessionName()])) {                                    
+           $_SESSION[self::getSessionName()]=['pfc-login'=>false];           
+        }
     }
 }

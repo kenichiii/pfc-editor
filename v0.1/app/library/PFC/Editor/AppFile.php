@@ -18,12 +18,24 @@ class AppFile
     {                
         self::$served = self::loadfile($file);
         
-        if($thumb!==false) self::serveThumb ($ext, $file, $name,$thumb);
-        elseif($ext=='png'||$ext=='gif'||$ext=='jpg'||$ext=='jpeg') self::serveImage($ext,$file,$name);
-        elseif($ext=='pdf') self::servePDF($ext,$file,$name);
-        elseif($ext=='xls') self::serveXLS($ext,$file,$name);
-        elseif($ext=='doc'||$ext=='docx') self::serveDOC($ext,$file,$name);
-        else echo "neplatna pripona {$ext}";
+        if ($thumb !== false) {
+            self::serveThumb ($ext, $file, $name,$thumb);
+        }
+        elseif ($ext === 'png'||$ext=='gif'||$ext=='jpg'||$ext=='jpeg') {
+            self::serveImage($ext,$file,$name);
+        }
+        elseif ($ext === 'pdf') {
+            self::servePDF($ext,$file,$name);
+        }
+        elseif ($ext === 'xls') {
+            self::serveXLS($ext,$file,$name);
+        }
+        elseif ($ext === 'doc' || $ext === 'docx') {
+            self::serveDOC($ext,$file,$name);
+        }
+        else {
+            echo "neplatna pripona {$ext}";
+        }
     }
     
     public static function loadfile($file)

@@ -22,7 +22,7 @@ class AppCryptor
     public static function getIns() {
         if(self::$cry===null)
         {
-            if(\PFC\Editor\Config::$crypting == self::USE_Bcrypt && \PFC\Crypting\Bcrypt::isEnabled())
+            if(\PFC\Editor\Config::crypting == self::USE_Bcrypt && \PFC\Crypting\Bcrypt::isEnabled())
             {
                     self::$cry = self::getBcrypt();
             }
@@ -34,11 +34,11 @@ class AppCryptor
     }
 
     public static function getSimple() {
-        return new \PFC\Crypting\Simple(AppConfig::$SALT);
+        return new \PFC\Crypting\Simple(AppConfig::SALT);
     }
   
     public static function getBcrypt() {
-        return new \PFC\Crypting\Bcrypt(AppConfig::$BcryptRounds);
+        return new \PFC\Crypting\Bcrypt(AppConfig::BcryptRounds);
     }
     
     public static function verifyDateFloatingPin($input) {
@@ -46,16 +46,16 @@ class AppCryptor
     }
     
     public static function getDateFloatingPin() { 
-        $pin = AppConfig::$authPin;
+        $pin = AppConfig::authPin;
         $pin = str_replace('[G]', date('G'), $pin);
         $pin = str_replace('[i]', date('i'), $pin);
         return $pin;         
     }
     
     public static function getDateFloatingPinSave() { 
-        $pin = AppConfig::$authPin;
+        $pin = AppConfig::authPin;
         $mins = (intval(date('i'))+1);
-        if($mins<10)
+        if($mins<10) 
         {
             $mins = "0".$mins;
         }

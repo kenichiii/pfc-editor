@@ -25,7 +25,7 @@
                         Name:
                     </div>    
                     <div class="fleft formPrimitiveCell">
-                        <input type="text" name="name" value="<?php echo AppConfig::$name ?>">
+                        <input type="text" name="name" value="<?php echo AppConfig::name ?>">
                     </div>            
                    <div class="pfc-config-help">
                         used as session container name
@@ -38,10 +38,10 @@
                         SALT:
                     </div>    
                     <div class="fleft formPrimitiveCell">
-                        <input type="text" name="salt" value="<?php echo AppConfig::$SALT ?>">
+                        <input type="text" name="salt" value="<?php echo AppConfig::SA T ?>">
                     </div>            
                    <div class="pfc-config-help">
-                        used for sessions, password
+                        used for sessions, password 
                     </div>                    
                 </div>  
                 <br class="clear">                  
@@ -52,9 +52,9 @@
                         Sounds:
                     </div>    
                     <div class="fleft formPrimitiveCell">
-                        <input type="radio" name="sounds" <?php echo AppConfig::$sounds ? 'checked="checked"' : ''; ?> value="true"> YES
+                        <input type="radio" name="sounds" <?php echo AppConfig::sounds ? 'checked="checked"' : ''; ?> value="true"> YES
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="radio" name="sounds" <?php echo !AppConfig::$sounds ? 'checked="checked"' : ''; ?> value="false"> NO
+                        <input type="radio" name="sounds" <?php echo !AppConfig::sounds ? 'checked="checked"' : ''; ?> value="false"> NO
                     </div>  
                   <br style="clear:both">
                    <div class="pfc-config-help">
@@ -70,7 +70,7 @@
                         Assets URL prefix:
                     </div>    
                     <div class="fleft formPrimitiveCell">
-                        <input type="text" name="assetsurl" value="<?php echo AppConfig::$assetsUrl; ?>">
+                        <input type="text" name="assetsurl" value="<?php echo AppConfig::assetsUrl; ?>">
                     </div>            
                    <div class="pfc-config-help">
                         used to generate inner links
@@ -89,7 +89,7 @@
                         Auth email:
                     </div>    
                     <div class="fleft formPrimitiveCell">
-                        <input type="text" name="webmasterauthemail" value="<?php echo AppConfig::$authEmail ?>">
+                        <input type="text" name="webmasterauthemail" value="<?php echo AppConfig::authEmail ?>">
                     </div>            
                    <div class="pfc-config-help">
                         Email to forgotten password form
@@ -102,7 +102,7 @@
                         Auth login:
                     </div>    
                     <div class="fleft formPrimitiveCell">
-                        <input type="text" name="webmasterauthlogin" value="<?php echo AppConfig::$authLogin ?>">
+                        <input type="text" name="webmasterauthlogin" value="<?php echo AppConfig::authLogin ?>">
                     </div>            
                    <div class="pfc-config-help">
                         username used by pfc editor
@@ -137,7 +137,7 @@
                         Auth pin:
                     </div>    
                     <div class="fleft formPrimitiveCell">
-                        <input type="text" name="webmasterauthpin" value="<?php echo AppConfig::$authPin ?>">
+                        <input type="text" name="webmasterauthpin" value="<?php echo AppConfig::authPin ?>">
                     </div>            
                    <div class="pfc-config-help">
                         pin used by pfc editor, [G] are hours, [i] are minutes
@@ -150,10 +150,10 @@
                         Crypting:
                     </div>    
                     <div class="fleft formPrimitiveCell">
-                        <input <?php echo \PFC\Crypting\Bcrypt::isEnabled() && AppConfig::$crypting == AppCryptor::USE_Bcrypt ? '' : 'checked="checked"' ?> type="radio" name="crypting" value="<?php echo AppCryptor::USE_Simple ?>"> simple
+                        <input <?php echo \PFC\Crypting\Bcrypt::isEnabled() && AppConfig::crypting == AppCryptor::USE_Bcrypt ? '' : 'checked="checked"' ?> type="radio" name="crypting" value="<?php echo AppCryptor::USE_Simple ?>"> simple
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <input <?php  
-                                    if(\PFC\Crypting\Bcrypt::isEnabled() && AppConfig::$crypting == AppCryptor::USE_Bcrypt )
+                                    if(\PFC\Crypting\Bcrypt::isEnabled() && AppConfig::crypting == AppCryptor::USE_Bcrypt )
                                     {
                                         echo 'checked="checked"';
                                     }
@@ -166,9 +166,9 @@
                                     }
                                 ?>    
                            type="radio" name="crypting" value="<?php echo AppCryptor::USE_Bcrypt ?>"> Bcrypt 
-                        <span <?php if(!\PFC\Crypting\Bcrypt::isEnabled()) echo 'style="display:none"' ?>>
-                        &nbsp; rounders: <input type="text" name="bcryptrounders" value="<?php echo AppConfig::$BcryptRounds; ?>" style="width:100px">
-                        </span> <?php if(!\PFC\Crypting\Bcrypt::isEnabled()) echo 'NOT ENABLED ON SERVER' ?>
+                        <span <?php if (!\PFC\Crypting\Bcrypt::isEnabled()) { echo 'style="display:none"'; } ?>>
+                        &nbsp; rounders: <input type="text" name="bcryptrounders" value="<?php echo AppConfig::BcryptRounds; ?>" style="width:100px">
+                        </span> <?php if (!\PFC\Crypting\Bcrypt::isEnabled()) { echo 'NOT ENABLED ON SERVER'; } ?>
                         <br class="clear">
                     </div>    
                         <br class="clear">
@@ -188,7 +188,7 @@
                         display_errors:
                     </div>    
                     <div class="fleft formPrimitiveCell">
-                        <input type="text" name="displayerrors" value="<?php echo AppConfig::$displayErrors ?>">
+                        <input type="text" name="displayerrors" value="<?php echo AppConfig::displayErrors ?>">
                     </div>            
                         <div class="pfc-config-help">
                            1 show errors, 0 dont show - combine with next setting
@@ -201,7 +201,7 @@
                         error_reporting:
                     </div>    
                     <div class="fleft formPrimitiveCell">
-                        <input type="text" name="errorreportimg" value="<?php echo AppConfig::$errorReporting == 32767 ? 'E_ALL' : AppConfig::$errorReporting ?>">
+                        <input type="text" name="errorreportimg" value="<?php echo AppConfig::errorReporting == 32767 ? 'E_ALL' : AppConfig::errorReporting ?>">
                     </div>            
                         <div class="pfc-config-help">
                            0 dont show, E_ALL or other supported const - but only one!
@@ -214,7 +214,7 @@
                         upload_max_filesize:
                     </div>    
                     <div class="fleft formPrimitiveCell">
-                        <input type="text" name="upload_max_filesize" value="<?php echo AppConfig::$upload_max_filesize ?>">
+                        <input type="text" name="upload_max_filesize" value="<?php echo AppConfig::upload_max_filesize ?>">
                     </div>            
                         <div class="pfc-config-help">
                            max allowed size of upload file through form
@@ -227,7 +227,7 @@
                         post_max_size:
                     </div>    
                     <div class="fleft formPrimitiveCell">
-                        <input type="text" name="post_max_size" value="<?php echo AppConfig::$post_max_size ?>">
+                        <input type="text" name="post_max_size" value="<?php echo AppConfig::post_max_size ?>">
                     </div>            
                         <div class="pfc-config-help">
                            max allowed size of post request through form, should be bigger than previos setting
@@ -240,7 +240,7 @@
                         date_default_timezone:
                     </div>    
                     <div class="fleft formPrimitiveCell">
-                        <input type="text" name="default_timezone" value="<?php echo AppConfig::$default_timezone ?>">
+                        <input type="text" name="default_timezone" value="<?php echo AppConfig::default_timezone ?>">
                     </div>            
                         <div class="pfc-config-help">
                            server timezone name, ie. Europe/Prague
@@ -253,7 +253,7 @@
                         session.cache_expire:
                     </div>    
                     <div class="fleft formPrimitiveCell">
-                        <input type="text" name="session_cache_expire" value="<?php echo AppConfig::$session_cache_expire ?>">
+                        <input type="text" name="session_cache_expire" value="<?php echo AppConfig::session_cache_expire ?>">
                     </div>            
                         <div class="pfc-config-help">
                            session cache memory expire time in minutes

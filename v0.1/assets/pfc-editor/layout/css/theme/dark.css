@@ -1,0 +1,115 @@
+
+body {
+    background-color: black;
+}
+
+
+/* booting */ 
+
+#pfc-editor-booting {
+    background-color: black;
+    color:white;
+}
+
+#pfc-editor-booting-holder {
+    border:1px solid white;
+}
+
+
+#pfc-editor-booting-prct {
+    background-color: white;
+}
+
+
+#pfc-editor-waiting-box {
+    border: 2px solid #ddd;
+    background-color: #00F;
+    color: #ddd;
+}
+
+/* HEAD */
+
+#pfc-editor-head {
+    background-color: #303030;
+}
+
+#pfc-editor-head a.pfc-editor-active-section-href {
+    color: orange;
+    background-color: black;    
+}
+
+#pfc-editor-head a:hover {
+    color: greenyellow;
+}
+
+a#pfc-editor-logo {    
+    color: lightcyan;   
+}
+
+#pfc-editor-menu li a {
+   color: lightskyblue;
+}
+
+#pfc-editor-menu li a.pfc-editor-page-href,
+a.pfc-editor-page-href {
+   color: lightsteelblue;
+}
+
+#pfc-editor-menu li a.pfc-editor-page-href:hover,
+a.pfc-editor-page-href:hover, a#pfc-editor-admin-href:hover {
+    color: greenyellow;
+}
+
+/*
+   EDITOR
+*/
+
+.CodeMirror-dialog {
+  background: darkblue;
+  color: #ddd;
+}
+
+.CodeMirror-dialog-top {
+  border-bottom: 1px solid black;
+}
+
+.CodeMirror-dialog-bottom {
+  border-top: 1px solid black;
+}
+
+.CodeMirror-dialog input {
+  background: transparent;
+  color: inherit;
+}
+
+.valid-file-text {
+  color:lightskyblue;
+}
+
+.file-text-errors {
+  color: red;
+}
+
+/*
+   tools
+*/
+#pfc-editor-tools {
+    background-color: #0F0D4E;
+}
+
+#pfc-editor-tools-body {
+    background-color: lightsteelblue;
+}
+
+#pfc-editor-tools-body a {
+    color: #154669;
+}
+
+#pfc-editor-tools-body a:hover {
+    background-color: darkblue;
+    color: white;
+    border-radius: 2px;
+}
+
+
+
