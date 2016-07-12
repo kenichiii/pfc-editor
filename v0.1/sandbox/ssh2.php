@@ -3,7 +3,7 @@ include('phpsec/Net/SSH2.php');
 set_include_path(implode(PATH_SEPARATOR,array(get_include_path(),\PFC\Editor\LIBRARY_PATH.'/phpsec')));
 
 $ssh = new Net_SSH2('www.kena23.cz');
-if (!$ssh->login('root', 'kenakena23')) {
+if (!$ssh->login('', '')) {
     exit('Login Failed');
 }
 
