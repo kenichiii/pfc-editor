@@ -289,6 +289,16 @@
               *   pfc editor
               */
              
+/*
+ * ADD TO EDITOR
+ */
+
+$.pfcEditor.addSection('#pfc-sources-sources-href',$pfcEditorSources.factory({secid:'pfc-sources-sources'}));
+$.pfcEditor.addSection('#pfc-sources-sandbox-href',$pfcEditorSources.factory({secid:'pfc-sources-sandbox'}));
+$.pfcEditor.addSection('#pfc-sources-editor-href',$pfcEditorSources.factory({secid:'pfc-sources-editor'}));
+$.pfcEditor.addSection('#pfc-sources-include-href',$pfcEditorSources.factory({secid:'pfc-sources-include'}));
+      
+      
               //configure
                 //editor
                 $.pfcEditor.editor.config.appSaveFileUrl =  "<?php echo \PFC\Editor\App::editorlinkaction('save-file'); ?>";

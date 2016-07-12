@@ -5,8 +5,23 @@
   <span style="color:lightsteelblue;font-weight:normal;"><span style="color:greenyellow">editor</span> 
   <span style="font-size:0.75em;">[[v0.1beta]]</span></span>
 </h1>
+
+<ul>
+    <li>rename to libs vendor</li>
+    <li>use new php backend + models Project,Sources</li>
+    <li>make ace editor</li>
+    <li>make dark, classic blue themes</li>
+    <li>config -> settings -> sources settings, theme, codemirrrorXace.ui</li>
+    <li>app header to config</li>
+    <li>finish app ui + standalone container</li>
+    <li>components sections,tools,pages => APPS</li>
+    <li>make pages nested</li>
+    <li>projects -> default,html,php -> sources,apps,tools</li>
+    <li>footer -> page info => amke first allways like main panel button -> standalone app minimalize</li>
+</ul>
+
 <br>  
-<div style="float:right;max-width:350px">
+<div style="float:right;max-width:250px">
   <b>FINDED BUGS:</b><br>
   - Error: Syntax error, unrecognized expression: #file_public____nette_sandbox_app_presenters_templates_@layout_latte
   - if sources change name from upercase to small updater not find our <br>
