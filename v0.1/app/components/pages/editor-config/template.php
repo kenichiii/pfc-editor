@@ -14,7 +14,7 @@
             $site = str_replace('/pfc-config', '', $ret[0]);
               */          
 ?>
-        <h2 style="padding-bottom: 5px">Editor Config</h2>
+        <h2 style="padding-bottom: 5px">Editor Settings</h2>
         <form id="pfc-editor-config" method="post" action="<?php echo App::pagelinkaction('editor-config','save-config') ?>">
           <div id="pfc-editor-config-accordicon">  
             <a class="accordicon-head" href="#pfc-editor-config-basic">Basic</a>
@@ -38,7 +38,7 @@
                         SALT:
                     </div>    
                     <div class="fleft formPrimitiveCell">
-                        <input type="text" name="salt" value="<?php echo AppConfig::SA T ?>">
+                        <input type="text" name="salt" value="<?php echo AppConfig::SALT ?>">
                     </div>            
                    <div class="pfc-config-help">
                         used for sessions, password 
@@ -50,7 +50,7 @@
                 <div class="fleft formPrimitiveRow">
                     <div class="fleft formPrimitiveTitle">
                         Sounds:
-                    </div>    
+                    </div>       
                     <div class="fleft formPrimitiveCell">
                         <input type="radio" name="sounds" <?php echo AppConfig::sounds ? 'checked="checked"' : ''; ?> value="true"> YES
                         &nbsp;&nbsp;&nbsp;&nbsp;
