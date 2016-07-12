@@ -41,7 +41,10 @@ defined('\PFC\Editor\SANDBOX_PATH')
             '/sandbox'
             );
 
-
+defined('\PFC\Editor\USER_DATA_PATH')
+    || define('PFC\Editor\SANDBOX_PATH', realpath(dirname(__FILE__) ).
+            '/_data'
+            );
 
         // Ensure library/ and editor/ are on include_path
         set_include_path(implode(PATH_SEPARATOR, array(          
