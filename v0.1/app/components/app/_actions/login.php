@@ -24,18 +24,18 @@ if( isset($_POST['pwd']) &&  isset($_POST['login'])
 }
      else
      {
-       if( AppLogin::isFreeForLoging() )       
+       if( AppLogin::isFreeForLoging() ) {       
          echo json_encode(array(
            'succ' => 'no',
            'reason' => 'creditials'
          ));
-       else
+       } else {
          echo json_encode(array(
            'succ' => 'no',
            'reason' => 'banned',
            'bannedToTime' => date('G:i:s',AppLogin::getBannedToTime())
          ));       
-       
+       }
        //AppFile::sendRedirectHeaders(str_replace('?_app=true&action=login','',$_SERVER['REQUEST_URI']).'?wrong-creditials');
      }
 
