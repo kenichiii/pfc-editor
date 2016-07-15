@@ -100,8 +100,8 @@ use \PFC\Editor\App;
             </div-->
             
             
-                <script type="text/javascript" src="<?php echo AppConfig::$assetsUrl; ?>assets/libs/jquery/jquery.js"></script>
-                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::$assetsUrl; ?>assets/libs/jquery_form/jquery.form.js"></script>
+                <script type="text/javascript" src="<?php echo AppConfig::assetsUrl; ?>assets/libs/jquery/jquery.js"></script>
+                <script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/jquery_form/jquery.form.js"></script>
             
             
                 <script type="text/javascript">
