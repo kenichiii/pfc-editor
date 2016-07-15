@@ -28,7 +28,7 @@ class AppLogin
         
       return   
         $login == AppConfig::$authLogin
-        && AppCryptor::getIns()->verify($pwd,AppConfig::$authPwd) 
+        && AppCryptor::getIns()->verify($pwd,AppConfig::authPwd) 
         && AppCryptor::verifyDateFloatingPin($pin)
         && self::isFreeForLoging()
         ;
@@ -71,11 +71,10 @@ class AppLogin
     
     public static function getLoginTryies() {
       $sess = AppSess::ins();
-        if(!isset($sess['pfc-login-tryies']))
+      
+        if (!isset($sess['pfc-login-tryies'])) {
           self::setLoginTryies(array());
-      
-      
-      $sess = AppSess::ins();
+        }            
       
         return 
            $sess['pfc-login-tryies'];
@@ -95,15 +94,15 @@ class AppLogin
      
      foreach($logintryies as $key=>$logintry)
 		{
-       		if($now-$logintry>60*5)
-              unset($logintryies[$key]);
+       		if ($now-$logintry>60*5) {
+                    unset($logintryies[$key]);
+                }
      	}     
      
      self::setLoginTryies($logintryies);   
      
      
-     if( count($logintryies) > 5 )
-     {
+     if ( count($logintryies) > 5 ) {
          self::setBannedToTime((time()+600));         
      }
 
