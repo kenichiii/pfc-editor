@@ -27,7 +27,7 @@ class AppLogin
           AppLogin::setFreeForLogingAccess();  
         
       return   
-        $login == AppConfig::$authLogin
+        $login == AppConfig::authLogin
         && AppCryptor::getIns()->verify($pwd,AppConfig::authPwd) 
         && AppCryptor::verifyDateFloatingPin($pin)
         && self::isFreeForLoging()
@@ -49,35 +49,29 @@ class AppLogin
     public static function setFreeForLogingAccess() {
         //check too much login lock   
         
-        if( 
-                self::isNotBanned()
-          )
-        {            
+        if (self::isNotBanned()) {            
             self::$freeForLoging = true;
-        }
-        else
-        { 
+        } else { 
             self::$freeForLoging = false;
         }
     }
     
     public static function getBannedToTime() {
       $sess = AppSess::ins();
-        return $sess['pfc-login-bannedTo'];
+      return $sess['pfc-login-bannedTo'];
     }
     public static function setBannedToTime($t) {
         AppSess::set('pfc-login-bannedTo',$t);    
     }
     
     public static function getLoginTryies() {
-      $sess = AppSess::ins();
+       $sess = AppSess::ins();
       
-        if (!isset($sess['pfc-login-tryies'])) {
-          self::setLoginTryies(array());
-        }            
+       if (!isset($sess['pfc-login-tryies'])) {
+         self::setLoginTryies([]);
+       }            
       
-        return 
-           $sess['pfc-login-tryies'];
+       return $sess['pfc-login-tryies'];
     }
     
     public static function setLoginTryies($v) {
@@ -92,16 +86,14 @@ class AppLogin
      
      $now = time();
      
-     foreach($logintryies as $key=>$logintry)
-		{
+     foreach ($logintryies as $key=>$logintry) {
        		if ($now-$logintry>60*5) {
                     unset($logintryies[$key]);
                 }
-     	}     
+     }     
      
      self::setLoginTryies($logintryies);   
-     
-     
+          
      if ( count($logintryies) > 5 ) {
          self::setBannedToTime((time()+600));         
      }
@@ -121,6 +113,7 @@ class AppLogin
     }
     
     public static function logout() {
+        self::setLoginTryies([]);   
         AppSess::set('pfc-login',false);
     }
 }
