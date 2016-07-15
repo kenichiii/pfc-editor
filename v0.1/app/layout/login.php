@@ -31,7 +31,7 @@ use \PFC\Editor\App;
             <div>
             server time: <span class="pfc-editor-server-time"><?php echo date('j.n.Y G:i:s'); ?></span>
             </div>
-            <?php if(AppConfig::$crypting==AppCryptor::USE_Bcrypt
+            <?php if(AppConfig::crypting==AppCryptor::USE_Bcrypt
                     && !\PFC\Crypting\Bcrypt::isEnabled()) { ?>
                     <h4>BCRYPTING IS TURN ON, BUT NOT SUPPORTED BY SERVER</h4>
                     reset password
