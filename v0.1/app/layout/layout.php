@@ -255,7 +255,7 @@
             <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/editor.js" type="text/javascript"></script>
             <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/editor/codemirror.editor.js" type="text/javascript"></script>
             
-<?php if (\PFC\Editor\Config::editor === 'codemirrror') { ?>                  
+<?php if (\PFC\Editor\Config::editor === 'codemirror') { ?>                  
             <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/config/codeMirror.js" type="text/javascript"></script>
 <?php } elseif (\PFC\Editor\Config::editor === 'ace-editor') { ?>
                                                         
