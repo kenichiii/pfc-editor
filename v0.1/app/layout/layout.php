@@ -146,7 +146,7 @@
                   $('#pfc-editor-booting-prct').css('width','18px')
       			</script>
       			
-<?php if (\PFC\Editor\Config::editor === 'codemirrror') { ?>      
+<?php if (\PFC\Editor\Config::editor === 'codemirror') { ?>      
                 <script type="text/javascript" src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/lib/codemirror.js"></script>
                 
       
