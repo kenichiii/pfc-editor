@@ -67,11 +67,11 @@ class AppLogin
     public static function getLoginTryies() {
        $sess = AppSess::ins();
       
-       if (!isset($sess['pfc-login-tryies'])) {
+       if (!isset($sess['pfc-login-tryies']) || !is_array($sess['pfc-login-tryies'])) {
          self::setLoginTryies([]);
        }            
       
-       return $sess['pfc-login-tryies'];
+       return isset($sess['pfc-login-tryies']) ? $sess['pfc-login-tryies'] : [];
     }
     
     public static function setLoginTryies($v) {
