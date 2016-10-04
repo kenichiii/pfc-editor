@@ -94,7 +94,7 @@ use \PFC\Editor\App;
             <a href="#">Login form</a>                  
             </div>                   
            </div>
-              <div>ADD DETECTION OF SYSTEM + AVAILABLE FUNCTIONS => TERMINAL</div>
+             
             <!--div>
              <?php echo date('G:i:s').'  => '; var_dump($_SESSION); ?>
             </div-->
@@ -140,7 +140,7 @@ use \PFC\Editor\App;
                         }
                     }
                   
-                    $(function(){
+                    //$(function(){
             
                            var options = {
                                     success: login_form,
@@ -155,23 +155,10 @@ use \PFC\Editor\App;
                             };
                             
                            $('#pfc-editor-login-form').ajaxForm(options);
-                      
-                           
-                      
-                      
-                      $(window).keypress(function(e) { 
-                        $('.caps-info').html('<br>');
-                          var s = String.fromCharCode( e.which );
-                          if ( s.toUpperCase() === s && s.toLowerCase() !== s && !e.shiftKey ) {
-                              $('.caps-info').html('CAPS LOCK IS ON');
-                          }
-                        else {
-                          
-                        }
-                      });
+                                                 
                       
                         refreshServerTime();
-                    });
+                    //});
                 </script>                      
                   
           </body>  

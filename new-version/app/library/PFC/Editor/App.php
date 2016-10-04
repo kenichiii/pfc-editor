@@ -38,98 +38,68 @@ class App {
 
     public static function getRequestFilePath()
     {
+      
+         $ajax = \filter_input(\INPUT_GET, 'ajax');
+         $action = \filter_input(\INPUT_GET, 'action');
+      
+       	 $app = \filter_input(\INPUT_GET, '_app');
+         $section = \filter_input(\INPUT_GET, 'section');
+         $page = \filter_input(\INPUT_GET, 'page');
+         $tools = \filter_input(\INPUT_GET, 'tools');
+      	 $editor = \filter_input(\INPUT_GET, 'editor');
+         $sandbox = \filter_input(\INPUT_GET, 'sandbox');
        
-         if(isset($_GET['page']) && isset($_GET['ajax'])) 
+         if($page && $ajax) 
          {
-             $r = 'components/pages/'.$_GET['page'].'/_ajax/'.$_GET['ajax'].'.php';
-         }
-         elseif(isset($_GET['page']) && isset($_GET['action'])) 
-         {
-             $r = 'components/pages/'.$_GET['page'].'/_actions/'.$_GET['action'].'.php';     
-         }
-         elseif(isset($_GET['page'])) 
-         {
-             $r = 'components/pages/'.$_GET['page'].'/template.php';
+             $r = 'components/pages/'.$page.'/_ajax/'.$ajax.'.php';
+         } elseif($page && $action) {
+             $r = 'components/pages/'.$page.'/_actions/'.$action.'.php';     
+         } elseif($page) {
+             $r = 'components/pages/'.$page.'/template.php';
          }
 
-         elseif(isset($_GET['section']) && isset($_GET['ajax']))
+         elseif($section && $ajax)
          {
-             if($_GET['section']=='pages')
-             {
-                 \PFC\WebApp\App::connectDatabase();
-             }
-             $r = 'components/sections/'.$_GET['section'].'/_ajax/'.$_GET['ajax'].'.php';     
+             return 'components/sections/'.$section.'/_ajax/'.$ajax.'.php';     
          }
-         elseif(isset($_GET['section']) && isset($_GET['action']))
-         {
-             if($_GET['section']=='pages')
-             {
-                 \PFC\WebApp\App::connectDatabase();
-             }     
-             $r = 'components/sections/'.$_GET['section'].'/_actions/'.$_GET['action'].'.php';     
+         elseif($section && $action)
+         {   
+             return 'components/sections/'.$section.'/_actions/'.$action.'.php';     
          }
-
-         elseif(isset($_GET['tools']) && isset($_GET['ajax']))
-         {
-             $r = 'components/tools/'.$_GET['tools'].'/_ajax/'.$_GET['ajax'].'.php';     
-         }
-         elseif(isset($_GET['tools']) && isset($_GET['action']))
-         {
-             $r = 'components/tools/'.$_GET['tools'].'/_actions/'.$_GET['action'].'.php';     
+         
+         elseif($tools && $ajax) {
+             $r = 'components/tools/'.$tools.'/_ajax/'.$ajax.'.php';     
+         } elseif($tools && $action) {
+             $r = 'components/tools/'.$tools.'/_actions/'.$action.'.php';     
          }
 
 
-         elseif(isset($_GET['editor']) && isset($_GET['ajax']))
-         {
-             $r = 'components/editor/_ajax/'.$_GET['ajax'].'.php';     
+         elseif($editor && $ajax) {
+             $r = 'components/editor/_ajax/'.$ajax.'.php';     
+         } elseif($editor && $action) {
+             $r = 'components/editor/_actions/'.$action.'.php';     
          }
-         elseif(isset($_GET['editor']) && isset($_GET['action']))
-         {
-             $r = 'components/editor/_actions/'.$_GET['action'].'.php';     
-         }
-
+            
+      
+         elseif($app && $ajax) {
+             $r = 'components/app/_ajax/'.$ajax.'.php';     
+         } elseif($app && $action) {
+             $r = 'components/app/_actions/'.$action.'.php';                
+         } 
       
       
-         elseif((isset($_GET['app'])||isset($_GET['_app']))  && isset($_GET['ajax']))
-         {
-             $r = 'components/app/_ajax/'.$_GET['ajax'].'.php';     
-         }
-         elseif((isset($_GET['app'])||isset($_GET['_app'])) && isset($_GET['action']))
-         {
-             $r = 'components/app/_actions/'.$_GET['action'].'.php';     
-         }
-
-         elseif(isset($_GET['sandbox']))
-         {
+         elseif($sandbox) {
             set_include_path(implode(PATH_SEPARATOR, array(
                 get_include_path(), 
                 \PFC\Editor\SANDBOX_PATH
             )));
 
-             $r = \PFC\Editor\SANDBOX_PATH.'/'.$_GET['sandbox'];     
+             $r = \PFC\Editor\SANDBOX_PATH.'/'.$sandbox;     
          } 
-
-         else
-         {
-           $uri = explode('?',$_SERVER['REQUEST_URI']);
-           $req = $uri[0];  
-           $pub = \PFC\Editor\PUBLIC_PATH.'/';
-           
-           $pos = strrpos($pub, $req);
-           
-                if (
-                  $pos === false ||
-                  strlen($pub)!== strlen(substr($pub,0,$pos).$req) 
-                    ) {
-                    // not found...
-                    \PFC\Editor\AppFile::send404NotFoundHeaders();
-                    $r = 'layout/404.php';
-                }
-                else
-                {
-                    $r = 'layout/layout.php';
-                }
-            
+      
+      
+      	 else {          
+            $r = 'layout/layout.php';                            
          }
 
       return $r;

@@ -16,7 +16,9 @@
       			<link href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/CalcSS3/CalcSS3.css" rel="stylesheet" type="text/css" />
       
                 <link type="text/css" href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/fileTree/jqueryFileTree.css" rel="stylesheet">
-      
+
+<?php if (\PFC\Editor\Config::editor === 'codemirror') { ?> 
+                
                 <link type="text/css" href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/hint/show-hint.css" rel="stylesheet">
                 <link type="text/css" href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/fold/foldgutter.css" rel="stylesheet">
                 <!--link type="text/css" href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/display/fullscreen.css" rel="stylesheet"-->      
@@ -27,7 +29,9 @@
                 <link type="text/css" href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/dialog/dialog.css" rel="stylesheet">
                 <link type="text/css" href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/search/matchesonscrollbar.css" rel="stylesheet">
                  <link rel="stylesheet" href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/codemirror/addon/lint/lint.css">                 
-                 
+ <?php } elseif (\PFC\Editor\Config::editor === 'ace-editor') { ?>
+                                                        
+<?php } //ace-editor ?>                  
                  
                  
                  
@@ -253,9 +257,9 @@
             <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/sounds/manager.js" type="text/javascript"></script>
             
             <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/editor.js" type="text/javascript"></script>
-            <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/editor/codemirror.editor.js" type="text/javascript"></script>
-            
-<?php if (\PFC\Editor\Config::editor === 'codemirror') { ?>                  
+
+<?php if (\PFC\Editor\Config::editor === 'codemirror') { ?>  
+            <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/editor/codemirror.editor.js" type="text/javascript"></script>                            
             <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/config/codeMirror.js" type="text/javascript"></script>
 <?php } elseif (\PFC\Editor\Config::editor === 'ace-editor') { ?>
                                                         
