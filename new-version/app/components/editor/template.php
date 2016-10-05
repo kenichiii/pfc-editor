@@ -37,11 +37,11 @@
 
             <div id="pfc-editor-external-page-template">
               <div class="pfc-editor-dialog">
-                      <div class="page-preview-browser-holder"> 
+                      <!--div class="page-preview-browser-holder"--> 
                           <div class="page-preview-browser">
                               
                           </div>
-                      </div>
+                      <!--/div-->
               </div>    
             </div> <!-- pfc-editor-external-page-content-template -->            
 

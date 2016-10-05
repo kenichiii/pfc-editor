@@ -12,7 +12,7 @@ $.pfcEditor.editor = {
           
             sandboxUrl:'',
           
-            phpSyntaxCheckerDelay:1000,
+            
             lastModificationTimeCheckerDelay:5000,
           
           phpSyntaxCheckerOn: true,          
@@ -49,16 +49,7 @@ $.pfcEditor.editor = {
                 });  
         },
             
-        codeMirror: {
-            config: {
-                modeUrl: {},
-                ui: {}
-            },
-            
-            initDefaults: function() {
-                    
-            }
-        },
+        
             
         ui: {
                 setFileEditorHeight: function() {
@@ -156,7 +147,7 @@ $.pfcEditor.editor = {
             
             addPage: function(page,ext) {
                 var params;
-                if(this.phpChecker!==null) clearTimeout(this.phpChecker);
+                
                 //test if already open
                 if(page.multi)
                 {
@@ -239,7 +230,7 @@ $.pfcEditor.editor = {
             
             ceditors:[],
             addFile: function(code,file_path,root,ext) {
-                if(this.phpChecker!==null) clearTimeout(this.phpChecker);
+                
                 var that = this;
                 
                 if($('#file_'+code.id).hasClass('pfc-editor-dialog'))
@@ -295,7 +286,7 @@ $.pfcEditor.editor = {
                 }//end else          
               
                 that.run_last_modification_checker(code); 
-                that.run_syntax_checker(code);
+                
             },
             
             getActiveDialogBody: function() {
@@ -609,103 +600,7 @@ $.pfcEditor.editor = {
               }
             }, 
        
-            phpChecker:null,
             
-            run_syntax_checker: function(code){
-                var that = this;
-                         if(code&&code.name.substr(code.name.length-3)=='php')
-                                     that.running_php_checker(code);                                     
-                         else if(code&&code.name.substr(code.name.length-2)=='js')
-                                     that.running_js_checker(code);      
-              
-                },
-            
-            running_js_checker: function(cc) { 
-              /*
-              var info;
-              var valid = true;
-              for (var i = 0; i <  this.ceditors[cc.id].inst.lineCount(); i++) {
-                 //layoutCodeEditor.clearMarker(i);
-                 info = this.ceditors[cc.id].inst.lineInfo(i);
-                 console.log(info.gutterMarkers)
-                 if(info.gutterMarkers)
-                 console.log('test'+$(info.gutterMarkers)
-                 if(info.gutterMarkers && info.gutterMarkers.className==='CodeMirror-lint-marker-error') valid = false;              
-               }
-                                    if(valid)
-                                    $('#file_'+cc.id+' .pfc-editor-file-check').html('<span style="color:lightskyblue">valid js file</span>');   
-                                        else
-                                    $('#file_'+cc.id+' .pfc-editor-file-check').html('<span style="color:red">Errors parsing</span>');
-              
-              var that = this;
-                    setTimeout(function(){
-                      that.running_js_checker(cc);
-                    },1500);
-              */      
-            },      
-       
-     makeErrorMarker: function(error) {
-      var elem = document.createElement('div');
-      elem.className = 'error-marker';
-      elem.innerHTML = '<div style="background-color:red;border-radius:3px;padding-left:3px;padding-right:3px">X</div>';
-      elem.setAttribute('title', error);
-      return elem;
-    },
-       
-            running_php_checker: function(cc) {
-             if(this.config.phpSyntaxCheckerOn)
-             {
-              var that = this;  
-              
-              if(cc.id===that.getActiveCEditorId())
-                {
-                     that.phpChecker = setTimeout(function(){
-                              var c = that.ceditors[cc.id].inst.getValue();
-                              var tc = setTimeout(function(){
-                                $('#file_'+cc.id+' .pfc-editor-file-check').html('<span>checking...</span>');   
-                                tc = setTimeout(function(){
-                                     $('#file_'+cc.id+' .pfc-editor-file-check').html('<span>bad connection</span>');   
-                                },12000);    
-                              },2000);
-                                
-                                $.post(that.config.checkPhpSyntaxUrl,{code:c},function(json){
-                                  
-                                  clearTimeout(tc);
-                                  
-                                  that.ceditors[cc.id].inst.clearGutter("error-gutter");
-                                  
-                                    if(json.errors=='FALSE')
-                                      {
-                                           $('#file_'+cc.id+' .pfc-editor-file-check').html('<span class="valid-file-text">valid php file</span>');       
-                                      }                                    
-                                     else 
-                                     {
-                                           $('#file_'+cc.id+' .pfc-editor-file-check').html('<span class="file-text-errors">Errors parsing</span>');
-                                           
-                                            var e = json.syntax.message;                                                                                                                                  
-                                           
-                                            that.ceditors[cc.id].inst.setGutterMarker(parseInt(e[1])-1, "error-gutter", that.makeErrorMarker(e[0]));
-                                          
-                                     }
-                                    
-                                                                        
-                                         if(cc.id===that.getActiveCEditorId())
-                                           {
-                                             that.running_php_checker(cc);                                     
-                                           }
-                                                                                                                                                                                  
-                                },'json').fail(function(){
-                                    $('#file_'+cc.id+' .pfc-editor-file-check').html('<span>http error</span>');   
-                                     if(cc.id===that.getActiveCEditorId())
-                                       {
-                                           that.running_php_checker(cc);                                     
-                                       }                              
-                                });
-                                
-                            },this.config.phpSyntaxCheckerDelay);  
-                }
-             }
-            },
             
             initFileCodeEditor: function(code) {
                 var that = this;
@@ -931,7 +826,7 @@ $.pfcEditor.editor = {
             
          init: function() {
              this.ui.init();
-             this.codeMirror.initDefaults();
+             
              this.setEditorDialogsHeadsContainerWidth(); 
          }   
             

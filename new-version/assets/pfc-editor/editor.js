@@ -133,7 +133,7 @@
                         
                         var body = $(template);
                         
-                        body.find('.page-preview-browser').append(content);
+                        body.find('.page-preview-browser').css('width','100%').css('height',parseInt($("#pfc-editor-body").height()) - 5 +"px").append(content);
                         body.attr('id',pageid);
                         body.hide();
                         
@@ -144,9 +144,9 @@
                 
                         $('#'+pageid).show();
                 
-                        $('#'+pageid+' .page-preview-browser-holder').first().width((parseInt($('#pfc-editor-body').width())-50)+"px");    
+                       //$('#'+pageid+' .page-preview-browser-holder').first().width((parseInt($('#pfc-editor-body').width())-50)+"px");    
                 
-                         $('#'+pageid+' .page-preview-browser-holder').first().resizable();
+                        //$('#'+pageid+' .page-preview-browser-holder').first().resizable();
                     
                         $.pfcEditor.editor.ui.openDialogsTabsListeners({pageid:pageid,close:function(){}});
                         

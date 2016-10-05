@@ -7,14 +7,14 @@
 </h1>
 
 <ul>
-    <li>rename to libs vendor</li>
+    
     <li>use new php backend + models Project,Sources</li>
-    <li>make ace editor</li>
+   
     <li>make dark, classic blue themes</li>
     <li>config -> settings -> sources settings, theme, codemirrrorXace.ui</li>
     <li>app header to config</li>
-    <li>finish app ui + standalone container</li>
-    <li>components sections,tools,pages => APPS</li>
+    
+ 
     <li>make pages nested</li>
     <li>projects -> default,html,php -> sources,apps,tools</li>
     <li>footer -> page info => amke first allways like main panel button -> standalone app minimalize</li>
@@ -73,11 +73,11 @@
   <h3>app</h3>
 <p>
   - login add reset password to email+pin function<br>
-  - ui.prompt -> add full support<br>
-  - ui.dialog -> add load from html($(obj))
+  
+  
 <br>
   - add install script -> gen salt, confirm to config, install info on homepage<br>
-    - make config routes,editor,sources.pjs+codemirror->php theme<br>
+  
   - sounds add volume
 </p>
 <br>
@@ -86,10 +86,10 @@
 - add auto-save for files<br>
 - add context Close+Other+All | Reload | Maximalize<br>
 - reload, close after modification at the background<br>
-- external page width, height to max<br>
+
 - add jquery media support<br>
 - add image viewer<br>
-- add support for codemirror js templates
+
   
 </p>
 <br>
@@ -99,7 +99,7 @@
         - add copy, move<br>
         - add zip, unzip, tarball, unpack tar<br>
         - add download ziped folder<br>
-  -> fix storno from prompt<br>
+
 (- add select group option)<br>
 (- add drag&amp;drop)
 </p>
