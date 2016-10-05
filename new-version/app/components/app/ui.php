@@ -22,9 +22,18 @@
          </div>    
          </div>    
          
-         <div class="pfcss-hidden pfc-promt-template">  
-             <div>pfc promt</div>
+         <div class="pfcss-hidden pfc-popup-prompt-holder">  
+         <div class="pfc-popup-prompt-inner">      
+            <div class="pfc-popup-prompt-question-holder">  
+            </div>    
+            <input type="text" class="pfc-popup-prompt-input">
+            <div class="pfc-popup-prompt-button-holder"> 
+                <button class="pfc-popup-prompt-ok-button"></button>  
+                <button class="pfc-popup-prompt-storno-button"></button>
+            </div> 
          </div>    
+         </div>
+   
          
          <div class="pfcss-hidden pfc-dialog-template">  
              <div>pfc dialog</div>

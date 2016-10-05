@@ -116,3 +116,33 @@ a.pfc-tab-menu {
 }
 
 
+.pfc-popup-prompt-holder {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 550px;
+    opacity: 1;
+    z-index: 100000;    
+    background-color: gray;    
+    
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    
+    -moz-box-shadow: 10px 10px 5px #888;
+    -webkit-box-shadow: 10px 10px 5px #888;
+    box-shadow: 10px 10px 5px #888;    
+}
+
+.pfc-popup-prompt-inner {
+    
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    background-color: white;
+    margin: 18px;
+    padding: 10px;
+}
+
+.pfc-popup-prompt-input {
+  padding: 10px;
+  width: 80%;
+}

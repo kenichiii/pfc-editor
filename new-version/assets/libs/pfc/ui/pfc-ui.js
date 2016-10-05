@@ -492,6 +492,114 @@ $.pfcConfirm = function(question,yesfunction,params)
                       
     }; //end pfc confirm
     
+  
+$.pfcPrompt = function(yesfunction,params)
+{
+    var settings = {   
+      	question: '',
+        buttonOK: 'OK',
+        buttonStorno: 'STORNO',
+        topMargin: 50,//pixels
+        startFromMinus: 100,//pixels
+        delaySlideDownStartAni: 1000,//ms
+        delaySlideUpEndAni: 500,//ms
+        stornofunction: function(){},
+        
+        nested: false,
+        
+        container:'.pfc-popup-prompt-holder',
+        qbox: '.pfc-popup-prompt-question-holder',
+        input: '.pfc-popup-prompt-input',
+        modal:".pfc-popup-modal-holder",
+        okBtn:'.pfc-popup-prompt-ok-button',
+        stornoBtn:'.pfc-popup-prompt-storno-button'
+    };
+        
+    $.extend( settings, params );       
+   
+    var $confirm = function(){
+        
+       $(settings.qbox).html(settings.question);        
+        
+       var pwidth = parseInt($(settings.container).css('width')); 
+       
+       var wwidth = $(window).width();
+       var wheight = $(window).height();               
+       var wscrolltop = $(window).scrollTop();
+       
+       var pendtop = ""+(wscrolltop+settings.topMargin)+"px"; 
+       var pstarttop = ""+(wscrolltop-settings.startFromMinus)+"px";       
+       var pleft;       
+ 
+       if(wwidth>pwidth)
+       {
+           
+           //center
+           pleft = ""+(wwidth/2-pwidth/2)+"px";           
+       }
+       else if(wwidth<=pwidth)
+       {
+           $(settings.container).css('width',""+(wwidth-20)+"px");           
+           pleft = "10%";
+       }
+       
+        $(settings.okBtn).unbind('click').click(function(){
+            hidePrompt();         
+            yesfunction($(settings.input).val());
+          	$(settings.input).val('');
+            return false;
+        }).html(settings.buttonOK);
+        $(settings.stornoBtn).unbind('click').click(function(){
+            hidePrompt();
+            settings.stornofunction();
+          	$(settings.input).val('');
+            return false;
+        }).html(settings.buttonStorno);        
+        
+       $(settings.modal).css({'width':$(document).width(),'height':$(document).height()}).show();
+                                
+       $(settings.container)
+          .css({'top':pstarttop,'opacity':'0','left':pleft})
+          .show()
+          .animate({
+            opacity: 1,
+            top: pendtop
+            }, settings.delaySlideDownStartAni, function() {
+                   
+            });       
+        
+                  function hidePrompt() 
+                  {                        
+                          $(settings.modal).hide();
+                          $(settings.container)
+                               .animate({
+                                   'opacity':'0',
+                                   'top':pstarttop
+                                 },settings.delaySlideUpEndAni
+                                 ,function(){                                
+                                    $front.dequeue();
+                                });
+                   }          
+    }; //end prompt 
+   
+   
+            if(settings.nested)
+            {                
+                var newqueue = [];
+                var fq = $front.queue();
+                newqueue.push(fq[0]);
+                newqueue.push($confirm);
+                for(var i = 0; i < fq.length;i++ )
+                {
+                    if(typeof fq[i] == 'function')
+                        newqueue.push(fq[i]);
+                }
+                clearTimeout(ALERT_SHOW_TIMEOUT);                
+                $front.queue(newqueue);
+            }
+            else $front.queue($confirm);
+                      
+    }; //end pfc prompt
     
 }(jQuery));
 

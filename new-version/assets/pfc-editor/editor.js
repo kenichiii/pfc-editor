@@ -291,9 +291,10 @@
                 //}
             },
           
-            prompt: function(result) {                
-                var res = window.prompt();
-                result(res);
+            prompt: function(result,params) {                
+                //var res = window.prompt();
+                //result(res);
+               $.pfcPrompt(result,params);
             },
             
             dialog: function(url,options) {

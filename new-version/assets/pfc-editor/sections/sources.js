@@ -257,6 +257,9 @@ var pfcEditorSources = {
       
              $(links).unbind("contextmenu").bind("contextmenu", function(event) {
                     event.preventDefault();
+               
+               		$('.pfc-sources-contextmenu-holder').not('#pfc-sources-contextmenu-template .pfc-sources-contextmenu-holder').remove();
+               
                     var cm = $($('#pfc-sources-contextmenu-template').html());
                     
                     cm.find('.pfc-sources-contextmenu-head').prepend($(this).text());
@@ -289,9 +292,11 @@ var pfcEditorSources = {
                return false;
              });             
 
-              $("#pfc-sources-"+root).bind("contextmenu", function(event) {
+              $("#pfc-sources-"+root).parent().unbind("contextmenu").bind("contextmenu", function(event) {
                     event.preventDefault();
-               
+                
+                	$('.pfc-sources-contextmenu-holder').not('#pfc-sources-contextmenu-template .pfc-sources-contextmenu-holder').remove();
+                
                     var obj = $(that.panel()+" header a[href='#pfc-sources-"+root+"']");
                     var parent = $(obj).parent();
                
@@ -319,7 +324,7 @@ var pfcEditorSources = {
                     .css({top: event.pageY + "px", left: event.pageX + "px"});
             
                  that.init_app_browser_context_menu(obj,parent,root);
-             });  
+             });         
       
     },
     
@@ -445,7 +450,7 @@ var pfcEditorSources = {
                         pfcEditorSourcesThat.reload_dir(obj,parent,root);
                         $.pfcEditor.ui.alert('action-error',{type:'err'});
                     });                            
-            });
+            },{question:'Enter new filename (with dot extension included)'});
             return false;
         });                    
     },
