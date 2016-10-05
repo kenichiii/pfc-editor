@@ -19,7 +19,7 @@
     color: black;
     background-color:  #0099FF;    
     padding: 5px;
-    padding-left: 20px;
+    padding-left: 25px;
     padding-right: 20px;    
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;    
@@ -33,7 +33,7 @@
 a.pfc-sources-contextmenu-btn {
     display:block;
     padding: 5px;
-    padding-left: 20px;
+    padding-left: 25px;
     padding-right: 20px;
     background-color: lightskyblue;
     color: #000099;

@@ -263,6 +263,11 @@ var pfcEditorSources = {
                     var cm = $($('#pfc-sources-contextmenu-template').html());
                     
                     cm.find('.pfc-sources-contextmenu-head').prepend($(this).text());
+                    if($(this).parent().hasClass('file')) {
+                        cm.find('.pfc-sources-contextmenu-head').addClass('file').addClass('ext_'+$(this).attr('extension'));
+                    } else {
+                        cm.find('.pfc-sources-contextmenu-head').addClass('folder');
+                    }
                     
                     if($(this).parent().hasClass('directory'))
                     cm.find('.pfc-sources-contextmenu-section-folder-actions').removeClass('pfc-sources-contextmenu-hidden');
@@ -303,7 +308,12 @@ var pfcEditorSources = {
                     var cm = $($('#pfc-sources-contextmenu-template').html());
                     
                     cm.find('.pfc-sources-contextmenu-head').prepend($(obj).text());
-                    
+                    if($(obj).parent().hasClass('file')) {
+                        cm.find('.pfc-sources-contextmenu-head').addClass('file').addClass('ext_'+obj.attr('extension'));
+                    } else {
+                        cm.find('.pfc-sources-contextmenu-head').addClass('folder');
+                    }
+              
       
                     cm.find('.pfc-sources-contextmenu-section-folder-actions').removeClass('pfc-sources-contextmenu-hidden');
                     

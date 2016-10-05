@@ -54,7 +54,7 @@
         <link href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/tools/default/styles.css" rel="stylesheet" type="text/css"/>        
       
         <link href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/sections/css/sources.css" rel="stylesheet" type="text/css"/>
-        
+        <link href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/sections/css/extensions.css" rel="stylesheet" type="text/css"/>
         
         
     </head>
@@ -236,7 +236,10 @@
       elseif (\PFC\Editor\Config::editor === 'ace-editor') {
 ?>
 
-                            
+                  <!-- load ace -->
+<script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/ace/ace.js"></script>
+<!-- load ace settings_menu extension -->
+<script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/libs/ace/ext-settings_menu.js"></script>                      
                             
 <?php } //ace-editor ?>                            
                             
@@ -262,7 +265,8 @@
             <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/editor/codemirror.editor.js" type="text/javascript"></script>                            
             <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/config/codeMirror.js" type="text/javascript"></script>
 <?php } elseif (\PFC\Editor\Config::editor === 'ace-editor') { ?>
-                                                        
+<script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/editor/ace.editor.js" type="text/javascript"></script>                            
+                                            
 <?php } //ace-editor ?>                            
             
             

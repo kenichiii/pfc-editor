@@ -40,7 +40,7 @@ class Config
  /*
   * EDITOR
   */       
-   const editor =  "codemirror";
+   const editor =  "ace-editor";
    const EditorLastModificationChecker = true;
    const EditorLastModificationCheckerInterval = 8000; //ms
    
