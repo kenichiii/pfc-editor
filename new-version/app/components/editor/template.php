@@ -5,28 +5,38 @@
                <header id="pfc-editor-dialogs-heads-holder">
                         <div id="pfc-editor-dialogs-heads">
                             
-                                <div class="pfc-editor-dialog-tab editor-page pfc-editor-dialog-tab-active" style="padding-left:20px;"> 
-                                    <a href="#" class="pfc-editor-dialog-tab-close">[X]</a>
-                                    <a href="#editor-home" class="pfc-editor-dialog-tab-title">Welcome</a>                                    
-                                    <div class="pfc-editor-dialog-info"></div>
-                                </div>    
                             
                             <br style="clear: both">
-                        </div>                        
+                        </div>                                               
                </header>                                                                           
                 <div id="pfc-editor-body">
-                    <div id="editor-home" class="pfc-editor-dialog">
-                      <div class="pfc-editor-dialog-page">  
-                        <?php require 'components/pages/editor-home/template.php'; ?>
-                      </div>  
-                    </div>
+                    
                 </div>
                                                   
          </section> <!-- pfc-editor --> 
 
 
       <div id="pfc-editor-templates">
-            
+           
+        <div id="pfc-editor-contextmenu-template">
+            <div class="pfc-editor-contextmenu-holder">     
+                 <div class="pfc-editor-contextmenu-head"></div>
+                  <div class="pfc-editor-contextmenu-section pfc-editor-contextmenu-tab-actions">  
+                    <a class="pfc-editor-contextmenu-btn pfc-editor-btn-close-this " href="#">Close this</a>  
+                    <a class="pfc-editor-contextmenu-btn pfc-editor-btn-close-others " href="#">Close others</a>
+                    <a class="pfc-editor-contextmenu-btn pfc-last pfc-editor-btn-close-all " href="#">Close all</a>
+                 </div>           
+                 <!--div class="pfc-editor-contextmenu-section pfc-editor-contextmenu-tab-actions">
+                    <a class="pfc-editor-contextmenu-btn pfc-last pfc-editor-btn-reload" href="#">Reload</a>
+                  </div-->  
+                 <div class="pfc-editor-contextmenu-section pfc-editor-contextmenu-tab-actions">  
+                    <a class="pfc-editor-contextmenu-btn pfc-last pfc-editor-btn-maximalize " href="#">Maximalize</a>                     
+                 </div>   
+            </div>
+        </div>  
+          
+          
+          
             <div id="pfc-editor-open-dialog-tab-template">
                     <div class="pfc-editor-dialog-tab pfc-editor-dialog-tab-active"> 
                         <a href="#" class="pfc-editor-dialog-tab-close">[X]</a>

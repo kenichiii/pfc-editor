@@ -34,8 +34,9 @@
         <link href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/pages/css/config.css" rel="stylesheet" type="text/css"/>
         <link href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/pages/css/phpinfo.css" rel="stylesheet" type="text/css"/>
         
-        <link href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/editor/extensions.css" rel="stylesheet" type="text/css"/>
-        <link href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/editor/fileactions.css" rel="stylesheet" type="text/css"/>      
+        <link href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/editor/css/styles.css" rel="stylesheet" type="text/css"/>
+        <link href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/editor/css/extensions.css" rel="stylesheet" type="text/css"/>
+        <link href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/editor/css/fileactions.css" rel="stylesheet" type="text/css"/>      
         
         <link href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/tools/default/styles.css" rel="stylesheet" type="text/css"/>        
       
@@ -325,17 +326,15 @@ $.pfcEditor.addSection('#pfc-sources-include-href',$pfcEditorSources.factory({se
                 pfcSoundsManager.on = <?php echo \PFC\Editor\Config::sounds ?  'true':'false'; ?>;
                 
                 //lets boot
-                $.pfcEditor.init();
-                $.pfcEditor.getPage('editor-home').init();
-                
-                //localhost delay for sources.runUpdater
-                setTimeout(function(){
-                    $.pfcEditor.getSection('pfc-sources-sources').focus();
-                },1000);
-                
-                
-                 //end booting
-                 $('#pfc-editor-booting').css('left','15000px');
+                $.pfcEditor.init(function(that){    
+                    setTimeout(function(){                            
+                        $('#pfc-editor-logo').trigger('click');
+                        $('a[href="#editor-home"]').text('Welcome');
+                        $.pfcEditor.getSection('pfc-sources-sources').focus();
+                        //end booting
+                        $('#pfc-editor-booting').css('left','15000px');
+                    },500);                                        
+                });                                                                                
 
             </script>
             

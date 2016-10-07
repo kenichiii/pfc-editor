@@ -12,7 +12,7 @@
                 <a id="pfc-editor-help-href" class="pfc-editor-page-href pfc-editor-help-href" href="#editor-help">help</a>
                 
                 <a id="pfc-editor-tools-href" class="pfc-editor-page-href"  href="#pfc-editor-tools">tools</a>
-                <a id="pfc-editor-config-href" class="pfc-editor-page-href" href="#editor-config">config</a>                
+                <a id="pfc-editor-config-href" class="pfc-editor-page-href" href="#editor-config">settings</a>          
               
                 
               <a id="pfc-sources-editor-href" class="pfc-editor-page-href" href="#pfc-sources-editor">editor</a>

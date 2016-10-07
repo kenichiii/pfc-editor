@@ -52,10 +52,7 @@ $.pfcEditor.editor = {
         
             
         ui: {
-                setFileEditorHeight: function() {
-                    
-                    
-                  
+                setFileEditorHeight: function() {                                                          
                     var body = parseInt($("#pfc-editor-body").height()) - 30;
                     return body+"px";
                 },
@@ -71,32 +68,20 @@ $.pfcEditor.editor = {
                            var id = $(this).next().attr('href');
                            if(obj && typeof obj.close=='function') obj.close();
                            $.pfcEditor.editor.closeDialog(id.replace('#',''));
-                           if(!isPage&&$(this).parent().hasClass('pfc-editor-dialog-tab-active')){
-                               if($.pfcEditor.editor.phpChecker!==null) clearTimeout($.pfcEditor.editor.phpChecker);
-                           }
                            
                            return false;
                        });
                     
                        $('.pfc-editor-dialog-tab-title').first().unbind('click').click(function(){
-                           if($.pfcEditor.editor.phpChecker!==null) clearTimeout($.pfcEditor.editor.phpChecker);
+                           
                            var id = $(this).attr('href');
                            $.pfcEditor.editor.ui.removeActiveState(); 
                            $.pfcEditor.editor.activateTab(id.replace('#',''));
                          
                            if(!isPage && $(this).parent().hasClass('file')) {
-                              $.pfcEditor.editor.run_last_modification_checker(code); 
-                                  setTimeout(function(){
-                                     $.pfcEditor.editor.getActiveCEditor().inst.focus();
-                                     $.pfcEditor.editor.getActiveCEditor().inst.setCursor(
-                                        $.pfcEditor.editor.getActiveCEditor().cursor.line,
-                                        $.pfcEditor.editor.getActiveCEditor().cursor.char
-                                     );
-                                   },250);
-                             
-                             $.pfcEditor.editor.run_syntax_checker(code);
-                             
+                              $.pfcEditor.editor.run_last_modification_checker(code);                                                                                                           
                            }
+                           
                            return false;
                        });
                        
@@ -124,16 +109,6 @@ $.pfcEditor.editor = {
                             }
                         }                                             
                     });
-                    /*
-                    $(document).keypress(function(e) {
-                    if(e.ctrlKey) {        
-                        if(e.key=="s"||e.key=="x")
-                        {            
-                            return $.pfcEditor.editor.saveActiveFile();
-                        }
-                    }
-                    }); 
-                    */
                 },
                 
                 
@@ -330,12 +305,7 @@ $.pfcEditor.editor = {
                    return false;
                  });
               
-                 if(code&&code.name.substr(code.name.length-3)=='php')
-                   {
-                        $t.find('.pfc-editor-file-actions-php').show();
-                     if(!that.config.phpSyntaxCheckerOn)
-                        $t.find('.pfc-editor-file-check').hide();
-                   }
+                 
                  
                  if(code.base=='sandbox-src')
                    {
@@ -356,7 +326,7 @@ $.pfcEditor.editor = {
                                          });
                      
                    }
-                  
+             /*     
                     that.getActiveCEditor().inst.on("change",function(){
                         if($t.find('.pfc-editor-file-button-insert').html()==='-nor-')      
                           {
@@ -367,7 +337,7 @@ $.pfcEditor.editor = {
                              that.getActiveCEditor().inst.toggleOverwrite(true);
                            }
                      });
-              
+              */
                     $(window).bind('keydown', function(event) {                                                
                         if(event.which==45 && that.getActiveCEditor().id===code.id)
                          {
@@ -605,61 +575,18 @@ $.pfcEditor.editor = {
             initFileCodeEditor: function(code) {
                 var that = this;
 
-             // $('#'+code.id).css('width','100%').css('height','600px');   
-               
-                that.ceditors[code.id].inst =  ace.edit(code.id);
+                 that.ceditors[code.id].inst =  ace.edit(code.id);
                  that.ceditors[code.id].inst.setTheme("ace/theme/twilight");
-    that.ceditors[code.id].inst.session.setMode("ace/mode/php");        
+                 that.ceditors[code.id].inst.session.setMode("ace/mode/php");        
               
-                /*
-                           var val = code.name, m, mode, spec;
-                           m = /.+\.([^.]+)$/.exec(val);
-                            if ( m ) {
-                                var info = CodeMirror.findModeByExtension(m[1]);
-                                if (info) {
-                                    mode = info.mode;
-                                    spec = info.mime;
-                                }
-                            } else {
-                                mode = spec = false;
-                            }
-                            
-                            
-                            
-                            
-                            if (mode) {
-                                    that.ceditors[code.id].inst.setOption("mode", spec);
-                                    CodeMirror.autoLoadMode(that.ceditors[code.id].inst, mode);                    
-                            } else {
-                               
-                            }
-
-                       
-                
+                                       
                             that.ceditors[code.id].inst.on("change",function(ins,p){
                                 $("#pfc-editor-dialogs-heads a[href='#file_"+code.id+"']").parent().addClass('pfc-editor-unsaved-file');                               
                             });
                             
                             
                 
-                that.ceditors[code.id].inst.execCommand('goDocStart');
-                that.ceditors[code.id].inst.focus();
-                that.ceditors[code.id].inst.setCursor(35);
-                that.ceditors[code.id].inst.focus();
-                that.ceditors[code.id].inst.setCursor(0);
-                
-               if(code.name.substr(code.name.length-2)=='js' || 
-                  code.name.substr(code.name.length-4)=='json')
-                { that.ceditors[code.id].inst.setOption("mode", "javascript");
-                  setTimeout(function(){
-                   that.ceditors[code.id].inst.setOption("lint", true);
-                  },2000);
-                }
-            */
-               /*if(code.name.substr(code.name.length-3)=='css')
-                { that.ceditors[code.id].inst.setOption("mode", "css");
-                that.ceditors[code.id].inst.setOption("lint", true);}*/
-            },
+        },
             
             closeDialog: function(id) {
               var that = this;
@@ -695,6 +622,20 @@ $.pfcEditor.editor = {
                     tab.find('.pfc-editor-dialog-tab-title').attr('href','#'+id).html(title);
                     //add info
                     tab.find('.pfc-editor-dialog-info').html(info);
+                    //add context menu
+                    tab.unbind("contextmenu").bind("contextmenu", function(event) {
+                        event.preventDefault();
+                
+                        that.hideContextMenu();
+                               
+                        var cm = $($('#pfc-editor-contextmenu-template').html());                                                                                                          
+                        cm.appendTo("body");
+                    
+                        cm.css({top: event.pageY + "px", left: event.pageX + "px"});
+            
+                        that.initContextMenu(tab);
+                    });         
+      
                     
                     $('#pfc-editor-dialogs-heads').prepend(
                             tab
@@ -702,7 +643,53 @@ $.pfcEditor.editor = {
                     
                     that.setEditorDialogsHeadsContainerWidth(); 
             },
-
+            
+            initContextMenu: function(tab) {
+                    var that = this;
+        
+                    $(document).bind("click", function(event) {
+                        that.hideContextMenu();
+                    }); 
+                    
+                        //Close this
+                        $('.pfc-editor-contextmenu-holder a.pfc-editor-btn-close-this').unbind('click').click(function(){
+                                tab.find('.pfc-editor-dialog-tab-close').trigger('click');
+                                that.hideContextMenu();
+                            return false;
+                        });
+                        
+                        //Close ALL
+                        $('.pfc-editor-contextmenu-holder a.pfc-editor-btn-close-all').unbind('click').click(function(){
+                                $('#pfc-editor-dialogs-heads').find('.pfc-editor-dialog-tab-close').trigger('click');
+                                that.hideContextMenu();
+                            return false;
+                        });                        
+                        
+                        //Close OTHERS
+                        $('.pfc-editor-contextmenu-holder a.pfc-editor-btn-close-others').unbind('click').click(function(){
+                                $('#pfc-editor-dialogs-heads').find('.pfc-editor-dialog-tab-close')
+                                    .not(tab.find('.pfc-editor-dialog-tab-close'))    
+                                    .trigger('click');
+                                that.hideContextMenu();
+                            return false;
+                        });           
+                        
+                        
+                        //Close ALL
+                        $('.pfc-editor-contextmenu-holder a.pfc-editor-btn-maximalize').unbind('click').click(function(){
+                                $('.pfc-editor-section-minify-href').trigger('click');
+                                
+                                that.hideContextMenu();
+                            return false;
+                        });           
+            },
+            
+            hideContextMenu: function() {
+                    $('.pfc-editor-contextmenu-holder')
+                        .not('#pfc-editor-contextmenu-template .pfc-editor-contextmenu-holder')
+                        .remove(); 
+            },
+            
             setEditorDialogsHeadsContainerWidth: function() {
                    var dw = 20;
                    $('.pfc-editor-dialog-tab').each(function(){
@@ -746,7 +733,7 @@ $.pfcEditor.editor = {
             
             activateTab: function(id) {
                         
-                        
+                        this.hideContextMenu();
                         
                         $.pfcEditor.editor.ui.removeActiveState();
                         

@@ -11,7 +11,7 @@
     <li>use new php backend + models Project,Sources</li>
    
     <li>make dark, classic blue themes</li>
-    <li>config -> settings -> sources settings, theme, codemirrrorXace.ui</li>
+    
     <li>app header to config</li>
     
  
@@ -84,7 +84,7 @@
   <h3>editor</h3>
 <p>
 - add auto-save for files<br>
-- add context Close+Other+All | Reload | Maximalize<br>
+
 - reload, close after modification at the background<br>
 
 - add jquery media support<br>

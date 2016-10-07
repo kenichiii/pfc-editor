@@ -303,7 +303,7 @@
             
         }, //end ui                
         
-        init: function() {
+        init: function(callback) {
             
 
             this.ui.init();
@@ -325,7 +325,7 @@
 
              this.addExternalPages();
             
-             
+             callback(this);
         } //init                                   
                         
     }; //end pfcEditor
