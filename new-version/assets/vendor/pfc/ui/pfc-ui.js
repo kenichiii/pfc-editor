@@ -357,7 +357,7 @@ $.fn.pfcTabs.addRule = function(rule,parent) {
                         $(settings.container)
                                 .animate({
                                     'opacity':'0',
-                                    'top':pstarttop
+                                    'top':'10000px'
                                   },settings.delaySlideUpEndAni
                                   ,function(){
                                            
@@ -465,7 +465,7 @@ $.pfcConfirm = function(question,yesfunction,params)
                           $(settings.container)
                                .animate({
                                    'opacity':'0',
-                                   'top':pstarttop
+                                   'top':'10000px'
                                  },settings.delaySlideUpEndAni
                                  ,function(){                                
                                     $front.dequeue();
@@ -574,7 +574,7 @@ $.pfcPrompt = function(yesfunction,params)
                           $(settings.container)
                                .animate({
                                    'opacity':'0',
-                                   'top':pstarttop
+                                   'top':'100000px'
                                  },settings.delaySlideUpEndAni
                                  ,function(){                                
                                     $front.dequeue();

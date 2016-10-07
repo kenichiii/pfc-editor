@@ -84,7 +84,7 @@
   <h3>editor</h3>
 <p>
 - add auto-save for files<br>
-
+- make ace editor file actions search, replace, insert<br>
 - reload, close after modification at the background<br>
 
 - add jquery media support<br>

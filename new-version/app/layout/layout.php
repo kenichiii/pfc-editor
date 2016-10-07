@@ -139,8 +139,12 @@
       		
                   <!-- load ace -->
                     <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/vendor/ace/ace.js"></script>
-                           
-                            
+                    <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/vendor/ace/ext-modelist.js"></script>       
+                    <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/vendor/ace/ext-settings_menu.js"></script>
+                    
+                    
+                    
+                    
                             <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/vendor/pfc/functions.js"></script>        
                             <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/vendor/pfc/pfcss/pfcss.js"></script>        
                             <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/vendor/pfc/ui/pfc-ui.js"></script>        
@@ -329,7 +333,7 @@ $.pfcEditor.addSection('#pfc-sources-include-href',$pfcEditorSources.factory({se
                 $.pfcEditor.init(function(that){    
                     setTimeout(function(){                            
                         $('#pfc-editor-logo').trigger('click');
-                        $('a[href="#editor-home"]').text('Welcome');
+                        $('#pfc-editor-dialogs-heads a[href="#editor-home"]').text('Welcome');
                         $.pfcEditor.getSection('pfc-sources-sources').focus();
                         //end booting
                         $('#pfc-editor-booting').css('left','15000px');

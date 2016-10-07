@@ -38,9 +38,10 @@ $.pfcEditor.editor = {
                       pfcEditorEditorThat.addFile(code,file_path,root,ext);         
                   });    
              }
-            else 
+            else if(code && code.name) {
                  pfcEditorEditorThat.addFile(code,file_path,root,ext);  
-            
+             }
+             
            $.pfcEditor.ui.hideWaitingBox();       
       
           },'json').fail(function(){
@@ -205,6 +206,7 @@ $.pfcEditor.editor = {
             
             ceditors:[],
             addFile: function(code,file_path,root,ext) {
+                if(!code || !code.name) return;
                 
                 var that = this;
                 
@@ -238,9 +240,12 @@ $.pfcEditor.editor = {
                     that.ceditors[code.id].waitingReload = false;
                   
                   
+                    
+                    
+                    
                     that.initFileCodeEditor(code);
-                                                                                    
-                    $('#file_'+code.id+' .ace_editor').css('height',that.ui.setFileEditorHeight());
+                    
+                   
                    //chrome needs -30px, IE and FF not
                     $('#file_'+code.id+' .pfc-editor-file-actions-holder').css('width',parseInt($("#pfc-editor-body").width())-30+"px");
                   
@@ -248,6 +253,8 @@ $.pfcEditor.editor = {
                       $('#file_'+code.id+' .ace_editor').css('width','100%').css('height',that.ui.setFileEditorHeight());
                       $('#file_'+code.id+' .pfc-editor-file-actions-holder').css('width',parseInt($("#pfc-editor-body").width())-30+"px");
                     });
+                  
+                    
                   
                     that.initFileActions(code,ext);
                   
@@ -574,17 +581,41 @@ $.pfcEditor.editor = {
             
             initFileCodeEditor: function(code) {
                 var that = this;
+                
+                $('#'+code.id).css('width','100%').css('height',that.ui.setFileEditorHeight());
 
                  that.ceditors[code.id].inst =  ace.edit(code.id);
+                 
+                 ace.require('ace/ext/settings_menu').init(that.ceditors[code.id].inst);
+                 
                  that.ceditors[code.id].inst.setTheme("ace/theme/twilight");
-                 that.ceditors[code.id].inst.session.setMode("ace/mode/php");        
-              
-                                       
-                            that.ceditors[code.id].inst.on("change",function(ins,p){
+                  
+                 that.ceditors[code.id].inst.setOptions({
+                    fontFamily: "tahoma",
+                    fontSize: "100%"
+                  });
+                    
+                var modelist = ace.require("ace/ext/modelist");
+                var filePath = code.name;
+                var mode = modelist.getModeForPath(filePath).mode;
+                that.ceditors[code.id].inst.session.setMode(mode); 
+                 
+                	that.ceditors[code.id].inst.commands.addCommands([{
+                                    name: "showSettingsMenu",
+                                    bindKey: {win: "Ctrl-q", mac: "Command-q"},
+                                    exec: function(editor) {
+                                            editor.showSettingsMenu();
+                                    },
+                                    readOnly: false
+                            }]);
+                
+                            that.ceditors[code.id].inst.getSession().on("change",function(ins,p){
                                 $("#pfc-editor-dialogs-heads a[href='#file_"+code.id+"']").parent().addClass('pfc-editor-unsaved-file');                               
                             });
                             
-                            
+                $('#file_'+code.id+' .ace_editor').css('width','100%').css('height',that.ui.setFileEditorHeight());
+                
+                that.ceditors[code.id].inst.resize();            
                 
         },
             
