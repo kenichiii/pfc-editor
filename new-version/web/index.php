@@ -27,22 +27,22 @@ namespace {
     
     defined('\PFC\Editor\LIBRARY_PATH')
         || define('PFC\Editor\LIBRARY_PATH', realpath(dirname(__FILE__) ).
-                '/app/library'
+                '/../app/library'
                 );
     
     defined('\PFC\Editor\APPLICATION_PATH')
         || define('PFC\Editor\APPLICATION_PATH', realpath(dirname(__FILE__) ).
-                '/app'
+                '/../app'
                 );
     
     defined('\PFC\Editor\SANDBOX_PATH')
         || define('PFC\Editor\SANDBOX_PATH', realpath(dirname(__FILE__) ).
-                '/_data/sandbox'
+                '/../_data/sandbox'
                 );
     
     defined('\PFC\Editor\USER_DATA_PATH')
         || define('PFC\Editor\USER_DATA_PATH', realpath(dirname(__FILE__) ).
-                '/_data'
+                '/../_data'
                 );
 
         // Ensure library/ and editor/ are on include_path
@@ -54,5 +54,3 @@ namespace {
     //lets boot editor
     require_once 'bootstrap.php';    
 }
-
-?>
