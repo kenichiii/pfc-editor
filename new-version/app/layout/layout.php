@@ -193,9 +193,10 @@
             <script src="assets/pfc-editor/pages/pfc-editor/editor-config/editor-config.js" type="text/javascript"></script>
             <script src="assets/pfc-editor/pages/pfc-editor/editor-help/editor-help.js" type="text/javascript"></script>
             <script src="assets/pfc-editor/pages/pfc-editor/editor-home/editor-home.js" type="text/javascript"></script>
+            
             <script src="assets/pfc-editor/pages/phpinfo/phpinfo.js" type="text/javascript"></script>            
             
-         
+            <script src="assets/pfc-editor/pages/adminer/adminer.js" type="text/javascript"></script>            
             
             
       
@@ -236,6 +237,8 @@ $.pfcEditor.addSection('#pfc-sources-editor-href',$pfcEditorSources.factory({sec
                 
                                 
                 $.pfcEditor.getPage('phpinfo').config.url = '<?php echo \PFC\Editor\App::pagelink('phpinfo'); ?>';
+                
+                $.pfcEditor.getPage('adminer').config.url = '<?php echo \PFC\Editor\App::pagelink('adminer'); ?>';
                 
                 //sections
                 
@@ -320,7 +323,7 @@ $.pfcEditor.addSection('#pfc-sources-editor-href',$pfcEditorSources.factory({sec
                 $.pfcEditor.init(function(that){    
                     setTimeout(function(){                            
                         $('#pfc-editor-logo').trigger('click');
-                        $('#pfc-editor-dialogs-heads a[href="#editor-home"]').text('Welcome');
+                        $('#pfc-editor-dialogs-heads a[href="#pfc-editor_editor-home"]').text('Welcome');
                         $.pfcEditor.getSection('pfc-sources-sources').focus();
                         //end booting
                         $('#pfc-editor-booting').css('left','15000px');

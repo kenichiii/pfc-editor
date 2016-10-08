@@ -18,7 +18,7 @@
     
     <li>javascript router -> generate links for page, section, tools, ajax, action</li>
     
-    <li>add adminer.php for database support</li>
+    
 </ul>
 
 <br>  

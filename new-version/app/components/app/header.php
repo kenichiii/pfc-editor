@@ -6,6 +6,7 @@
 
                     <li><a id="pfc-sources-sandbox-href"  href="#pfc-sources-sandbox">sandbox</a></li>                    
                   
+                    <li><a id="pfc-editor-adminer-href" class="pfc-editor-page-href" href="#">adminer</a></li>
                 </ul>            
               	<span style="float:right;display:block;padding-right:10px;color:#ddd">:]]</span>
                 <a id="pfc-editor-logout-href" class="pfc-editor-page-href" href="<?php echo \PFC\Editor\App::applinkaction('logout'); ?>">logout</a>
