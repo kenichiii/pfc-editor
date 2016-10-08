@@ -1,5 +1,10 @@
 <?php
 
+    //ensure we have right include path
+    set_include_path(implode(PATH_SEPARATOR, [
+            realpath(dirname(__FILE__) )
+        ]));
+
 function adminer_object() {
     // required to run any plugin
     include_once "./plugins/plugin.php";
