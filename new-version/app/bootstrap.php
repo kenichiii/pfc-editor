@@ -27,21 +27,12 @@ namespace {
  //check if is installed 
   
  //public services   
-  if(App::isServerTimeRequest())
+  if(App::isServerTimeRequest() || App::isLoginActionRequest())
     {            
     	require App::getRequestFilePath();    
-    }  
-
-  elseif(App::isLoginActionRequest())
-    {                             
-    	require App::getLoginActionFilePath();    
-    }
-  
-  //application
-  else
-    {
-    
-    
+    }      
+  else //application
+    {        
       //show only login form for non-logged user
       if( ! AppLogin::isLogged() )
       {                     

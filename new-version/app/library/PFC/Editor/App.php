@@ -16,29 +16,16 @@ class App {
 
     public static function isLoginActionRequest()
     {
-           //$uri = explode('/',$_SERVER['REQUEST_URI']);
-           //$req = end($uri);
-      if((isset($_GET['app'])||isset($_GET['_app'])) && isset($_GET['action']) && $_GET['action']==='login')
-        {
-           return true;
-        }
-      else return false;  
+      return \filter_input(\INPUT_GET, '_app') && \filter_input(\INPUT_GET, 'action') === 'login';
     }  
-  
-    public static function getLoginActionFilePath()
-    {
-       return 'components/app/_actions/login.php';
-    }  
-  
-  
+
     public static function isServerTimeRequest()
     {
-        return (isset($_GET['_app']) && isset($_GET['ajax']) && $_GET['ajax']=='server-time');
+        return \filter_input(\INPUT_GET, '_app') && \filter_input(\INPUT_GET, 'ajax') === 'server-time';
     }
 
     public static function getRequestFilePath()
-    {
-      
+    {      
          $ajax = \filter_input(\INPUT_GET, 'ajax');
          $action = \filter_input(\INPUT_GET, 'action');
       
