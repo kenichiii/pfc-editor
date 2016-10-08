@@ -1,4 +1,4 @@
 
 RewriteEngine on
 
-RewriteRule !^(assets) index.php
+#RewriteRule !^((pfc-editor)|(vendor)) index.php

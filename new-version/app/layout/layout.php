@@ -7,41 +7,41 @@
         
         <!-- libraries css -->
         
-                <link type="text/css" href="assets/vendor/jquery_ui/jquery-ui.min.css" rel="stylesheet">
+                <link type="text/css" href="vendor/jquery_ui/jquery-ui.min.css" rel="stylesheet">
                                
                 
       
-      			<link href="assets/vendor/colpick/css/colpick.css" rel="stylesheet" type="text/css"/>
+      			<link href="vendor/colpick/css/colpick.css" rel="stylesheet" type="text/css"/>
       
-      			<link href="assets/vendor/CalcSS3/CalcSS3.css" rel="stylesheet" type="text/css" />
+      			<link href="vendor/CalcSS3/CalcSS3.css" rel="stylesheet" type="text/css" />
       
-                <link type="text/css" href="assets/vendor/fileTree/jqueryFileTree.css" rel="stylesheet">
+                <link type="text/css" href="vendor/fileTree/jqueryFileTree.css" rel="stylesheet">
 
                  
                  
                  
                  
                  
-                 <link rel="stylesheet" href="assets/vendor/pfc/pfcss/pfcss.css">                 
-                 <link rel="stylesheet" href="assets/vendor/pfc/ui/pfc-ui.css">                 
+                 <link rel="stylesheet" href="vendor/pfc/pfcss/pfcss.css">                 
+                 <link rel="stylesheet" href="vendor/pfc/ui/pfc-ui.css">                 
                  
         <!-- end libraries -->        
         
-        <link href="assets/pfc-editor/layout/css/layout.css" rel="stylesheet" type="text/css"/>
-        <link href="assets/pfc-editor/layout/css/theme/<?php echo \PFC\Editor\Config::theme; ?>.css" rel="stylesheet" type="text/css"/>
+        <link href="pfc-editor/layout/css/layout.css" rel="stylesheet" type="text/css"/>
+        <link href="pfc-editor/layout/css/theme/<?php echo \PFC\Editor\Config::theme; ?>.css" rel="stylesheet" type="text/css"/>
       
-        <link href="assets/pfc-editor/pages/pfc-editor/editor-about/about.css" rel="stylesheet" type="text/css"/>
-        <link href="assets/pfc-editor/pages/pfc-editor/editor-config/config.css" rel="stylesheet" type="text/css"/>
-        <link href="assets/pfc-editor/pages/phpinfo/css/phpinfo.css" rel="stylesheet" type="text/css"/>
+        <link href="pfc-editor/pages/pfc-editor/editor-about/about.css" rel="stylesheet" type="text/css"/>
+        <link href="pfc-editor/pages/pfc-editor/editor-config/config.css" rel="stylesheet" type="text/css"/>
+        <link href="pfc-editor/pages/phpinfo/css/phpinfo.css" rel="stylesheet" type="text/css"/>
         
-        <link href="assets/pfc-editor/editor/css/styles.css" rel="stylesheet" type="text/css"/>
-        <link href="assets/pfc-editor/editor/css/extensions.css" rel="stylesheet" type="text/css"/>
-        <link href="assets/pfc-editor/editor/css/fileactions.css" rel="stylesheet" type="text/css"/>      
+        <link href="pfc-editor/editor/css/styles.css" rel="stylesheet" type="text/css"/>
+        <link href="pfc-editor/editor/css/extensions.css" rel="stylesheet" type="text/css"/>
+        <link href="pfc-editor/editor/css/fileactions.css" rel="stylesheet" type="text/css"/>      
         
-        <link href="assets/pfc-editor/tools/default/styles.css" rel="stylesheet" type="text/css"/>        
+        <link href="pfc-editor/tools/default/styles.css" rel="stylesheet" type="text/css"/>        
       
-        <link href="assets/pfc-editor/sections/css/sources.css" rel="stylesheet" type="text/css"/>
-        <link href="assets/pfc-editor/sections/css/extensions.css" rel="stylesheet" type="text/css"/>
+        <link href="pfc-editor/sections/css/sources.css" rel="stylesheet" type="text/css"/>
+        <link href="pfc-editor/sections/css/extensions.css" rel="stylesheet" type="text/css"/>
         
         
     </head>
@@ -124,35 +124,35 @@
               
                 
       
-                <script type="text/javascript" src="assets/vendor/jquery/jquery.js"></script>
-                <script type="text/javascript" src="assets/vendor/jquery_ui/jquery-ui.min.js"></script>                           
+                <script type="text/javascript" src="vendor/jquery/jquery.js"></script>
+                <script type="text/javascript" src="vendor/jquery_ui/jquery-ui.min.js"></script>                           
               
-      		<script type="text/javascript" src="assets/vendor/CalcSS3/CalcSS3.js"></script>
+      		<script type="text/javascript" src="vendor/CalcSS3/CalcSS3.js"></script>
     
-                <script src="assets/vendor/colpick/js/colpick.js" type="text/javascript"></script>
+                <script src="vendor/colpick/js/colpick.js" type="text/javascript"></script>
     
-                <script type="text/javascript" src="assets/vendor/jquery_form/jquery.form.js"></script>
+                <script type="text/javascript" src="vendor/jquery_form/jquery.form.js"></script>
                 
                    
-                <script type="text/javascript" src="assets/vendor/fileTree/jqueryFileTree.js"></script>
+                <script type="text/javascript" src="vendor/fileTree/jqueryFileTree.js"></script>
       
       			<script  type="text/javascript">
                   $('#pfc-editor-booting-prct').css('width','18px')
       			</script>
       		
                   <!-- load ace -->
-                    <script src="assets/vendor/ace/ace.js"></script>
-                    <script src="assets/vendor/ace/ext-modelist.js"></script>       
-                    <script src="assets/vendor/ace/ext-settings_menu.js"></script>
-                    <script src="assets/vendor/ace/ext-statusbar.js"></script>
-                    <script src="assets/vendor/ace/ext-language_tools.js"></script>
-                    <script src="assets/vendor/ace/keybinding-vim.js"></script>
-                    <script src="assets/vendor/ace/keybinding-emacs.js"></script>
+                    <script src="vendor/ace/ace.js"></script>
+                    <script src="vendor/ace/ext-modelist.js"></script>       
+                    <script src="vendor/ace/ext-settings_menu.js"></script>
+                    <script src="vendor/ace/ext-statusbar.js"></script>
+                    <script src="vendor/ace/ext-language_tools.js"></script>
+                    <script src="vendor/ace/keybinding-vim.js"></script>
+                    <script src="vendor/ace/keybinding-emacs.js"></script>
                   <!-- end ace editor -->  
                     
-                            <script src="assets/vendor/pfc/functions.js"></script>        
-                            <script src="assets/vendor/pfc/pfcss/pfcss.js"></script>        
-                            <script src="assets/vendor/pfc/ui/pfc-ui.js"></script>        
+                            <script src="vendor/pfc/functions.js"></script>        
+                            <script src="vendor/pfc/pfcss/pfcss.js"></script>        
+                            <script src="vendor/pfc/ui/pfc-ui.js"></script>        
           
         
         <!-- end libararies javascript -->
@@ -162,20 +162,20 @@
         </script>
         
         
-        <script src="assets/vendor/functions/functions.js" type="text/javascript"></script>
+        <script src="vendor/functions/functions.js" type="text/javascript"></script>
             
-            <script src="assets/pfc-editor/sounds/manager.js" type="text/javascript"></script>
+            <script src="pfc-editor/sounds/manager.js" type="text/javascript"></script>
             
-            <script src="assets/pfc-editor/pfc-editor.js" type="text/javascript"></script>
+            <script src="pfc-editor/pfc-editor.js" type="text/javascript"></script>
 
 
-            <script src="assets/pfc-editor/editor/ace.editor.js" type="text/javascript"></script>                            
+            <script src="pfc-editor/editor/ace.editor.js" type="text/javascript"></script>                            
                                             
-            <script src="assets/pfc-editor/editor/ace.editor.config.js"></script>             
+            <script src="pfc-editor/editor/ace.editor.config.js"></script>             
             
             
-            <script src="assets/pfc-editor/tools/default/tools.js" type="text/javascript"></script>
-            <script src="assets/pfc-editor/tools/default/snippets/snippets.js" type="text/javascript"></script>
+            <script src="pfc-editor/tools/default/tools.js" type="text/javascript"></script>
+            <script src="pfc-editor/tools/default/snippets/snippets.js" type="text/javascript"></script>
             
             
             
@@ -184,21 +184,21 @@
         </script>
       
       
-            <script src="assets/pfc-editor/sections/sources.js" type="text/javascript"></script>
+            <script src="pfc-editor/sections/sources.js" type="text/javascript"></script>
       
                  <script  type="text/javascript">
                   $('#pfc-editor-booting-prct').css('width','128px')
         </script>
       
             
-            <script src="assets/pfc-editor/pages/pfc-editor/editor-about/editor-about.js" type="text/javascript"></script>
-            <script src="assets/pfc-editor/pages/pfc-editor/editor-config/editor-config.js" type="text/javascript"></script>
-            <script src="assets/pfc-editor/pages/pfc-editor/editor-help/editor-help.js" type="text/javascript"></script>
-            <script src="assets/pfc-editor/pages/pfc-editor/editor-home/editor-home.js" type="text/javascript"></script>
+            <script src="pfc-editor/pages/pfc-editor/editor-about/editor-about.js" type="text/javascript"></script>
+            <script src="pfc-editor/pages/pfc-editor/editor-config/editor-config.js" type="text/javascript"></script>
+            <script src="pfc-editor/pages/pfc-editor/editor-help/editor-help.js" type="text/javascript"></script>
+            <script src="pfc-editor/pages/pfc-editor/editor-home/editor-home.js" type="text/javascript"></script>
             
-            <script src="assets/pfc-editor/pages/phpinfo/phpinfo.js" type="text/javascript"></script>            
+            <script src="pfc-editor/pages/phpinfo/phpinfo.js" type="text/javascript"></script>            
             
-            <script src="assets/pfc-editor/pages/adminer/adminer.js" type="text/javascript"></script>            
+            <script src="pfc-editor/pages/adminer/adminer.js" type="text/javascript"></script>            
             
             
       

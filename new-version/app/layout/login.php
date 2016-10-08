@@ -73,8 +73,8 @@ use PFC\Editor\App;
            </div>
             
             
-                <script type="text/javascript" src="assets/vendor/jquery/jquery.js"></script>
-                <script type="text/javascript" src="assets/vendor/jquery_form/jquery.form.js"></script>
+                <script type="text/javascript" src="vendor/jquery/jquery.js"></script>
+                <script type="text/javascript" src="vendor/jquery_form/jquery.form.js"></script>
             
             
                 <script type="text/javascript">
