@@ -48,12 +48,12 @@ class Sources
                 'root'=>\PFC\Editor\LIBRARY_PATH,
                 'path'=>'./'              
           ),
-          'pfc-assets'=>array(
+          'pfc-data'=>array(
                 'section'=>'editor',
-                'title'=>'assets',
-                'name'=>'pfc-assets',
-                'root'=>\PFC\Editor\PUBLIC_PATH,
-                'path'=>'./assets/'              
+                'title'=>'data',
+                'name'=>'pfc-data',
+                'root'=>\PFC\Editor\DATA_PATH,
+                'path'=>'./'              
           ),
           'pfc-cfg'=>array(
                 'section'=>'editor',

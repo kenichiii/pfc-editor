@@ -40,8 +40,8 @@ namespace {
                 '/../_data/sandbox'
                 );
     
-    defined('\PFC\Editor\USER_DATA_PATH')
-        || define('PFC\Editor\USER_DATA_PATH', realpath(dirname(__FILE__) ).
+    defined('\PFC\Editor\DATA_PATH')
+        || define('PFC\Editor\DATA_PATH', realpath(dirname(__FILE__) ).
                 '/../_data'
                 );
 
