@@ -3,6 +3,7 @@
   *  show href
   */
 (function($){
+    
 $.fn.pfcShowHrefClass = function(callback) {
   
   this.each(function()  
@@ -17,7 +18,7 @@ $.fn.pfcShowHrefClass = function(callback) {
   
     return this;
 };        
-}(jQuery));
+})(jQuery);
 
 (function($){
 $.fn.pfcShowHrefId = function(callback) {
@@ -32,7 +33,7 @@ $.fn.pfcShowHrefId = function(callback) {
   
     return this;
 };        
-}(jQuery));
+})(jQuery);
 
 (function($){
 $.fn.pfcOnClickShowHrefClass = function(callback) {
@@ -50,7 +51,7 @@ $.fn.pfcOnClickShowHrefClass = function(callback) {
   
     return this;
 };        
-}(jQuery));
+})(jQuery);
 
 (function($){
 $.fn.pfcOnClickShowHrefId = function(callback) {
@@ -67,7 +68,7 @@ $.fn.pfcOnClickShowHrefId = function(callback) {
   
   return this;
 };        
-}(jQuery));
+})(jQuery);
 
  /*
   *  UI TABS
@@ -264,7 +265,7 @@ $.fn.pfcTabs.addRule = function(rule,parent) {
                 buttonText:"OK",
                 topMargin: 50,//pixels
                 startFromMinus: 100,//pixels
-                delayAutoHide: 2000,//ms
+                delayAutoHide: 4500,//ms
                 delaySlideDownStartAni: 1000,//ms
                 delaySlideUpEndAni: 500,//ms
                 
@@ -743,299 +744,6 @@ $.fn.pfcAjaxForm.exception = function(text,form) {
         $.pfcAlert(text,{type:'err'});        
 }
 
-}( jQuery ));
 
 
-/*
-  *  DATATABLE
-  */
-(function($){
-      
-    
-$.fn.pfcDatatable = function(options) {
-
-    var that = this;
-    
-    if(typeof options == 'object'||typeof options == undefined)
-    {
-        var settings = $.extend({
-            items: [],
-            center: [],
-            ajaxLoader:false,
-            initFilters:function(holder) {return;},
-            initCallback: function(holder) { return; },
-            initStaticCallback: function(holder) { return; },
-            loadCallback: function(holder) { return; },
-            pagingCallback: function(holder) { return; },
-            resetCallback: function(holder) { return; },
-            api: {
-                init:$.fn.pfcDatatable.init,
-                initStatic:$.fn.pfcDatatable.initStatic,
-                load:load,
-                loading:loading,
-                afterSearch:afterSearch,
-                initUi:initUi,
-                stripes:stripes,
-                initHolder:initHolder
-            }
-        }, options );
-    
-        this.data('settings',settings);
-    
-        if(!settings.ajaxLoader)
-        settings.api.initHolder()                
-    
-        return {
-            initUi:settings.api.initUi,
-            load: settings.api.load,
-            stripes: settings.api.stripes,
-            initHolder:settings.api.initHolder
-        }
-    }
-    else if(options=='load')
-    {
-        var settings = this.data('settings');
-        settings.api.load();
-        return this;
-    }
-    else if(options=='initUi')
-    {
-        var settings = this.data('settings');
-        settings.api.initUi();
-        return this;
-    }
-    else if(options=='stripes')
-    {
-        var settings = this.data('settings');
-        settings.api.stripes();
-        return this;
-    }
-
-   
-   function initHolder() {
-        settings.api.initUi();
-    
-        settings.api.initStatic(that);
-            
-        settings.api.init(that);       
-   }
-   
-   function loading() {
-        that.find(".pfc-dt-list-holder").html('<div class="pfc-dt-loading"><span>'+that.find(".pfc-texts").first().find(".loading").val()+'</span></div>');
-   } 
-    
-   function load() {
-    
-        settings.api.loading();
-    
-        that.find(".pfc-dt-list-holder").find(".pfc-dt-loading").css('width',that.find(".pfc-dt-row").first().css('width'));
-        
-        that.find(".pfc-dt-head").first().find("form").submit();
-    
-    }     
-    
-    function afterSearch(html) {
-        that.find(".pfc-dt-ajaxlist-holder").html(html);
-        settings.api.initUi();
-        settings.api.init(that);
-        settings.loadCallback(that);
-    }
-    
-    function initUi() {
-        
-      //template TABLE  
-      if(that.find('.pfc-dt-no-data').length==0)
-      {
-        var maxwidth = parseInt(that.parent().css('width'));
-      
-        that.find('.pfc-dt-row, .pfc-dt-filters-holder, .pfc-dt-ajaxlist-holder, .pfc-dt-head, .pfc-dt-header, .pfc-dt-list-item, .pfc-dt-paging-previos-holder, .pfc-dt-paging-holder').css('width',maxwidth+'px');
-        for(var i=0;i<settings.items.length;i++)
-        {
-            that.find('.item-'+settings.items[i]).sameWidth();
-        }
-        var usedwidth = 0;
-        that.find('.pfc-dt-list-item').first().find('.pfc-dt-collum').each(function(){
-            usedwidth += parseInt($(this).css('width'));
-            usedwidth += parseInt($(this).css('padding-left'));
-            usedwidth += parseInt($(this).css('padding-right'));
-        })
-        that.find('.pfc-dt-row, .pfc-dt-filters-holder, .pfc-dt-ajaxlist-holder, .pfc-dt-head, .pfc-dt-header, .pfc-dt-list-item, .pfc-dt-paging-previos-holder, .pfc-dt-paging-holder').css('width',usedwidth+'px');
-        that.css('width',usedwidth+'px');
-        
-        /**
-         * change to something reuseable not depend on admin
-         * -> count max collum width from options.items.length and maxwidth
-         * 
-         */
-        if(maxwidth<usedwidth) that.parent().css('width',usedwidth+'px')
-        var bodywidth = parseInt($("body").css('width'));
-        if(bodywidth<usedwidth) $("body").css('width',(usedwidth+40)+'px')
-        
-        that.find('.pfc-dt-collum').each(function() {
-            $(this).centerVerticaly(parseInt($(this).closest(".pfc-dt-list-item").find('.pfc-dt-row').first().css('height')));
-        });
-        
-         
-        settings.api.stripes();
-        
-        
-        that.find('.pfc-dt-list-item').mouseover(function(){
-            $(this).addClass('pfc-dt-hover');
-        }).mouseout(function(){
-            $(this).removeClass('pfc-dt-hover');
-        });                                       
-        
-        for(var i=0;i<settings.center.length;i++)
-        {
-            that.find('.item-'+settings.center[i]).css('text-align','center');
-        }
-      }
-    }
-
-    function stripes() {
-        that.find('.pfc-dt-list-item').removeClass('even');
-        that.find('.pfc-dt-list-item:even').addClass('even');
-    }
-    
-    
-}
-
-
-$.fn.pfcDatatable.initStatic = function(holder) {
-    holder.find('a.pfc-dt-search-form').first().unbind('click').click(function(){        
-        if($(this).find('.search-on').first().hasClass('pfc-dt-hidden'))
-        {
-            $(this).find('.search-off').first().addClass('pfc-dt-hidden');
-            $(this).find('.search-on').first().removeClass('pfc-dt-hidden');
-            holder.find('.pfc-dt-filters-holder').first().addClass('pfc-dt-hidden');            
-        }
-        else 
-        {
-            $(this).find('.search-off').first().removeClass('pfc-dt-hidden');
-            $(this).find('.search-on').first().addClass('pfc-dt-hidden');
-            holder.find('.pfc-dt-filters-holder').first().removeClass('pfc-dt-hidden');
-        }
-        
-        return false;
-    })
-    
-    var settings = holder.data('settings');
-    var search_options = {
-        success: settings.api.afterSearch
-    }
-    holder.find(".pfc-dt-head").first().find("form").ajaxForm(search_options);
-    
-    holder.find(".pfc-dt-reset").unbind('click').click(function(){
-        
-        holder.find(".pfc-dt-filters-holder").find("input[type='text']").val('');
-        holder.find(".pfc-dt-filters-holder").find("select").each(function(){
-            $(this).find('option').first().attr('selected',true);
-        });
-        holder.find(".pfc-dt-filters-holder").find("input[type='radio']").each(function(){
-            var name = $(this).attr('name');
-            holder.find(".pfc-dt-filters-holder").find("input[name='"+name+"']").first().attr('çhecked',true);
-        });
-        
-        settings.resetCallback(holder);
-        
-        return false;
-    })
-    
-    settings.initFilters(holder);
-    
-    settings.initStaticCallback(holder);
-}
-
-$.fn.pfcDatatable.init = function(holder) {
-    
-    var settings = holder.data('settings');
-    
-    if( holder.find(".pfc-dt-paging-mode").first().val() == '1' )
-    {
-        holder.find(".pfc-dt-paging-holder .smart-paging").addClass('pfc-dt-hidden')
-    }
-    else
-    {
-        holder.find(".pfc-dt-paging-holder .classic-paging").addClass('pfc-dt-hidden')
-    }
-    
-    holder.find(".pfc-dt-paging-chooser-holder .paging_switch").unbind('click').click(function(){
-         if( $(this).closest(".pfc-dt-holder").find(".pfc-dt-paging-mode").first().val()=='0')
-         {
-             holder.find(".pfc-dt-paging-chooser-holder .to-smart").removeClass("pfc-dt-hidden");
-             holder.find(".pfc-dt-paging-chooser-holder .to-classic").addClass("pfc-dt-hidden");
-             $(this).closest(".pfc-dt-holder").find(".pfc-dt-paging-mode").first().val('1');
-         }
-         else
-         {
-             holder.find(".pfc-dt-paging-chooser-holder .to-smart").addClass("pfc-dt-hidden");
-             holder.find(".pfc-dt-paging-chooser-holder .to-classic").removeClass("pfc-dt-hidden");
-             $(this).closest(".pfc-dt-holder").find(".pfc-dt-paging-mode").first().val('0');            
-         }
-         
-         
-         settings.api.load();
-         
-         //never checked
-         return false;
-    })
-    
-    holder.find(".pfc-dt-lang,.pfc-dt-orderby").change(function(){
-         settings.api.load();
-    })
-    
-    holder.find(".pfc-dt-per-page").blur(function(){
-         settings.api.load();
-    })
-    
-    holder.find(".pfc-dt-paging-holder .paging").unbind('click').click(function(){
-        settings.api.loading();
-        $.get(this.href.replace('?1=1',holder.find('.pfc-dt-ajax-list-file').val()+'?1=1'),{},function(html){
-            settings.api.afterSearch(html);
-            settings.pagingCallback(holder);
-        })
-        return false;
-    })
-    
-    holder.find(".pfc-dt-paging-holder .smart-paging a").unbind('click').click(function(){        
-        holder.find(".pfc-dt-paging-holder .smart-paging").html(holder.find(".pfc-texts").first().find(".loading").val())
-        $.get(this.href,{},function(html){
-            holder.find(".pfc-dt-paging-holder").replaceWith(html);
-            settings.api.initUi();
-            settings.api.init(holder);            
-            settings.pagingCallback(holder);
-        })                     
-        return false;
-    });
-    
-    holder.find(".pfc-dt-paging-previos-holder a").unbind('click').click(function(){
-        holder.find(".pfc-dt-paging-previos-holder").html(holder.find(".pfc-texts").first().find(".loading").val())
-        $.get(this.href,{},function(html){
-            $(html).find(".pfc-dt-list-item").addClass('pfc-dt-hidden')
-            holder.find(".pfc-dt-paging-previos-holder").replaceWith(html);
-            holder.find(".pfc-dt-list-item").each(function(){                 
-                if($(this).hasClass('pfc-dt-hidden'))
-                {
-                    $(this).removeClass('pfc-dt-hidden')
-                }                
-            })
-                    settings.api.initUi();
-                    settings.api.init(holder);              
-                    settings.pagingCallback(holder);
-        })                     
-        return false;
-    });
-    
-    var settings = holder.data('settings');
-    settings.initCallback(holder);
-    
-} //end fn init
-
-
-
-}(jQuery));
-/*
- * END DATATABLE
- */
-
-
+})(jQuery);

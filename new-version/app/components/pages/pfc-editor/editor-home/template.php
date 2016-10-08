@@ -6,13 +6,20 @@
   <span style="font-size:0.75em;">[[v0.1beta]]</span></span>
 </h1>
 
-<ul>
+<br>
+<ul style="margin-left: 25px;">
+    
+    <li>divide editor Config into configs DATA</li>
     
     <li>use new php backend + models User, Project(s), Sources</li>
    
-    <li>app header, tools to config</li>
+    <li>use new php backend with phpQuery for templates called in controllers -> class functionss before:render:after</li>
     
-    <li>pages add controller script</li>
+    <li>add hardcoded basic multiuser :=> make DATA user id depend -> private settings(config)<br> => make notes.txt file in DATA and add it as my notes into main menu(encrypted)</li>
+    
+    <li>(multi language support)</li>
+   
+    <li>app header, tools to config</li>
     
     <li>projects -> default,html,php -> sources, pages(apps), tools</li>
     
@@ -22,8 +29,10 @@
 </ul>
 
 <br>  
-<div style="float:right;max-width:250px">
+<div style="">
   <b>FINDED BUGS:</b><br>
+  
+  - pfcPrompt focus into input -> listen enter to trigger OK escape for STORNO -> pfcAlert, pfcConfirm enter/esc<br>
   - if sources change name from upercase to small updater not find our <br>
   - sources, editor tabs, tools remember scrolltop+left -> load from state, on active<br>
   - sources if file first in tree after auto-update add folder is not add before<br> 
@@ -63,8 +72,8 @@
 
   (- sources load big folder in small(short) pieces -> firefox things that script is wrong [timeout])
 </div>
-
-<div style="float:left;max-width:400px;">
+<BR><BR>
+<div style="">
 
 <h3>MISSING:</h3>
 - graphical design<br>

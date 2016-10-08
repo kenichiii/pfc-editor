@@ -112,7 +112,9 @@
       
     <?php require 'components/tools/default/calculator/template.php'; ?>   
    
-    <?php require 'components/tools/default/color-picker/template.php'; ?> 
+    <?php require 'components/tools/default/color-picker/template.php'; ?>
+    
+    <?php require 'components/tools/default/key-code/template.php'; ?>
            
     <?php require 'components/app/sounds.php'; ?> 
       
