@@ -1,40 +1,30 @@
 <?php
 
-
-
-/*
-    pfc editor :: online developnent tool
-    -------------------------------------
-    
-    Copyright (C) 2015  Martin Königsmark
-
-*/
-
 namespace PFC\Editor;
 
 class App {
 
     public static function isLoginActionRequest()
     {
-      return \filter_input(\INPUT_GET, '_app') && \filter_input(\INPUT_GET, 'action') === 'login';
+        return Router::isAppRequest() && Router::isActionRequest() === 'login';//\filter_input(\INPUT_GET, '_app') && \filter_input(\INPUT_GET, 'action') === 'login';
     }  
 
     public static function isServerTimeRequest()
     {
-        return \filter_input(\INPUT_GET, '_app') && \filter_input(\INPUT_GET, 'ajax') === 'server-time';
+        return Router::isAppRequest() && Router::isAjaxRequest() === 'server-time';//\filter_input(\INPUT_GET, '_app') && \filter_input(\INPUT_GET, 'ajax') === 'server-time';
     }
 
     public static function getRequestFilePath()
     {      
-         $ajax = \filter_input(\INPUT_GET, 'ajax');
-         $action = \filter_input(\INPUT_GET, 'action');
+         $ajax = Router::isAjaxRequest();
+         $action = Router::isActionRequest();
       
-       	 $app = \filter_input(\INPUT_GET, '_app');
-         $page = \filter_input(\INPUT_GET, 'page');
-         $tools = \filter_input(\INPUT_GET, 'tools');
-      	 $editor = \filter_input(\INPUT_GET, 'editor');
-      	 $section = \filter_input(\INPUT_GET, 'section');
-         $sandbox = \filter_input(\INPUT_GET, 'sandbox');
+       	 $app = Router::isAppRequest();
+         $page = Router::isPageRequest();
+         $tools = Router::isToolsRequest();
+      	 $editor = Router::isEditorRequest();
+      	 $section = Router::isSectionRequest();
+         $sandbox = Router::isSandboxRequest();
        
          if($page && $ajax) 
          {
