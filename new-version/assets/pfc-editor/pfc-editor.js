@@ -68,7 +68,7 @@
                     $('#pfc-editor-head a').removeClass('pfc-editor-active-section-href');
                     $(selector).addClass('pfc-editor-active-section-href');   
                     
-                    $("#pfc-editor").css('margin-left','295px');
+                    $("#pfc-editor").css('margin-left','395px');
                     $($(selector).attr('href')).show();
                     section.setSectionHeaderHolderWidth();
                     $($(selector).attr('href')).hide();
@@ -224,7 +224,7 @@
 
             toolsHrefListener: function(){
                $('#pfc-editor-tools-href').click(function(){
-                   $("#pfc-editor").css('margin-right','295px');
+                   $("#pfc-editor").css('margin-right','395px');
                    $('#pfc-editor-tools').slideDown();
                    return false;
                });  

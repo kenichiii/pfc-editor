@@ -163,7 +163,7 @@
             
             <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/sounds/manager.js" type="text/javascript"></script>
             
-            <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/editor.js" type="text/javascript"></script>
+            <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/pfc-editor.js" type="text/javascript"></script>
 
 
             <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/editor/ace.editor.js" type="text/javascript"></script>                            
