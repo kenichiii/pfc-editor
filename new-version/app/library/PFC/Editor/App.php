@@ -30,10 +30,10 @@ class App {
          $action = \filter_input(\INPUT_GET, 'action');
       
        	 $app = \filter_input(\INPUT_GET, '_app');
-         $section = \filter_input(\INPUT_GET, 'section');
          $page = \filter_input(\INPUT_GET, 'page');
          $tools = \filter_input(\INPUT_GET, 'tools');
       	 $editor = \filter_input(\INPUT_GET, 'editor');
+      	 $section = \filter_input(\INPUT_GET, 'section');
          $sandbox = \filter_input(\INPUT_GET, 'sandbox');
        
          if($page && $ajax) 
@@ -78,10 +78,10 @@ class App {
          elseif($sandbox) {
             set_include_path(implode(PATH_SEPARATOR, array(
                 get_include_path(), 
-                \PFC\Editor\SANDBOX_PATH
+                SANDBOX_PATH
             )));
 
-             $r = \PFC\Editor\SANDBOX_PATH.'/'.$sandbox;     
+             $r = SANDBOX_PATH.'/'.$sandbox;     
          } 
       
       
@@ -91,82 +91,5 @@ class App {
 
       return $r;
     }
-
-    public static function getLoginCheckFilePath()
-    {
-        return 'components/app/_actions/login.php';   
-    }
   
-    public static function bufferOn()
-    {
-        ob_start();
-    }
-
-    public static function bufferEnd()
-    {
-        $code = ob_get_contents();
-        ob_end_clean();
-        return $code;
-    }
-  
-    public static function pagelink($page,$plugin=null)
-    {
-      $plugin_href = $plugin?'&plugin='.$plugin:'';
-        return "?page={$page}{$plugin_href}";
-    }
-    
-    public static function pagelinkaction($page,$file,$plugin=null)
-    {
-      $plugin_href = $plugin?'&plugin='.$plugin:'';
-        return "?page={$page}&amp;action={$file}{$plugin_href}";
-    }
-    
-    public static function pagelinkajax($page,$file,$plugin=null)
-    {
-      $plugin_href = $plugin?'&plugin='.$plugin:'';
-        return "?page={$page}&amp;ajax={$file}{$plugin_href}";
-    }    
-    public static function sectionlinkaction($page,$file,$params=null,$plugin=null)
-    {
-      $plugin_href = $plugin?'&plugin='.$plugin:'';
-      $uri='';
-           if(is_array($params))
-            {
-               $uri .= '&amp;';  
-               $i = 0;
-               foreach($params as $key=>$value)
-               {
-                   $uri .= $key.'='.urlencode ($value);
-                   if( $i < count($params)-1 ) $uri .= '&amp;';
-                   $i++;
-               }
-            }
-      
-        return "?section={$page}&amp;action={$file}{$uri}{$plugin_href}";
-    }
-    public static function sectionlinkajax($page,$file,$plugin=null)
-    {
-      $plugin_href = $plugin?'&plugin='.$plugin:'';
-        return "?section={$page}&amp;ajax={$file}{$plugin_href}";
-    }        
-    public static function editorlinkaction($file,$plugin=null)
-    {
-      $plugin_href = $plugin?'&plugin='.$plugin:'';
-        return "?editor=true&action={$file}{$plugin_href}";
-    }
-    public static function editorlinkajax($file,$plugin=null)
-    {
-      $plugin_href = $plugin?'&plugin='.$plugin:'';
-        return "?editor=true&ajax={$file}{$plugin_href}";
-    }     
-    public static function applinkaction($file,$plugin=null)
-    {
-      $plugin_href = $plugin?'&plugin='.$plugin:'';
-        return "?_app=true&action={$file}{$plugin_href}";
-    }
-    public static function applinkajax($file,$plugin=null)
-    {
-      $plugin_href = $plugin?'&plugin='.$plugin:'';
-        return "?_app=true&ajax={$file}{$plugin_href}";
-    }    
 }

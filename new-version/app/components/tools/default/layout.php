@@ -8,7 +8,7 @@
         
       <hr>
       
-		<b>Html</b>
+		
 		<button id="pfc-editor-specchars-href" class="pfc-editor-external-link" href="http://typeit.org">special chars</button>
 		<button id="pfc-editor-charcodes-href" class="pfc-editor-external-link" href="http://character-code.com/">character codes</button>
       

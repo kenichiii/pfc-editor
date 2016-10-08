@@ -1,42 +1,30 @@
 <?php
 
-namespace PFC\Editor;
-//use \PFC\Editor\AppLogin;
-//use \PFC\Editor\AppFile;
-//use \PFC\Editor\AppSess;         
+namespace PFC\Editor;       
 
 //do login if login form is submited
-if( isset($_POST['pwd']) &&  isset($_POST['login'])
-        && AppLogin::verify($_POST['login'],$_POST['pwd'],$_POST['pin'])        
-  )
-{
-  
-  
-     AppLogin::setUserLoggedIn($_POST['pwd']);    
-     AppSess::set('pfc-login',true);
-     
-     echo json_encode(array(
-       'succ' => 'yes'
-     ));
-  
-     //AppFile::sendRedirectHeaders(str_replace('?_app=true&action=login','',$_SERVER['REQUEST_URI']).'?after-login');
+$login = \filter_input(\INPUT_POST, 'login');
+$passw = \filter_input(\INPUT_POST, 'pwd');
+$pin = \filter_input(\INPUT_POST, 'pin');
 
-}
-     else
-     {
-       if( AppLogin::isFreeForLoging() ) {       
-         echo json_encode(array(
-           'succ' => 'no',
-           'reason' => 'creditials'
-         ));
-       } else {
-         echo json_encode(array(
-           'succ' => 'no',
-           'reason' => 'banned',
-           'bannedToTime' => date('G:i:s',AppLogin::getBannedToTime())
-         ));       
-       }
-       //AppFile::sendRedirectHeaders(str_replace('?_app=true&action=login','',$_SERVER['REQUEST_URI']).'?wrong-creditials');
-     }
+    if($login && $passw && AppLogin::verify($login, $passw, $pin)) {
+        AppLogin::setUserLoggedIn($login, $passw);    
+        AppSess::set('pfc-login', true);
+         
+        echo \json_encode(['succ' => 'yes']);
+    
+    } elseif(AppLogin::isFreeForLoging()) {       
+             echo \json_encode([
+               'succ' => 'no',
+               'reason' => 'creditials'
+             ]);
+             
+    } else {
+             echo \json_encode([
+               'succ' => 'no',
+               'reason' => 'banned',
+               'bannedToTime' => \date('G:i:s', AppLogin::getBannedToTime())
+             ]);       
+    }
 
 

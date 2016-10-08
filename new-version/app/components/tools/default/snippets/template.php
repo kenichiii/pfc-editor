@@ -6,9 +6,9 @@
 
           <div class="pfc-templates-section pfc-templates-section-pfc">
               <b>PFC</b>
-          use <a class="pfc-templates-ajax" href="#php_use_pfc_app">App</a> <a class="pfc-templates-ajax" href="#php_use_pfc_project">Project</a>
-              <a class="pfc-templates-ajax" href="#php_use_pfc_appconfig">AppConfig</a>
-              <a class="pfc-templates-ajax" href="#php_use_pfc_acl">ACL</a>
+          use <a class="pfc-templates-ajax" href="#php/use/pfc/app">App</a> <a class="pfc-templates-ajax" href="#php_use_pfc_project">Project</a>
+              <a class="pfc-templates-ajax" href="#php/use/pfc/appconfig">AppConfig</a>
+              <a class="pfc-templates-ajax" href="#php/use/pfc/acl">ACL</a>
             <br>
               <b>PFC UI</b>
               <a class="pfc-templates-ajax" href="#php_use_pfc_appconfig">alert</a>              

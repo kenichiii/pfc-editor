@@ -1,9 +1,10 @@
 <?php
 
-    use \PFC\Editor\Config as AppConfig;
-    use \PFC\Editor\AppCryptor;
-    use \PFC\Editor\App;    
-               
+    use PFC\Editor\Config as AppConfig;
+    use PFC\Editor\AppCryptor;
+    use PFC\Editor\App;    
+    use PFC\Editor\Router;
+    
                 /*
             $ssl = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? true:false;
             $sp = strtolower($_SERVER['SERVER_PROTOCOL']);
@@ -15,7 +16,7 @@
               */          
 ?>
         <h2 style="padding-bottom: 5px">Editor Settings</h2>
-        <form id="pfc-editor-config" method="post" action="<?php echo App::pagelinkaction('pfc-editor/editor-config','save-config') ?>">
+        <form id="pfc-editor-config" method="post" action="<?php echo Router::pagelinkaction('pfc-editor/editor-config','save-config') ?>">
           <div id="pfc-editor-config-accordicon">  
             <a class="accordicon-head" href="#pfc-editor-config-basic">Basic</a>
             <div class="pfc-editor-config-basic accordicon-body">

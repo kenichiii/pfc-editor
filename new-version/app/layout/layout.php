@@ -1,3 +1,10 @@
+<?php
+
+use PFC\Editor\Config\Sources;
+use PFC\Editor\Router;
+use PFC\Editor\Config;
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -28,7 +35,7 @@
         <!-- end libraries -->        
         
         <link href="pfc-editor/layout/css/layout.css" rel="stylesheet" type="text/css"/>
-        <link href="pfc-editor/layout/css/theme/<?php echo \PFC\Editor\Config::theme; ?>.css" rel="stylesheet" type="text/css"/>
+        <link href="pfc-editor/layout/css/theme/<?php echo Config::theme; ?>.css" rel="stylesheet" type="text/css"/>
       
         <link href="pfc-editor/pages/pfc-editor/editor-about/about.css" rel="stylesheet" type="text/css"/>
         <link href="pfc-editor/pages/pfc-editor/editor-config/config.css" rel="stylesheet" type="text/css"/>
@@ -92,10 +99,9 @@
                <?php require 'components/tools/layout.php' ?>
            </aside> <!-- pfc-editor-tools -->   
            
-         <main>      
+         <section class="pfc-editor-main-section">      
            <?php require 'components/editor/template.php'; ?>
-          
-         </main>                            
+         </section>                            
          
       
       
@@ -225,23 +231,23 @@ $.pfcEditor.addSection('#pfc-sources-editor-href',$pfcEditorSources.factory({sec
       
               //configure
                 //editor
-                $.pfcEditor.editor.config.appSaveFileUrl =  "<?php echo \PFC\Editor\App::editorlinkaction('save-file'); ?>";
-                $.pfcEditor.editor.config.getFileContentsUrl =  "<?php echo \PFC\Editor\App::editorlinkajax('get-file-contents'); ?>";
-                $.pfcEditor.editor.config.checkLastModificationTimeCheckerUrl = "<?php echo \PFC\Editor\App::editorlinkajax('get-file-last-update'); ?>";
+                $.pfcEditor.editor.config.appSaveFileUrl =  "<?php echo Router::editorlinkaction('save-file'); ?>";
+                $.pfcEditor.editor.config.getFileContentsUrl =  "<?php echo Router::editorlinkajax('get-file-contents'); ?>";
+                $.pfcEditor.editor.config.checkLastModificationTimeCheckerUrl = "<?php echo Router::editorlinkajax('get-file-last-update'); ?>";
               
                 $.pfcEditor.editor.config.sandboxUrl =  "?sandbox=";
              
                 //pages
-                $.pfcEditor.getPage('pfc-editor_editor-home').config.url = '<?php echo \PFC\Editor\App::pagelink('pfc-editor/editor-home'); ?>';
-                $.pfcEditor.getPage('pfc-editor_editor-about').config.url = '<?php echo \PFC\Editor\App::pagelink('pfc-editor/editor-about'); ?>';
-                $.pfcEditor.getPage('pfc-editor_editor-config').config.url = '<?php echo \PFC\Editor\App::pagelink('pfc-editor/editor-config'); ?>';
-                $.pfcEditor.getPage('pfc-editor_editor-help').config.url = '<?php echo \PFC\Editor\App::pagelink('pfc-editor/editor-help'); ?>';
+                $.pfcEditor.getPage('pfc-editor_editor-home').config.url = '<?php echo Router::pagelink('pfc-editor/editor-home'); ?>';
+                $.pfcEditor.getPage('pfc-editor_editor-about').config.url = '<?php echo Router::pagelink('pfc-editor/editor-about'); ?>';
+                $.pfcEditor.getPage('pfc-editor_editor-config').config.url = '<?php echo Router::pagelink('pfc-editor/editor-config'); ?>';
+                $.pfcEditor.getPage('pfc-editor_editor-help').config.url = '<?php echo Router::pagelink('pfc-editor/editor-help'); ?>';
                 
                                 
-                $.pfcEditor.getPage('phpinfo').config.url = '<?php echo \PFC\Editor\App::pagelink('phpinfo'); ?>';
+                $.pfcEditor.getPage('phpinfo').config.url = '<?php echo Router::pagelink('phpinfo'); ?>';
                 
-                $.pfcEditor.getPage('adminer').config.url = '<?php echo \PFC\Editor\App::pagelink('adminer'); ?>';
-                $.pfcEditor.getPage('adminer').multi = <?php echo \PFC\Editor\Config::isAdminerMultiPage ?  'true':'false'; ?>;
+                $.pfcEditor.getPage('adminer').config.url = '<?php echo Router::pagelink('adminer'); ?>';
+                $.pfcEditor.getPage('adminer').multi = <?php echo Config::isAdminerMultiPage ?  'true':'false'; ?>;
                 
                 
                 
@@ -249,7 +255,7 @@ $.pfcEditor.addSection('#pfc-sources-editor-href',$pfcEditorSources.factory({sec
                 
                 $.pfcEditor.getSection('pfc-sources-editor').config.opendirs = [
                         <?php 
-                              foreach(\PFC\Editor\Config\Sources::$paths as $k=>$s) 
+                              foreach(Sources::$paths as $k=>$s) 
                               { 
                                 if($s['section']=='editor') {  
                                     ?>
@@ -267,7 +273,7 @@ $.pfcEditor.addSection('#pfc-sources-editor-href',$pfcEditorSources.factory({sec
 
                 $.pfcEditor.getSection('pfc-sources-sources').config.opendirs = [
                         <?php 
-                              foreach(\PFC\Editor\Config\Sources::$paths as $k=>$s) 
+                              foreach(Sources::$paths as $k=>$s) 
                               { 
                                 if($s['section']=='sources') {  
                                     ?>
@@ -286,7 +292,7 @@ $.pfcEditor.addSection('#pfc-sources-editor-href',$pfcEditorSources.factory({sec
         
                 $.pfcEditor.getSection('pfc-sources-sandbox').config.opendirs = [
                         <?php 
-                              foreach(\PFC\Editor\Config\Sources::$paths as $k=>$s) 
+                              foreach(Sources::$paths as $k=>$s) 
                               { 
                                 if($s['section']=='sandbox') {  
                                     ?>
@@ -306,21 +312,21 @@ $.pfcEditor.addSection('#pfc-sources-editor-href',$pfcEditorSources.factory({sec
               
               
               
-                $.pfcEditor.getSection('pfc-sources-sources').config.updaterTimeout = <?php echo \PFC\Editor\Config::SourcesLastModificationCheckerInterval; ?>;
-                $.pfcEditor.getSection('pfc-sources-sources').config.lastModificationCheckerOn = <?php echo \PFC\Editor\Config::SourcesLastModificationChecker ?  'true':'false'; ?>;
+                $.pfcEditor.getSection('pfc-sources-sources').config.updaterTimeout = <?php echo Config::SourcesLastModificationCheckerInterval; ?>;
+                $.pfcEditor.getSection('pfc-sources-sources').config.lastModificationCheckerOn = <?php echo Config::SourcesLastModificationChecker ?  'true':'false'; ?>;
                 
-                $.pfcEditor.getSection('pfc-sources-editor').config.updaterTimeout = <?php echo \PFC\Editor\Config::SourcesLastModificationCheckerInterval; ?>;
-                $.pfcEditor.getSection('pfc-sources-editor').config.lastModificationCheckerOn = <?php echo \PFC\Editor\Config::SourcesLastModificationChecker ?  'true':'false'; ?>;;
+                $.pfcEditor.getSection('pfc-sources-editor').config.updaterTimeout = <?php echo Config::SourcesLastModificationCheckerInterval; ?>;
+                $.pfcEditor.getSection('pfc-sources-editor').config.lastModificationCheckerOn = <?php echo Config::SourcesLastModificationChecker ?  'true':'false'; ?>;;
  
-                $.pfcEditor.getSection('pfc-sources-sandbox').config.updaterTimeout = <?php echo \PFC\Editor\Config::SourcesLastModificationCheckerInterval; ?>;
-                $.pfcEditor.getSection('pfc-sources-sandbox').config.lastModificationCheckerOn = <?php echo \PFC\Editor\Config::SourcesLastModificationChecker ?  'true':'false'; ?>;;
+                $.pfcEditor.getSection('pfc-sources-sandbox').config.updaterTimeout = <?php echo Config::SourcesLastModificationCheckerInterval; ?>;
+                $.pfcEditor.getSection('pfc-sources-sandbox').config.lastModificationCheckerOn = <?php echo Config::SourcesLastModificationChecker ?  'true':'false'; ?>;;
               
               
               
   
                           
-                $.pfcEditor.editor.config.lastModificationTimeCheckerDelay = <?php echo \PFC\Editor\Config::EditorLastModificationCheckerInterval; ?>;
-                $.pfcEditor.editor.config.lastModificationCheckerOn = <?php echo \PFC\Editor\Config::EditorLastModificationChecker ?  'true':'false'; ?>;          
+                $.pfcEditor.editor.config.lastModificationTimeCheckerDelay = <?php echo Config::EditorLastModificationCheckerInterval; ?>;
+                $.pfcEditor.editor.config.lastModificationCheckerOn = <?php echo Config::EditorLastModificationChecker ?  'true':'false'; ?>;          
                 
                 pfcSoundsManager.on = <?php echo \PFC\Editor\Config::sounds ?  'true':'false'; ?>;
                 

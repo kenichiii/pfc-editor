@@ -1,4 +1,6 @@
-
+<?php
+    use PFC\Editor\Router;
+?>
 			<nav>
                 <a id="pfc-editor-logo" href="#">[[:pfc <em>lite</em></a>
                 <ul id="pfc-editor-menu">                    
@@ -9,7 +11,7 @@
                     <li><a id="pfc-editor-adminer-href" class="pfc-editor-page-href" href="#">adminer</a></li>
                 </ul>            
               	<span style="float:right;display:block;padding-right:10px;color:#ddd">:]]</span>
-                <a id="pfc-editor-logout-href" class="pfc-editor-page-href" href="<?php echo \PFC\Editor\App::applinkaction('logout'); ?>">logout</a>
+                <a id="pfc-editor-logout-href" class="pfc-editor-page-href" href="<?php echo Router::applinkaction('logout'); ?>">logout</a>
                 <a id="pfc-editor-help-href" class="pfc-editor-page-href pfc-editor-help-href" href="#">help</a>
                 
                 <a id="pfc-editor-tools-href" class="pfc-editor-page-href"  href="#pfc-editor-tools">tools</a>
