@@ -54,3 +54,20 @@ a.pfc-editor-contextmenu-btn:hover {
 }
 
 
+
+   .pfc-editor-file-status-bar {
+        margin: 0;
+        padding: 0;
+        position: relative;
+        margin-top: 5px;
+        padding-left: 25px;
+        color: #ccc;
+    }
+    .ace_status-indicator {
+        color: #ccc;
+        position: absolute;
+        right: 0;
+        
+        padding-left: 5px;
+        padding-right: 20px;
+    }

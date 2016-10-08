@@ -24,8 +24,8 @@ var pfcEditorToolsSnippets = {
             {
                 var doc = $.pfcEditor.editor.ceditors[eid].inst;
                      
-                doc.replaceSelection(code);
-                doc.focus();
+                doc.insert(code);
+               // doc.focus();
             }
             else {
                 $.pfcEditor.ui.alert('Select file to paste template in');

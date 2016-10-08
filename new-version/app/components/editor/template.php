@@ -80,9 +80,7 @@
                   </span>
                    &nbsp;&nbsp;<span class="pfc-editor-file-actions-lu" style=""></span> 
                   &nbsp;&nbsp;   <button class="pfc-editor-file-button-save">Save</button>
-                  <span class="pfc-editor-file-actions-php" style="display:none">
-                    &nbsp;&nbsp;&nbsp; <span class="pfc-editor-file-check">Checking</span>
-                  </span>  
+                    
                   <span class="pfc-editor-file-actions-sandbox" style="display:none">
                     &nbsp;&nbsp;&nbsp; <button class="pfc-editor-file-button-run">Run</button> 
                     <input type="checkbox" class="pfc-editor-file-option-run-blank">blank
@@ -91,20 +89,20 @@
                     &nbsp;&nbsp; <button class="pfc-editor-file-button-undo">&lt;</button>
                      <button class="pfc-editor-file-button-redo">&gt;</button>
                     
-                    &nbsp; <button class="pfc-editor-file-button-goto">goto</button>
+                    
                     &nbsp;&nbsp;<button class="pfc-editor-file-button-search">search</button>
-                     <button class="pfc-editor-file-button-search-prev">&lt;</button>
-                     <button class="pfc-editor-file-button-search-next">&gt;</button>                    
-                    &nbsp; <button class="pfc-editor-file-button-replace">replace</button>
-                    &nbsp;<button class="pfc-editor-file-button-replace-all">replace all</button>
+                    &nbsp; <button class="pfc-editor-file-button-replace">replace</button>                  
+                    &nbsp;&nbsp; <button class="pfc-editor-file-button-goto">goto</button>
                     &nbsp;&nbsp;<button class="pfc-editor-file-button-insert">-nor-</button>
+                    &nbsp;&nbsp;<button class="pfc-editor-file-button-settings">options</button>
                     
                   </span>
                 </div>
                </div>  
                 <div class="pfc-editor-file-editor">
                     <textarea class="pfc-editor-file-code-editor" id=""></textarea>
-                </div>                   
+                </div> 
+                <div class="pfc-editor-file-status-bar" id=""></div>   
                </div>    
               </div>    
             </div> <!-- pfc-editor-file-content-template -->

@@ -1,18 +1,14 @@
 
 <h2>Help</h2>
 <br>
-For editor possibilities check <a href="https://codemirror.net/" target="_blank">https://codemirror.net/</a>
+For calculator possibilities check <a href="http://dematte.at/calculator#usage">calculator page</a>
 <br><br>
-List of supported editor functionality:<br><br>
-                        Ctrl+S (save),<br><br>
-                        
-                        Ctrl-F Start searching, <br><br>
-                        Ctrl-G Find next, <br><br>
-                        Shift-Ctrl-G Find previous, <br><br>
-                        Shift-Ctrl-F Replace, <br><br>
-                        Shift-Ctrl-R Replace all<br><br>    
-                        
-                        Ctrl-Space (autocomplete),<br><br>                        
-    					
-						and much more...
+For editor possibilities check <a href="https://ace.c9.io/">https://ace.c9.io/</a> or <a href="https://github.com/ajaxorg/ace" target="_blank">https://github.com/ajaxorg/ace</a>
+<br><br>
+<h3>List of supported editor functionality:</h3>
+<br>
+                        <b>Ctrl + s</b>&nbsp;&nbsp;&nbsp;&nbsp; <i>save open file contents</i>,<br><br>
+                        <b>Ctrl + q</b>&nbsp;&nbsp;&nbsp;&nbsp; <i>local editor settings menu</i>,<br><br>
+                        <b>Ctrl + SPACE</b>&nbsp;&nbsp;&nbsp;&nbsp; <i>editor basic autocompletetion + snippets</i>,<br><br>
+                        <a href="https://github.com/ajaxorg/ace/wiki/Default-Keyboard-Shortcuts" target="_blank">Default editor shortcuts</a>
                         

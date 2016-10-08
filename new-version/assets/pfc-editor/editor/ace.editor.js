@@ -53,8 +53,9 @@ $.pfcEditor.editor = {
         
             
         ui: {
-                setFileEditorHeight: function() {                                                          
-                    var body = parseInt($("#pfc-editor-body").height()) - 30;
+                setFileEditorHeight: function() {                                
+                    
+                    var body = parseInt($("#pfc-editor-body").height()) - 30 - 20;
                     return body+"px";
                 },
                 
@@ -305,6 +306,7 @@ $.pfcEditor.editor = {
             initFileActions:function(code,ext) {
                  var that = this;
                  var $t = $('#file_'+code.id+' .pfc-editor-file-actions').addClass('file-actions-'+ext);
+                 
                  $t.find('.pfc-editor-file-encoding').html(code.encoding);
                  
                  $t.find('.pfc-editor-file-button-save').click(function(){
@@ -380,11 +382,7 @@ $.pfcEditor.editor = {
               //init code mirror search shortcuts                  
                   $t.find('.pfc-editor-file-button-undo').click(function(){                  
               
-                        that.getActiveCEditor().inst.focus();
-                        that.getActiveCEditor().inst.setCursor(
-                             that.getActiveCEditor().cursor.line,
-                             that.getActiveCEditor().cursor.char
-                        );
+                      
 
                         that.getActiveCEditor().inst.execCommand('undo');
                         
@@ -393,12 +391,7 @@ $.pfcEditor.editor = {
               
                   $t.find('.pfc-editor-file-button-redo').click(function(){                  
               
-                        that.getActiveCEditor().inst.focus();
-                        that.getActiveCEditor().inst.setCursor(
-                             that.getActiveCEditor().cursor.line,
-                             that.getActiveCEditor().cursor.char
-                        );
-
+                      
                         that.getActiveCEditor().inst.execCommand('redo');
                         
                     return false;
@@ -407,82 +400,32 @@ $.pfcEditor.editor = {
               
                   $t.find('.pfc-editor-file-button-goto').click(function(){                  
               
-                        that.getActiveCEditor().inst.focus();
-                        that.getActiveCEditor().inst.setCursor(
-                             that.getActiveCEditor().cursor.line,
-                             that.getActiveCEditor().cursor.char
-                        );
-
-                        that.getActiveCEditor().inst.execCommand('gotoLine');
+                      
+                        that.getActiveCEditor().inst.execCommand('gotoline');
                         
                     return false;
                   });
               
                   $t.find('.pfc-editor-file-button-search').click(function(){                  
               
-                        that.getActiveCEditor().inst.focus();
-                        that.getActiveCEditor().inst.setCursor(
-                             that.getActiveCEditor().cursor.line,
-                             that.getActiveCEditor().cursor.char
-                        );
+                     
 
                         that.getActiveCEditor().inst.execCommand('find');
                         
                     return false;
                   });
 
-                  $t.find('.pfc-editor-file-button-search-prev').click(function(){                  
-              
-                        that.getActiveCEditor().inst.focus();
-                        that.getActiveCEditor().inst.setCursor(
-                             that.getActiveCEditor().cursor.line,
-                             that.getActiveCEditor().cursor.char
-                        );
-
-                        that.getActiveCEditor().inst.execCommand('findPrev');
-                        
-                    return false;
-                  });
-
-                  $t.find('.pfc-editor-file-button-search-next').click(function(){                  
-              
-                        that.getActiveCEditor().inst.focus();
-                        that.getActiveCEditor().inst.setCursor(
-                             that.getActiveCEditor().cursor.line,
-                             that.getActiveCEditor().cursor.char
-                        );
-
-                        that.getActiveCEditor().inst.execCommand('findNext');
-                        
-                    return false;
-                  });
               
               
                   $t.find('.pfc-editor-file-button-replace').click(function(){                  
-              
-                        that.getActiveCEditor().inst.focus();
-                        that.getActiveCEditor().inst.setCursor(
-                             that.getActiveCEditor().cursor.line,
-                             that.getActiveCEditor().cursor.char
-                        );
+
 
                         that.getActiveCEditor().inst.execCommand('replace');
                         
                     return false;
                   });
               
-                  $t.find('.pfc-editor-file-button-replace-all').click(function(){                  
-              
-                        that.getActiveCEditor().inst.focus();
-                        that.getActiveCEditor().inst.setCursor(
-                             that.getActiveCEditor().cursor.line,
-                             that.getActiveCEditor().cursor.char
-                        );
-
-                        that.getActiveCEditor().inst.execCommand('replaceAll');
-                        
-                    return false;
-                  });              
+           
               
                   $t.find('.pfc-editor-file-button-insert').click(function(){                  
               
@@ -490,17 +433,17 @@ $.pfcEditor.editor = {
                         $(this).html('-ins-');
                       else $(this).html('-nor-');
                     
-                        that.getActiveCEditor().inst.focus();
-                        that.getActiveCEditor().inst.setCursor(
-                             that.getActiveCEditor().cursor.line,
-                             that.getActiveCEditor().cursor.char
-                        );
-				
-                        that.getActiveCEditor().inst.execCommand('toggleOverwrite');
+                        that.getActiveCEditor().inst.execCommand('overwrite');
                         
                     return false;
                   });              
-              
+                  
+                  $t.find('.pfc-editor-file-button-settings').click(function(){                                
+                    
+                        that.getActiveCEditor().inst.showSettingsMenu();
+                        
+                    return false;
+                  }); 
             },
        
             run_last_modification_checker: function(code) {
@@ -580,24 +523,26 @@ $.pfcEditor.editor = {
             
             
             initFileCodeEditor: function(code) {
-                var that = this;
+                var that = this;                                
                 
+                var modelist = ace.require("ace/ext/modelist");
+                var filePath = code.name;
+                var mode = modelist.getModeForPath(filePath).mode;
+                var language = mode.split('/');
+                
+                $('#'+code.id+'_status_bar').html('mode: '+language[2]);
                 $('#'+code.id).css('width','100%').css('height',that.ui.setFileEditorHeight());
 
                  that.ceditors[code.id].inst =  ace.edit(code.id);
                  
-                 ace.require('ace/ext/settings_menu').init(that.ceditors[code.id].inst);
+                 ace.require('ace/ext/settings_menu').init(that.ceditors[code.id].inst);                                  
+                 ace.require("ace/ext/language_tools");
                  
-                 that.ceditors[code.id].inst.setTheme("ace/theme/twilight");
+                    var StatusBar = ace.require("ace/ext/statusbar").StatusBar;
+                    // create a simple selection status indicator
+                    var statusBar = new StatusBar(that.ceditors[code.id].inst, document.getElementById(code.id+'_status_bar')); 
                   
-                 that.ceditors[code.id].inst.setOptions({
-                    fontFamily: "tahoma",
-                    fontSize: "100%"
-                  });
-                    
-                var modelist = ace.require("ace/ext/modelist");
-                var filePath = code.name;
-                var mode = modelist.getModeForPath(filePath).mode;
+                that.ceditors[code.id].inst.setOptions(that.aceEditorOptions);                    
                 that.ceditors[code.id].inst.session.setMode(mode); 
                  
                 	that.ceditors[code.id].inst.commands.addCommands([{
@@ -607,7 +552,22 @@ $.pfcEditor.editor = {
                                             editor.showSettingsMenu();
                                     },
                                     readOnly: false
+                            },{
+                                name: "overwrite",
+                                bindKey: {win:"Insert", mac: "Insert"},
+                                exec: function(editor) {
+                                        var $t = $('#file_'+code.id+' .pfc-editor-file-actions .pfc-editor-file-button-insert');
+                                        if($t.html()==='-nor-') 
+                                          $t.html('-ins-');
+                                        else $t.html('-nor-');
+
+                                        editor.toggleOverwrite();
+                                },
+                                readOnly: false
                             }]);
+                
+                if(that.aceEditorOptions.keyboardBindings !== 'default')                  
+                that.ceditors[code.id].inst.setKeyboardHandler(ace.require("ace/keyboard/"+that.aceEditorOptions.keyboardBindings).handler);
                 
                             that.ceditors[code.id].inst.getSession().on("change",function(ins,p){
                                 $("#pfc-editor-dialogs-heads a[href='#file_"+code.id+"']").parent().addClass('pfc-editor-unsaved-file');                               
@@ -616,6 +576,9 @@ $.pfcEditor.editor = {
                 $('#file_'+code.id+' .ace_editor').css('width','100%').css('height',that.ui.setFileEditorHeight());
                 
                 that.ceditors[code.id].inst.resize();            
+                
+                //var fm = that.ceditors[code.id].inst.renderer.$textLayer.$fontMetrics;
+                //"xiXbm".split("").map(fm.$measureCharWidth, fm);
                 
         },
             
@@ -752,7 +715,7 @@ $.pfcEditor.editor = {
                         
                         
                         body.find('.pfc-editor-file-code-editor').attr('id',id).val(content);
-                        
+                        body.find('.pfc-editor-file-status-bar').attr('id',id+'_status_bar');
                         body.hide();
                         
                         $('#pfc-editor-body').prepend(

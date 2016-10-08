@@ -141,9 +141,11 @@
                     <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/vendor/ace/ace.js"></script>
                     <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/vendor/ace/ext-modelist.js"></script>       
                     <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/vendor/ace/ext-settings_menu.js"></script>
-                    
-                    
-                    
+                    <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/vendor/ace/ext-statusbar.js"></script>
+                    <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/vendor/ace/ext-language_tools.js"></script>
+                    <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/vendor/ace/keybinding-vim.js"></script>
+                    <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/vendor/ace/keybinding-emacs.js"></script>
+                  <!-- end ace editor -->  
                     
                             <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/vendor/pfc/functions.js"></script>        
                             <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/vendor/pfc/pfcss/pfcss.js"></script>        
@@ -166,7 +168,7 @@
 
             <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/editor/ace.editor.js" type="text/javascript"></script>                            
                                             
-                         
+            <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/editor/ace.editor.config.js"></script>             
             
             
             <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/tools/default/tools.js" type="text/javascript"></script>
