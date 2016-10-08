@@ -239,6 +239,9 @@ $.pfcEditor.addSection('#pfc-sources-editor-href',$pfcEditorSources.factory({sec
                 $.pfcEditor.getPage('phpinfo').config.url = '<?php echo \PFC\Editor\App::pagelink('phpinfo'); ?>';
                 
                 $.pfcEditor.getPage('adminer').config.url = '<?php echo \PFC\Editor\App::pagelink('adminer'); ?>';
+                $.pfcEditor.getPage('adminer').multi = <?php echo \PFC\Editor\Config::isAdminerMultiPage ?  'true':'false'; ?>;
+                
+                
                 
                 //sections
                 

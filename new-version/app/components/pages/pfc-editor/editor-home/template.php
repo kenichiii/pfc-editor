@@ -86,7 +86,7 @@
 - add auto-save for files -> configurable<br>
 - sandbox fix open to blank page<br>
 - reload, close after modification at the background<br>
-
+(- ACE EDITOR SPLIT VIEW AS IT IS IN KITCHEN SINK)<BR>
 (- add jquery media support)<br>
 (- add image viewer)<br>
 
