@@ -4,7 +4,7 @@
 
 
 var pfcEditorHelpPage = {
-    pageid: 'editor-help',
+    pageid: 'pfc-editor_editor-help',
     title: 'HELP',
     config: {
         url: ''

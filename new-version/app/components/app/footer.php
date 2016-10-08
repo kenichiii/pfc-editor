@@ -19,7 +19,7 @@
                  YOUR OS(php): <?php echo \PFC\Editor\OS::getOS(); ?>
                 &nbsp;&nbsp;|&nbsp;&nbsp;
                  YOUR Browser(php): <?php echo \PFC\Editor\OS::getBrowser(); ?>
-                &nbsp;&nbsp;|&nbsp;&nbsp;
+                
              </span>
                
                </li>
@@ -28,6 +28,8 @@
 
              <span id="copy" style="width:auto">
                
-				<a id="pfc-editor-about-href" href="#editor-about" class="pfc-editor-page-href">about[&copy;]</a>
+				<a id="pfc-editor-about-href" href="#" class="pfc-editor-page-href">
+				    about[&copy; <?php echo date('Y'); ?>]
+			    </a>
               
              </span>

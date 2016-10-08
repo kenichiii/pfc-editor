@@ -5,7 +5,7 @@
 
 
 var pfcEditorHomePage = {
-    pageid: 'editor-home',
+    pageid: 'pfc-editor_editor-home',
     title: 'pfc editor',
     config: {
         url: '?page=editor-home'

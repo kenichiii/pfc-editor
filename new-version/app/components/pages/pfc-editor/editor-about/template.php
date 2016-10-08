@@ -1,11 +1,12 @@
 
 <h2>pfc editor :: web development tool</h2>
-
+<br>
 <p>
-    pfc editor :: online web development tool<br>
-    Copyright (C) 2015 Martin Königsmark 
+    
+    Copyright (&copy;) <?php echo date('Y'); ?> Martin Königsmark
+    <br> All rights reserved.
 </p>  
- 
+<br> 
 <p>
     Contact: <a href="mailto: martinkonigsmark@gmail.com">martinkonigsmark@gmail.com</a>
 </p>

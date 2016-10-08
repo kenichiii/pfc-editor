@@ -60,7 +60,7 @@ if($fs->fileExists($path))
     $json->succ = 'yes';
     $json->name = end($expl);
     $json->path = $path;
-    $json->id = preg_replace('/\W/', '_', $base.'_'.$path);
+    $json->id = preg_replace('/\W/', '_l1_xXx_l2_', $base.'_'.$path);
     $json->code = $textToSend;
     $json->base = $base;    
     $json->lu = $fs->getLastModificationTime($path);    

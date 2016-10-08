@@ -4,7 +4,7 @@
 
 
 var pfcEditorAboutPage = {
-    pageid: 'editor-about',
+    pageid: 'pfc-editor_editor-about',
     title: 'about pfc',
     config: {
         url: ''

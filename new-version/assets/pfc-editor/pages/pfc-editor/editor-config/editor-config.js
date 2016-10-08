@@ -4,7 +4,7 @@
 
 var pfcEditorConfigPage = {
 
-    pageid: 'editor-config', 
+    pageid: 'pfc-editor_editor-config', 
 
     title: 'Editor Config',
         

@@ -30,9 +30,9 @@
         <link href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/layout/css/layout.css" rel="stylesheet" type="text/css"/>
         <link href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/layout/css/theme/<?php echo \PFC\Editor\Config::theme; ?>.css" rel="stylesheet" type="text/css"/>
       
-        <link href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/pages/css/about.css" rel="stylesheet" type="text/css"/>
-        <link href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/pages/css/config.css" rel="stylesheet" type="text/css"/>
-        <link href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/pages/css/phpinfo.css" rel="stylesheet" type="text/css"/>
+        <link href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/pages/pfc-editor/editor-about/about.css" rel="stylesheet" type="text/css"/>
+        <link href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/pages/pfc-editor/editor-config/config.css" rel="stylesheet" type="text/css"/>
+        <link href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/pages/phpinfo/css/phpinfo.css" rel="stylesheet" type="text/css"/>
         
         <link href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/editor/css/styles.css" rel="stylesheet" type="text/css"/>
         <link href="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/editor/css/extensions.css" rel="stylesheet" type="text/css"/>
@@ -188,11 +188,11 @@
         </script>
       
             
-            <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/pages/editor-about.js" type="text/javascript"></script>
-            <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/pages/editor-config.js" type="text/javascript"></script>
-            <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/pages/editor-help.js" type="text/javascript"></script>
-            <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/pages/editor-home.js" type="text/javascript"></script>
-            <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/pages/phpinfo.js" type="text/javascript"></script>            
+            <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/pages/pfc-editor/editor-about/editor-about.js" type="text/javascript"></script>
+            <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/pages/pfc-editor/editor-config/editor-config.js" type="text/javascript"></script>
+            <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/pages/pfc-editor/editor-help/editor-help.js" type="text/javascript"></script>
+            <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/pages/pfc-editor/editor-home/editor-home.js" type="text/javascript"></script>
+            <script src="<?php echo \PFC\Editor\Config::assetsUrl; ?>assets/pfc-editor/pages/phpinfo/phpinfo.js" type="text/javascript"></script>            
             
          
             
@@ -229,9 +229,10 @@ $.pfcEditor.addSection('#pfc-sources-include-href',$pfcEditorSources.factory({se
                 $.pfcEditor.editor.config.sandboxUrl =  "?sandbox=";
              
                 //pages
-                $.pfcEditor.getPage('editor-about').config.url = '<?php echo \PFC\Editor\App::pagelink('editor-about'); ?>';
-                $.pfcEditor.getPage('editor-config').config.url = '<?php echo \PFC\Editor\App::pagelink('editor-config'); ?>';
-                $.pfcEditor.getPage('editor-help').config.url = '<?php echo \PFC\Editor\App::pagelink('editor-help'); ?>';
+                $.pfcEditor.getPage('pfc-editor_editor-home').config.url = '<?php echo \PFC\Editor\App::pagelink('pfc-editor/editor-home'); ?>';
+                $.pfcEditor.getPage('pfc-editor_editor-about').config.url = '<?php echo \PFC\Editor\App::pagelink('pfc-editor/editor-about'); ?>';
+                $.pfcEditor.getPage('pfc-editor_editor-config').config.url = '<?php echo \PFC\Editor\App::pagelink('pfc-editor/editor-config'); ?>';
+                $.pfcEditor.getPage('pfc-editor_editor-help').config.url = '<?php echo \PFC\Editor\App::pagelink('pfc-editor/editor-help'); ?>';
                 
                                 
                 $.pfcEditor.getPage('phpinfo').config.url = '<?php echo \PFC\Editor\App::pagelink('phpinfo'); ?>';

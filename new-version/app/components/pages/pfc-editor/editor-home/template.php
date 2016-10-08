@@ -23,7 +23,6 @@
 <br>  
 <div style="float:right;max-width:250px">
   <b>FINDED BUGS:</b><br>
-  - Error: Syntax error, unrecognized expression: #file_public____nette_sandbox_app_presenters_templates_@layout_latte
   - if sources change name from upercase to small updater not find our <br>
   - sources, editor tabs, tools remember scrolltop+left -> load from state, on active<br>
   - sources if file first in tree after auto-update add folder is not add before<br> 
