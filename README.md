@@ -1,16 +1,13 @@
-# pfc editor :: online web development tool
-free opensource php&amp;jquery online web developer editor :: online IDE :: WebIDE :: WIDE :: CodeMirror implementation
+# pfc editor :: web development tool
+free opensource php&amp;jquery online web developer editor :: online IDE :: WebIDE :: WIDE
 
 This project is in first development stage. Existing version is called version 0.1beta - its first functional prototype, which starts from having textarea with file contents. This version wasnt designed as application, but was created with small steps adding needed functionality. Goal of this prototype is show author what will be needed and what is nesecesary to keep in mind when will be designed architecture for project first phase - creating projects based basic editor allowing adding plugins.
 
 You can see first functional prototype of basic editor at
-http://freeonlinewebdevelopereditor.kena23.cz/demo/
-
-Project now starting first phase. See project plan:
-http://freeonlinewebdevelopereditor.kena23.cz/project-plan.html
+http://pfceditor.kena23.cz/demo/
 
 For more information see:
-http://freeonlinewebdevelopereditor.kena23.cz/
+http://pfceditor.kena23.cz/
 
 You can support project at Pledgie:
 https://pledgie.com/campaigns/30171
@@ -92,12 +89,6 @@ Enjoy working with pfc editor:
 - save changed open files using key binding or open file top menu button Save
 
 ====================================
-
-# LICENSE
-Project will be released under GNU AFFERO GENERAL PUBLIC LICENSE.
-
-#You can support project at Pledgie:
-https://pledgie.com/campaigns/30171
 
 # CONTACT
 Martin Königsmark
