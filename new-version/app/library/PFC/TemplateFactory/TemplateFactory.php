@@ -25,7 +25,7 @@ class TemplateFactory
         
     public static function getTemplateDir()
     {
-        return 'components/pfc/templateFactory/templates/';
+        return 'template-factory/';
     }
     
     public static function translatePHP($template)
