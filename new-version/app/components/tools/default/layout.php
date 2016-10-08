@@ -33,5 +33,5 @@
       		<button href="https://www.evi.com/" class="pfc-editor-external-link">EVI.com</button> 
       		
       <hr>
-
+<br>
                    <?php require 'components/tools/default/snippets/template.php';?>
