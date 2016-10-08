@@ -134,6 +134,11 @@
                         var body = $(template);
                         
                         body.find('.page-preview-browser').css('width','100%').css('height',parseInt($("#pfc-editor-body").height()) - 5 +"px").append(content);
+                        
+                        $(window).resize(function(){
+                            body.find('.page-preview-browser').css('height','100%').css('height',parseInt($("#pfc-editor-body").height()) - 5 +"px")
+                        });
+                        
                         body.attr('id',pageid);
                         body.hide();
                         
