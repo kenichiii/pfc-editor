@@ -5,7 +5,7 @@
   $t = str_replace('_', '/', $t);
   
   \PFC\Editor\App::bufferOn();
-  require \PFC\Editor\APPLICATION_PATH.'/components/tools/snippets/'.$t.'.php';
+  require \PFC\Editor\APPLICATION_PATH.'/components/tools/default/snippets/'.$t.'.php';
   $code = \PFC\Editor\App::bufferEnd();
   
   echo \PFC\TemplateFactory\TemplateFactory::translatePHP($code);

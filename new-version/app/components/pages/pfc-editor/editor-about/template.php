@@ -27,7 +27,7 @@
   <a href="https://github.com/ajaxorg/ace/" target="_blank">github.com/ajaxorg/ace</a> (Code editor)<br>
 <br> 
   <a href="http://www.dematte.at/calculator/" target="_blank">dematte.at/calculator</a> (Calculator)<br>
-  <a href="http://colpick.com/" target="_blank">colpick.com</a> (Color picker)<br>
+  <a href="http://colpick.com/" target="_blank">colpick.com</a> or <a href="http://www.jq22.com/demo/colpick-jQuery-Color-Picker-master/" target="_blank">jq22.com/demo/colpick</a> (Color picker)<br>
   <a href="http://www.abeautifulsite.net/notebook.php?article=58" target="_blank">abeautifulsite.net</a> (File Tree)<br>
   <a href="https://github.com/neitanod/forceutf8" target="_blank">github.com/neitanod/forceutf8</a> (File encoding conversions)<br>
 <br>

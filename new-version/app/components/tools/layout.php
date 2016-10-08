@@ -13,13 +13,9 @@
       <div id="pfc-editor-tools-body">
                 
                 <div id="pfc-editor-tools-default" class="pfc-editor-tools-section pfc-editor-section-panel-body">                    
-                    <?php require 'components/tools/default/template.php';?>
-                    <?php require 'components/tools/snippets/template.php';?>
+                    <?php require 'components/tools/default/layout.php';?> 
                 </div> <!-- pfc-editor-tools-default -->
                 
-                <!--div id="pfc-editor-tools-templates" class="pfc-editor-tools-section pfc-editor-section-panel-body" style="display: none">
-                    <?php require 'components/tools/snippets/template.php';?>
-                </div--> <!-- pfc-editor-tools-templates -->
                 
                 
         </div> <!-- pfc-editor-tools-body -->

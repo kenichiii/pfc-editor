@@ -6,7 +6,7 @@
 var pfcEditorToolsSnippets = {
     sescid: 'pfc-editor-tools-templates',        
     config: {
-        getTemplateSourceUrl:'?tools=snippets&ajax=get-template-src'
+        getTemplateSourceUrl:'?tools=default/snippets&ajax=get-template-src'
     },
     
     init: function() {

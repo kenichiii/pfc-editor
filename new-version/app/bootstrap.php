@@ -21,11 +21,10 @@ namespace {
  require_once 'bootstrap/master.php';        
   
  //start private session
+ session_start();
  AppSess::start();
- 
- require_once 'bootstrap/plugins.php';
   
-  
+ //check if is installed 
   
  //public services   
   if(App::isServerTimeRequest())
@@ -50,21 +49,8 @@ namespace {
       }
       else
       {
-        
-        if(isset($_GET['after-login']))
-          {
-            AppFile::sendRedirectHeaders(str_replace('?after-login','',$_SERVER["REQUEST_URI"]));
-          }
-        else {
-          
-          
-          
             //get runable file
-             require App::getRequestFilePath();  
-          
-        }
-        
-
+            require App::getRequestFilePath();  
       }
     }
   

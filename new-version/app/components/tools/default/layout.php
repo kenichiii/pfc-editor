@@ -2,7 +2,7 @@
 	
       <div> 
         
-        <button id="pfc-editor-tools-color-picker">color picker</button>
+        <button id="pfc-tools-color-picker">color picker</button>
         <button id="pfc-tools-calculator">calculator</button>
         <button id="pfc-editor-phpinfo-href" class="pfc-editor-page-href" href="#phpinfo">phpinfo</button>
       </div>
@@ -25,3 +25,4 @@
       		<button href="https://www.evi.com/" class="pfc-editor-external-link">EVI.com</button> <button href="http://paletton.com/"      class="pfc-editor-external-link">color scheme generator</button>
       <hr>
 
+                   <?php require 'components/tools/default/snippets/template.php';?>

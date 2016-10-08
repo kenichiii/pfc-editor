@@ -1,15 +1,10 @@
 
-/*
-   color picker
-*/
-.colpick {
-  z-index:10900 !important;
-}
-
 
 /*
-   calculator
+default
+   calculator, color-picker
 */
+.color-picker-holder,
 .calc-holder {
   position: absolute;
   right: 150px;
@@ -21,6 +16,7 @@
   display:none;
 }
 
+.color-picker-title,
 .calc-help,
 .calc-key-back
 {
@@ -36,13 +32,16 @@ a.calc-key-back:hover
   color: lightskyblue;
 }
 
+.color-picker-close,
 .calc-close {
   display: block;
   padding: 2px;
   color: white;
   float: right;
+  margin-left: 10px;
 }
 
+a.color-picker-close:hover,
 a.calc-close:hover {
   background-color: red;
 }

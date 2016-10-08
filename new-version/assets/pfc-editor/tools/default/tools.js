@@ -29,10 +29,23 @@ var pfcEditorToolsDefault = {
     }, //init
     
     colorPicker: function() {
-        $('#pfc-editor-tools-color-picker').colpick({
-                colorScheme:'dark'
+        $('.color-picker-holder').draggable();
+        
+        $('.color-picker-close').click(function(){
+             $('.color-picker-holder').hide();
+          return false;
         });
-        $('#pfc-editor-tools-color-picker').draggable();
+        
+        $('.color-picker-main').colpick({
+                colorScheme:'dark',
+                flat:true,
+                submit: 0
+        });
+        
+        $('#pfc-tools-color-picker').click(function(){
+            $('.color-picker-holder').show();
+            return false;
+        });
     },
   
     calculator: function() {
