@@ -15,7 +15,7 @@ $.pfcEditor.editor = {
             
             lastModificationTimeCheckerDelay:5000,
           
-          phpSyntaxCheckerOn: true,          
+                  
           lastModificationCheckerOn: true          
         },    
         
@@ -64,7 +64,7 @@ $.pfcEditor.editor = {
                        $('.pfc-editor-dialog-tab').not('#pfc-editor-templates .pfc-editor-dialog-tab').removeClass('pfc-editor-dialog-tab-active');
                 },
                 
-                openDialogsTabsListeners: function(obj,isPage,code) {
+                openDialogsTabsListeners: function(obj,isPage,code,file_path,root,ext) {
                     
                        $('.pfc-editor-dialog-tab-close').first().unbind('click').click(function(){
                            var id = $(this).next().attr('href');
@@ -81,7 +81,7 @@ $.pfcEditor.editor = {
                            $.pfcEditor.editor.activateTab(id.replace('#',''));
                          
                            if(!isPage && $(this).parent().hasClass('file')) {
-                              $.pfcEditor.editor.run_last_modification_checker(code);                                                                                                           
+                              $.pfcEditor.editor.run_last_modification_checker(code,file_path,root,ext);                                                                                                           
                            }
                            
                            return false;
@@ -215,7 +215,7 @@ $.pfcEditor.editor = {
                 {
                        that.activateTab('file_'+code.id);
                        
-                       that.run_last_modification_checker(code); 
+                       that.run_last_modification_checker(code,file_path,root,ext); 
                      
                 }
                 else
@@ -259,7 +259,7 @@ $.pfcEditor.editor = {
                   
                     that.initFileActions(code,ext);
                   
-                    $.pfcEditor.editor.ui.openDialogsTabsListeners({},false,code);
+                    $.pfcEditor.editor.ui.openDialogsTabsListeners({},false,code,file_path,root,ext);
                     
                     $.pfcEditor.editor.activateTab('file_'+code.id);                                         
                     
@@ -268,7 +268,7 @@ $.pfcEditor.editor = {
                   
                 }//end else          
               
-                that.run_last_modification_checker(code); 
+                that.run_last_modification_checker(code,file_path,root,ext); 
                 
             },
             
@@ -446,7 +446,7 @@ $.pfcEditor.editor = {
                   }); 
             },
        
-            run_last_modification_checker: function(code) {
+            run_last_modification_checker: function(code,file_path,root,ext) {
             if(this.config.lastModificationCheckerOn)
             {
               var that = this;
@@ -465,7 +465,11 @@ $.pfcEditor.editor = {
                                         $.pfcEditor.ui.confirm('Actual file has changed on the background.<br>Reload file to last actual version?',
                                          function(){
                                           that.ceditors[code.id].waitingReload = false;
-                                       alert('realod');
+                                            
+                                             //alert('realod');
+                                                     $('.pfc-editor-dialog-tab-active').find('.pfc-editor-dialog-tab-close').first().trigger('click');
+                                            that.openfile(file_path,root,ext);
+                                            
                                         },{modal:0,nofunction:function(){
                                            that.ceditors[code.id].ignore = 'no';
                                           that.ceditors[code.id].waitingReload = false;
@@ -478,7 +482,11 @@ $.pfcEditor.editor = {
                                         $.pfcEditor.ui.confirm('Actual file has been deleted on the background.<br>Close file?',
                                          function(){
                                           that.ceditors[code.id].waitingClose = false;
-                                         alert('closing');   
+                                            
+                                             
+                                             //alert('closing');   
+                                             $('.pfc-editor-dialog-tab-active').find('.pfc-editor-dialog-tab-close').first().trigger('click');
+                                             
                                         },{modal:0,nofunction:function(){
                                           that.ceditors[code.id].waitingClose = false;
                                            that.ceditors[code.id].ignore = 'not-exists';
@@ -498,7 +506,7 @@ $.pfcEditor.editor = {
                                       if(code.id===that.getActiveCEditorId())
                                        {  setTimeout(function(){ 
                                               if(code.id===that.getActiveCEditorId())	
-                                                  that.run_last_modification_checker(code);                                     
+                                                  that.run_last_modification_checker(code,file_path,root,ext);                                     
                                          
                                           },that.config.lastModificationTimeCheckerDelay);  
                                        }              
@@ -509,7 +517,7 @@ $.pfcEditor.editor = {
                                        {
                                           setTimeout(function(){ 
                                               if(code.id===that.getActiveCEditorId())
-                                                  that.run_last_modification_checker(code);                                     
+                                                  that.run_last_modification_checker(code,file_path,root,ext);                                     
                                          
                                           },that.config.lastModificationTimeCheckerDelay);                               
                                        }                              

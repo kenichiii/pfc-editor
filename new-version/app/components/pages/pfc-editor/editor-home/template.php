@@ -31,7 +31,7 @@
 <br>  
 <div style="">
   <b>FINDED BUGS:</b><br>
-  
+  - middle tab panel for editor -> close all dont close unsaved file => ask if you want<br>
   - pfcPrompt focus into input -> listen enter to trigger OK escape for STORNO -> pfcAlert, pfcConfirm enter/esc<br>
   - if sources change name from upercase to small updater not find our <br>
   - sources, editor tabs, tools remember scrolltop+left -> load from state, on active<br>
