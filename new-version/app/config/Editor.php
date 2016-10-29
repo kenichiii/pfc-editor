@@ -57,7 +57,7 @@ class Config
     const authPwd = '6939775ef065962b6605cc17b1d38c46';
     const authPin = 'pfc[G][i]';
     
-    const crypting = "bcrypt";
+    const crypting = "simple";
     
     const BcryptRounds = 12;
     
