@@ -19,6 +19,10 @@ var pfcEditorAdminerPage = {
         $('.adminer-iframe-holder').parent().css('margin','0').css('padding','0').css('padding-right','5px');
         var height = parseInt($("#pfc-editor-body").height()) - 8;
         $('.adminer-iframe-holder').css('height',height+"px");
+        $(window).resize(function(){
+            var height = parseInt($("#pfc-editor-body").height()) - 8;
+            $('.adminer-iframe-holder').css('height',height+"px");             
+        });
     }
     
     

@@ -39,13 +39,12 @@ use PFC\Editor\Config;
       
         <link href="pfc-editor/pages/pfc-editor/editor-about/about.css" rel="stylesheet" type="text/css"/>
         <link href="pfc-editor/pages/pfc-editor/editor-config/config.css" rel="stylesheet" type="text/css"/>
-        <link href="pfc-editor/pages/phpinfo/css/phpinfo.css" rel="stylesheet" type="text/css"/>
-        
+                
         <link href="pfc-editor/editor/css/styles.css" rel="stylesheet" type="text/css"/>
         <link href="pfc-editor/editor/css/extensions.css" rel="stylesheet" type="text/css"/>
         <link href="pfc-editor/editor/css/fileactions.css" rel="stylesheet" type="text/css"/>      
         
-        <link href="pfc-editor/tools/default/styles.css" rel="stylesheet" type="text/css"/>        
+        <link href="pfc-editor/tools/defaultApps/styles.css" rel="stylesheet" type="text/css"/>        
       
         <link href="pfc-editor/sections/css/sources.css" rel="stylesheet" type="text/css"/>
         <link href="pfc-editor/sections/css/extensions.css" rel="stylesheet" type="text/css"/>
@@ -178,8 +177,8 @@ use PFC\Editor\Config;
             <script src="pfc-editor/editor/ace.editor.config.js"></script>             
             
             
-            <script src="pfc-editor/tools/default/tools.js" type="text/javascript"></script>
-            <script src="pfc-editor/tools/default/snippets/snippets.js" type="text/javascript"></script>
+            <script src="pfc-editor/tools/defaultApps/tools.js" type="text/javascript"></script>
+            <script src="pfc-editor/tools/defaultApps/snippets/snippets.js" type="text/javascript"></script>
             
             
             
