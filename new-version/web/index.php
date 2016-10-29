@@ -48,7 +48,8 @@ namespace {
         // Ensure library/ and editor/ are on include_path
         set_include_path(implode(PATH_SEPARATOR, [
             PFC\Editor\LIBRARY_PATH,         
-            PFC\Editor\APPLICATION_PATH
+            PFC\Editor\APPLICATION_PATH,
+            PFC\Editor\DATA_PATH,
         ]));
 
     //lets boot editor

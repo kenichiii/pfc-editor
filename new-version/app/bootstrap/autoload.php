@@ -10,7 +10,7 @@ function autoload($class)
     
     
     if($class === 'PFC/Editor/Config') 
-      { require_once APPLICATION_PATH . '/config/Editor.php'; }      
+      { require_once APPLICATION_PATH . '/config/Editor.php'; return; }      
 
     elseif(substr($class,0,18) === 'PFC/Editor/Config/')
       { require_once 
@@ -21,10 +21,97 @@ function autoload($class)
             )
             .'.php'
         ; 
+        return;
       }      
       
     elseif(file_exists(LIBRARY_PATH.'/'.$class.".php"))
-      { require_once LIBRARY_PATH.'/'.$class.".php"; }
+      { require_once LIBRARY_PATH.'/'.$class.".php"; return; }
+    
+    else 
+    {
+        //test for application
+        $pies = explode('/', $class);        
+        $piesCount = count($pies);        
+        if ($pies[0] === 'pfcEditor' && $piesCount > 2) {                                                
+            //set default $isController
+            $isController = true;
+            if ($pies[1] === 'Component') {
+                $pies[1] = 'components';
+            } elseif ($pies[1] === 'Layout') {
+                $pies[1] = 'layout';
+           }              
+                            
+                    //get right folders and script names
+                    foreach ($pies as $key => $pie)
+                    {                                                                            
+                        if ($key === 0) {
+                            $pies[$key] = preg_replace('/(\/)$/', '', APPLICATION_PATH);
+                            continue;
+                        }
+                        
+                        if ($pies[$key] === 'Model') { 
+                            $pies[$key] = $key > 1 ? '_models' : 'models';                            
+                            $isController = false;
+                            break;
+                        } elseif ($pies[$key] === 'Config') {
+                            $pies[$key] = $key > 1 ? '_config' : 'config';
+                            $isController = false;                            
+                            break;
+                        }
+                        
+                        $pies[$key] = preg_replace_callback(
+                                    '/([a-z0-9]){1}([A-Z]){1}/',
+                                    function($matches) {
+                                        return $matches[1] .'-'. strtolower($matches[2]);
+                                    },
+                                    $pie
+                                );                      
+                    } //foreach           
+            
+            //build new path
+            if ($isController) {
+                                                                                                                                                                                                       
+                $scriptName = $pies[(count($pies)-1)];    
+                    
+                //do subtype folder rewrites and script rewrites    
+                if ($pies[1] === 'Ajax') {                    
+                    unset($pies[1]);
+                    unset($pies[(count($pies)-1)]);
+                    $pies[] = '_ajax';
+                    $pies[] = $scriptName;
+                } elseif ($pies[1] === 'Action') {
+                    unset($pies[1]);
+                    unset($pies[(count($pies)-1)]);
+                    $pies[] = '_actions';
+                    $pies[] = $scriptName;                     
+                } elseif ($pies[1] === 'Pjs') { 
+                    unset($pies[1]);
+                    unset($pies[(count($pies)-1)]);
+                    $pies[] = '_pjs';
+                    $pies[] = $scriptName;
+                } elseif ($pies[1] === 'Pcss') {                      
+                    unset($pies[1]);
+                    unset($pies[(count($pies)-1)]);
+                    $pies[] = '_pcss'; 
+                    $pies[] = $scriptName;                     
+                } else {            
+                    //controller is file main
+                    $pies[] = 'controller';
+                }                                                                          
+            }
+            
+            //require application script
+            $appFileScript = implode('/', $pies) .'.php';
+            if (file_exists($appFileScript)) {
+                require_once $appFileScript;                
+            }            
+            return;
+        } //if pies[0] === pfcApp
+    }
+    
+    
+    
+    
       
     //else echo $class;
 

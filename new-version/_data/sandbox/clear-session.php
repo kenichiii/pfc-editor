@@ -1,5 +1,7 @@
 <?php 
 
+function test($parametr="text") {
+    echo $parametr;
+}
 
-$_SESSION= null;
-session_destroy();
+test(); test('TRALALALALALA');

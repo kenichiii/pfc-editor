@@ -210,7 +210,7 @@ var pfcEditorSources = {
     folderLoadCallback:null,
 
     load_app_browser_tabs: function() {
-        
+      
       for(var i=0;i<this.config.opendirs.length;i++)
            this.load_app_dir(this.config.opendirs[i].target,this.config.opendirs[i].root,this.config.opendirs[i].path);
     },
@@ -238,6 +238,7 @@ var pfcEditorSources = {
             },
             expandSpeed: 1, 
             callback: function(added,root) {
+                
                 that.init_app_browser_files($(added).find('a'),root);  
                 if(typeof callback == 'function') callback();
                 else if(typeof that.folderLoadCallback == 'function') that.folderLoadCallback();

@@ -1,0 +1,148 @@
+<?php
+
+namespace PFC\Editor\Component\View;
+
+class pfcView implements iView
+{
+    protected $path;
+    protected $name;
+    protected $params = [];
+    
+    public function __construct($path, $params = [], $name = null)
+    {
+        $this->path = $path;
+        $this->name = $name;
+        $this->setParams($params);
+    }
+    
+    public function headers()
+    {
+        //default apache send html headers
+    }
+    
+    public function render()
+    {
+        foreach ($this->params as $paramName => $paramValue)
+        {
+            ${$paramName} = $paramValue;
+        }
+        
+        ob_start();
+        
+        require self::getTemplatePath($this->getPath(), $this->getName());
+        
+        $output = ob_get_contents();
+        ob_end_clean();
+        
+        return $output;
+    }
+    
+    protected function component($path)
+    {
+        $controllerClassName =  "\\pfcEditor\\Component\\". \preg_replace_callback(
+                            '/([a-zA-Z]){1}(-){1}([a-zA-Z0-9]){1}/',
+                            function ($matches) {
+                                return $matches[1] . \strtoupper($matches[3]);
+                            },
+                            \str_replace('/', '\\', $path)
+                );
+                            
+        $controller = new $controllerClassName;                    
+        $view = $controller->dispatch();
+        return $view->render();
+    }
+        
+    protected function getPath()
+    {
+        return $this->path;
+    }
+
+    protected function getName()
+    {
+        return $this->name;
+    }    
+    
+    
+    
+    protected static function getTemplatePath($name, $tplName = null)
+    {
+        $pies = \explode('/', $name);        
+
+            if (\count($pies) > 1) {
+                if ($pies[1] === 'Layout') {
+                    $pies[1] = 'layout';
+                } elseif ($pies[1] === 'Component') {
+                    $pies[1] = 'components';
+                }       
+            }
+            
+                     
+            if (\count($pies) > 2 && \in_array($pies[2], ['Ajax','Pcss','Pjs'])) {
+                    $type = $pies[2];
+                    unset($pies[2]);
+                    $scriptName = $pies[(count($pies)-1)];    
+                    if ($type === 'Ajax') {
+                        $pies[(count($pies)-1)] = '_ajax';
+                    } elseif ($type === 'Pjs') {
+                        $pies[(count($pies)-1)] = '_pjs';
+                    } else {
+                        $pies[(count($pies)-1)] = '_pcss';
+                    }
+                    $pies[] = '_templates';
+                    $pies[] = $tplName ?: $scriptName;                    
+            } else {
+                    $pies[] = '_templates';                    
+                    if ($tplName !== null) {
+                        $pies[] = $tplName;
+                    } else {
+                        $pies[] = 'index';
+                    }                    
+            }
+            
+
+            if ($pies[0] === 'pfcEditor') {
+                unset($pies[0]); 
+                 
+                $path = \PFC\Editor\APPLICATION_PATH .'/'
+                        . \preg_replace_callback(
+                                '/([a-z0-9]){1}([A-Z]){1}([a-z]){1}/',
+                                function ($matches) {
+                                    return $matches[1] .'-'
+                                            . \strtolower($matches[2])
+                                            . $matches[3]
+                                        ;
+                                },
+                                \implode('/', $pies) . '.php'
+                    );                                               
+                                
+               // if (\file_exists($path)) {
+                    return $path;                    
+               // }               
+                
+            } else {
+               //????   
+            }                    
+    }
+    
+    protected function getControllerClassName()
+    {
+        return $this->controllerClassName;
+    }
+    
+    public function setParam($name, $value)
+    {
+        $this->params[$name] = $value;
+        
+        return $this;
+    }    
+    
+    public function setParams(Array $params)
+    {
+        foreach ($params as $name => $value)
+        {
+            $this->params[$name] = $value;
+        }
+        
+        return $this;        
+    }
+}

@@ -81,5 +81,73 @@ class App {
 
       return $r;
     }
-  
+    
+    public static function getRequestControllerClass()
+    {      
+         $ajax = Router::isAjaxRequest();
+         $action = Router::isActionRequest();
+      
+       	 $app = Router::isAppRequest();
+         $page = Router::isPageRequest();
+         $tools = Router::isToolsRequest();
+      	 $editor = Router::isEditorRequest();
+      	 $section = Router::isSectionRequest();
+         $sandbox = Router::isSandboxRequest();
+         
+         if($page && $ajax) 
+         {
+             $r = 'Components\\Ajax\\pages\\'.str_replace('/','\\',$page).'\\'.$ajax;
+         } elseif($page && $action) {
+             $r = 'Component\\Action\\pages\\'.str_replace('/','\\',$page).'\\'.$action;     
+         } elseif($page) {
+             $r = 'Component\\pages\\'.str_replace('/','\\',$page);
+         }
+
+         elseif($section && $ajax)
+         {
+             $r = 'Component\\Ajax\\sections\\'.str_replace('/','\\',$section).'\\'.$ajax;     
+         }
+         elseif($section && $action)
+         {   
+             $r = 'Component\\Action\\sections\\'.str_replace('/','\\',$section).'\\'.$action;     
+         }
+         
+         elseif($tools && $ajax) {
+             $r = 'Component\\Ajax\\tools\\'.str_replace('/','\\',$tools).'\\'.$ajax;     
+         } elseif($tools && $action) {
+             $r = 'Component\\Action\\tools\\'.str_replace('/','\\',$tools).'\\'.$action;     
+         }
+
+
+         elseif($editor && $ajax) {
+             $r = 'Component\\Ajax\\editor\\'.$ajax;     
+         } elseif($editor && $action) {
+             $r = 'Component\\Ajax\\editor\\'.$action;     
+         }
+            
+      
+         elseif($app && $ajax) {
+             $r = 'Component\\Ajax\\app\\'.$ajax;     
+         } elseif($app && $action) {
+             $r = 'Component\\Action\\app\\'.$action;                
+         } 
+      
+      
+         elseif($sandbox) {
+            return null;
+         } 
+      
+      
+      	 else {          
+            $r = 'Layout\\pfcEditor';                            
+         }
+
+      return '\\pfcEditor\\' . preg_replace_callback(
+                                    '/([a-zA-Z]){1}(-){1}([a-zA-Z0-9]){1}/',
+                                    function ($matches) {
+                                        return $matches[1] . strtoupper($matches[3]);
+                                    },
+                                $r
+                   );         
+    }
 }

@@ -55,7 +55,7 @@ $.pfcEditor.editor = {
         ui: {
                 setFileEditorHeight: function() {                                
                     
-                    var body = parseInt($("#pfc-editor-body").height()) - 30 - 20;
+                    var body = parseInt($("#pfc-editor-body").height()) - 30 - 20 - 5;
                     return body+"px";
                 },
                 

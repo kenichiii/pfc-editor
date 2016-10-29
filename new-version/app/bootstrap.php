@@ -15,9 +15,9 @@ namespace {
  use PFC\Editor\App;
  use PFC\Editor\AppLogin;
  use PFC\Editor\AppSess;
- use PFC\Editor\AppFile;      
-    
- //get application autoload, settings and libraries
+ use PFC\Editor\Router;
+ 
+//get application autoload, settings and libraries
  require_once 'bootstrap/master.php';        
   
  //start private session
@@ -27,24 +27,38 @@ namespace {
  //check if is installed 
   
  //public services   
-  if(App::isServerTimeRequest() || App::isLoginActionRequest())
-    {            
-    	require App::getRequestFilePath();    
+  if(AppLogin::isLogged() 
+    || App::isServerTimeRequest() || App::isLoginActionRequest()
+    ) {       
+        if(Router::isSandboxRequest()
+          || Router::isAjaxRequest() || Router::isActionRequest()      
+                ) {
+            
+            //include requested file from sandbox
+    	    require App::getRequestFilePath();    
+            exit;
+            
+        } else {
+            //get controller class from request
+            $controllerClassName = App::getRequestControllerClass();           
+        }
     }      
-  else //application
-    {        
-      //show only login form for non-logged user
-      if( ! AppLogin::isLogged() )
-      {                     
-          require 'layout/login.php';
-      }
-      else
-      {
-            //get runable file
-            require App::getRequestFilePath();  
-      }
+  else {                     
+          $controllerClassName = '\\pfcEditor\\Layout\\login';           
     }
-  
+     
+            //initialize controller                           
+            $controller = new $controllerClassName;
+         
+            //get current view
+            $view = $controller->dispatch();
+         
+            //send current HTTP headers
+            $view->headers();
+         
+            //render view to client as string
+            echo $view->render();
+            
 } //end namespace
 
 
