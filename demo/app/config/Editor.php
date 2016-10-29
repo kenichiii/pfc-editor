@@ -34,7 +34,7 @@ class Config
     public static $authEmail = 'your@email.com';        
     public static $authLogin = 'pfclogin';        
     public static $authPwd = '6939775ef065962b6605cc17b1d38c46';
-    public static $authPin = 'hours[G]mins[i]sufix';
+    public static $authPin = 'pfc[G][i]';
     
     public static $crypting = "simple";
     
