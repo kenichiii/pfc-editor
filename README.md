@@ -12,9 +12,9 @@ http://pfceditor.kena23.cz/
 You can support project at Pledgie:
 https://pledgie.com/campaigns/30171
 
-# INSTALL DEMO
+# INSTALL DEMO/NEW VERSION
 
-Copy downloaded unpacked zip(folder) into existing web folder/webhosting with PHP 5.4+ and mod_rewrite support. No database is needed.
+Copy downloaded unpacked zip(folder) into existing web folder/webhosting with PHP 5.4+ (and mod_rewrite) support. No database is needed.
 
 Open this web address(your web folder + unpacked folder name) ie. http://somedomain.com/pfclite(demo)/ or http://somedomain.com/somefolder/otherfolder/pfclite(demo)/.
 
@@ -23,17 +23,17 @@ Open this web address(your web folder + unpacked folder name) ie. http://somedom
 Use this account to login:
  - login: pfclogin
  - password: pfcpassword
- - pin: hours[hours]mins[minutes]sufix
+ - pin: pfc[hours][minutes]
  
-    -> in 12:35:22 pin will be hours12mins35sufix
+    -> in 12:35:22 pin will be pfc1235
 
-    -> in 12:05:21 pin will be hours12mins05sufix
+    -> in 12:05:21 pin will be pfc1205
     
-    -> in 2:05:21 pin will be hours2mins05sufix
+    -> in 2:05:21 pin will be pfc205
     
-    -> in 0:05:21 pin will be hours0mins05sufix
+    -> in 0:05:21 pin will be pfc005
     
-    -> in 16:55:21 pin will be hours16mins55sufix
+    -> in 16:55:21 pin will be pfc1655
     
   => server time is printed for support on login page  
 
@@ -63,10 +63,6 @@ Refresh/Reload page to get changes visible.
 ------------------------------------------------
 
 Optionaly you can edit editor ./app/config/Sources.php to manage sources paths/main folders/left panel tabs.
-
-Some application settings(javascript) as sources, open files updaters and routes definitions are located at the end/bottom of editor ./app/layout/layout.php.
-
-CodeMirror config is located at editor ./assets/pfc-editor/config/codeMirror.js. CodeMirror theme should be filename without extension from editor ./assets/libs/codemirror/themes/.
 
 Again reload page to get changes visible.
 
