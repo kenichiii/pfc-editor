@@ -37,35 +37,6 @@ Use this account to login:
     
   => server time is printed for support on login page  
 
-----------------------------------------------
-
-After login in visit top right menu "config":
-- change basic section
-
-    -> create some unique project SALT 
-    
-    -> you can turn sounds on/off
-    
-- edit account section
-    
-    -> change login, password, pin
-
-    -> if supported switch to Bcrypt password protection
-    
-- you can edit php settings section
-
-    -> add your server timezone
-
-    -> more php settings are supported
-
-Refresh/Reload page to get changes visible.
-
-------------------------------------------------
-
-Optionaly you can edit editor ./app/config/Sources.php to manage sources paths/main folders/left panel tabs.
-
-Again reload page to get changes visible.
-
 ------------------------------------------
 
 Enjoy working with pfc editor:
