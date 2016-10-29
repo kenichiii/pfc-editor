@@ -18,7 +18,7 @@ Copy downloaded unpacked zip(folder) into existing web folder/webhosting with PH
 
 Open this web address(your web folder + unpacked folder name) ie. http://somedomain.com/pfclite(demo)/ or http://somedomain.com/somefolder/otherfolder/pfclite(demo)/.
 
-For new version you have move contents of web folder to root folder(also change paths in index.php) or set this folder as public where index.php is located.
+For new version you have to move contents of web folder to root folder(also change paths in index.php) or set this folder as public where index.php is located.
 
 ---------------------------------------
 
