@@ -27,12 +27,12 @@ namespace {
     
     defined('\PFC\Editor\LIBRARY_PATH')
         || define('PFC\Editor\LIBRARY_PATH', realpath(dirname(__FILE__) ).
-                '/../app/library'
+                '/../_app/library'
                 );
     
     defined('\PFC\Editor\APPLICATION_PATH')
         || define('PFC\Editor\APPLICATION_PATH', realpath(dirname(__FILE__) ).
-                '/../app'
+                '/../_app'
                 );
     
     defined('\PFC\Editor\SANDBOX_PATH')
