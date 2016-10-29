@@ -53,9 +53,9 @@ class Config
     *  System passwords
     */
     const authEmail = 'your@email.com';        
-    const authLogin = 'webmaster';        
-    const authPwd = '$2a$12$5bjLZS7ENKTYRA84N3KuK.xcV1P5kIix6fRnT5S91SVn85j2ph77q';
-    const authPin = 'dev[G][i]';
+    const authLogin = 'pfclogin';        
+    const authPwd = '6939775ef065962b6605cc17b1d38c46';
+    const authPin = 'pfc[G][i]';
     
     const crypting = "bcrypt";
     
