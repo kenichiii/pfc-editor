@@ -28,6 +28,8 @@
 <br>
   <a href="https://www.adminer.org/" target="_blank">adminer.org</a> (Database manager)<br>    
 <br> 
+  <a href="http://www.web-console.org" target="_blank">web-console.org</a> (Shell terminal)<br>
+<br>
   <a href="http://www.dematte.at/calculator/" target="_blank">dematte.at/calculator</a> (Calculator)<br>
   <a href="http://colpick.com/" target="_blank">colpick.com</a> or <a href="http://www.jq22.com/demo/colpick-jQuery-Color-Picker-master/" target="_blank">jq22.com/demo/colpick</a> (Color picker)<br>
   <a href="http://www.abeautifulsite.net/notebook.php?article=58" target="_blank">abeautifulsite.net</a> (File Tree)<br>

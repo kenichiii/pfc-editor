@@ -11,14 +11,18 @@
  */
 //die('die on line 12of index.php');
 
+if(strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+    die('Terminal is not supported on this system');
+}
+
 set_time_limit(0);
 error_reporting(E_ALL);
 
 /**
  * The includes.
  */
-include("process.class.php");
-include("terminal.class.php");
+include("test_webterminal/process.class.php");
+include("test_webterminal/terminal.class.php");
 
 /**
  * The command comes from ajax-post.
@@ -182,7 +186,6 @@ header("Content-type: text/html; charset=utf8");
   </body>  
 </html>
   <?php
-var_dump(array());
 /**
  * All the output is made by this simple method.
  */

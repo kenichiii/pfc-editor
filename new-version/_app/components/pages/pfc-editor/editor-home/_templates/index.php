@@ -10,7 +10,7 @@
 
 <br>
 <ul style="margin-left: 25px;">
-    
+    <li>make apps as web console or adminer save -> access only for logged users => web/secure-script.php with index.php include wirhout bootsraping and require AppLogin to determine if user is logged else exit; => require this file in adminer,webconsole main script</li>
     <li>divide editor Config into configs DATA</li>
     
     <li>use new php backend + models User, Project(s), Sources</li>
@@ -80,7 +80,7 @@
 
 <h3>MISSING:</h3>
 - graphical design<br>
-  --> add .htaccess, .json file icon<br>
+  --> add .htaccess, .json, .twig, apache config, sass, less, smarty, latte, xml, xls, yaml, neon file icon<br>
 - sounds only after save -> add some better<br><br>
   <h3>app</h3>
 <p>

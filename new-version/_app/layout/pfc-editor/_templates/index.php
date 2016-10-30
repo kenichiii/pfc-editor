@@ -203,7 +203,7 @@ use PFC\Editor\Config;
             
             <script src="pfc-editor/pages/adminer/adminer.js" type="text/javascript"></script>            
             
-            
+            <script src="pfc-editor/pages/webterminal/webterminal.js" type="text/javascript"></script> 
       
               <script  type="text/javascript">
                   $('#pfc-editor-booting-prct').css('width','138px')
@@ -246,7 +246,7 @@ $.pfcEditor.addSection('#pfc-sources-editor-href',$pfcEditorSources.factory({sec
                 $.pfcEditor.getPage('adminer').config.url = '<?php echo Router::pagelink('adminer'); ?>';
                 $.pfcEditor.getPage('adminer').multi = <?php echo Config::isAdminerMultiPage ?  'true':'false'; ?>;
                 
-                
+                $.pfcEditor.getPage('webterminal').config.url = '<?php echo Router::pagelink('webterminal'); ?>';
                 
                 //sections
                 
