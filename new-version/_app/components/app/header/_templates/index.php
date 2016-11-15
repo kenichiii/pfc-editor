@@ -11,6 +11,10 @@
                     <li><a id="pfc-editor-adminer-href" class="pfc-editor-page-href" href="#">adminer</a></li>
                     
                     <li><a id="pfc-editor-webterminal-href" class="pfc-editor-page-href" href="#">terminal</a></li>
+                    
+                    <li><a id="pfc-editor-notestxt-href" class="pfc-editor-file-href" href="#">notes.txt</a></li>
+                    
+                    <li><a id="pfc-sources-my-home-href" href="#pfc-sources-my-home">my home</a></li>
                 </ul>            
               	<span style="float:right;display:block;padding-right:10px;color:#ddd">:]]</span>
                 <a id="pfc-editor-logout-href" class="pfc-editor-page-href" href="<?php echo Router::applinkaction('logout'); ?>">logout</a>

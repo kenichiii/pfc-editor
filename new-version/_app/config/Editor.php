@@ -30,7 +30,7 @@ class Config
 /*
  * THEME
  */
-        const theme = "dark";
+        const theme = "classic-blue";
 /*
  * SOURCES
  */

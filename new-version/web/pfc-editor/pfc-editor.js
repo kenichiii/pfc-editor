@@ -280,11 +280,12 @@
             },
             
             alert: function(text,settings) {
-                $.pfcAlert(text,settings);  
               if(!settings.type)
                  pfcSoundsManager.play('sound-ui-alert');
               else if(settings.type && settings.type=='err')
                 pfcSoundsManager.play('sound-ui-error');
+                
+                $.pfcAlert(text,settings);  
                 //alert(text.replace("<br>","\n"));
             },
             

@@ -5,6 +5,8 @@
             realpath(dirname(__FILE__) )
         ]));
 
+require_once '../../safescript.php';    
+    
 function adminer_object() {
     // required to run any plugin
     include_once "./plugins/plugin.php";

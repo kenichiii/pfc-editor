@@ -33,12 +33,7 @@ namespace {
     defined('\PFC\Editor\APPLICATION_PATH')
         || define('PFC\Editor\APPLICATION_PATH', realpath(dirname(__FILE__) ).
                 '/../_app'
-                );
-    
-    defined('\PFC\Editor\SANDBOX_PATH')
-        || define('PFC\Editor\SANDBOX_PATH', realpath(dirname(__FILE__) ).
-                '/../_data/sandbox'
-                );
+                );    
     
     defined('\PFC\Editor\DATA_PATH')
         || define('PFC\Editor\DATA_PATH', realpath(dirname(__FILE__) ).

@@ -1,6 +1,4 @@
 
-
-
 <br>
 <h1>
   <span style="color:greenyellow;">pfc <em style="color:lightskyblue">lite</em></span> 
@@ -27,7 +25,9 @@
     
     <li>javascript router -> generate links for page, section, tools, ajax, action</li>
     
+    <li>filepath onmouseover at editor tab use realpath</li>
     
+    <li>move sources.css to layout AND TO classic-blue.css theme</li>
 </ul>
 
 <br>  

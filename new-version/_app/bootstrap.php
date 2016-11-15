@@ -30,10 +30,15 @@ namespace {
   if(AppLogin::isLogged() 
     || App::isServerTimeRequest() || App::isLoginActionRequest()
     ) {       
+      
+                      defined('\PFC\Editor\SANDBOX_PATH')
+                        || define('PFC\Editor\SANDBOX_PATH', PFC\Editor\DATA_PATH.
+                                '/users/default-user/sandbox'
+                            );
+      
         if(Router::isSandboxRequest()
           || Router::isAjaxRequest() || Router::isActionRequest()      
-                ) {
-            
+                ) {                        
             //include requested file from sandbox
     	    require App::getRequestFilePath();    
             exit;

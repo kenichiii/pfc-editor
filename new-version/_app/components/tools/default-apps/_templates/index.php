@@ -20,11 +20,7 @@
             <button id="pfc-tools-js-keydown-code">keydown/up</button>
             
       <hr>  
-			
-			<b>W3C check</b>
-			<button href="https://validator.w3.org/"      class="pfc-editor-external-link">html</button>
-			<button href="http://www.css-validator.org/"  class="pfc-editor-external-link">css</button>
-	  <hr>
+	
 	        <b>SERVER</b> 
 	        <button id="pfc-editor-phpinfo-href" class="pfc-editor-page-href" href="#phpinfo">phpinfo</button>
       <hr> 
