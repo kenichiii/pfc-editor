@@ -20,6 +20,8 @@ Open this web address(your web folder + unpacked folder name) ie. http://somedom
 
 For new version you have to move contents of web folder to root folder(also change paths in index.php) or set this folder as public where index.php is located.
 
+Path for source code trees are located at /_app/config/Sources.php
+
 ---------------------------------------
 
 Use this account to login:
