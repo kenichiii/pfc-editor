@@ -1,7 +1,7 @@
 # pfc editor :: web development tool
 free opensource php&amp;jquery online web developer editor :: online IDE :: WebIDE :: WIDE
 
-This project is in first development stage. Existing version is called version 0.1beta - its first functional prototype, which starts from having textarea with file contents. This version wasnt designed as application, but was created with small steps adding needed functionality. Goal of this prototype is show author what will be needed and what is nesecesary to keep in mind when will be designed architecture for project first phase - creating projects based basic editor allowing adding plugins.
+This project will be designed architecture for project first phase - creating projects based basic editor allowing adding plugins.
 
 You can see first functional prototype of basic editor at
 http://pfceditor.kena23.cz/demo/
