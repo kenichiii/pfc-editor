@@ -1,7 +1,7 @@
 # pfc editor :: web development tool
 free opensource php&amp;jquery online web developer editor :: online IDE :: WebIDE :: WIDE
 
-This project is in first development stage. Existing version is called version 0.1beta - its first functional prototype, which starts from having textarea with file contents. This version wasnt designed as application, but was created with small steps adding needed functionality. Goal of this prototype is show author what will be needed and what is nesecesary to keep in mind when will be designed architecture for project first phase - creating projects based basic editor allowing adding plugins.
+This project will be designed architecture for project first phase - creating projects based basic editor allowing adding plugins.
 
 You can see first functional prototype of basic editor at
 http://pfceditor.kena23.cz/demo/
@@ -19,6 +19,8 @@ Copy downloaded unpacked zip(folder) into existing web folder/webhosting with PH
 Open this web address(your web folder + unpacked folder name) ie. http://somedomain.com/pfclite(demo)/ or http://somedomain.com/somefolder/otherfolder/pfclite(demo)/.
 
 For new version you have to move contents of web folder to root folder(also change paths in index.php) or set this folder as public where index.php is located.
+
+Path for source code trees are located at /_app/config/Sources.php
 
 ---------------------------------------
 
