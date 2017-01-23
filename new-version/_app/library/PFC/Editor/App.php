@@ -122,7 +122,7 @@ class App {
          elseif($editor && $ajax) {
              $r = 'Component\\Ajax\\editor\\'.$ajax;     
          } elseif($editor && $action) {
-             $r = 'Component\\Ajax\\editor\\'.$action;     
+             $r = 'Component\\Action\\editor\\'.$action;     
          }
             
       

@@ -10,6 +10,7 @@ class ActionView extends JsonView
     
     public function setSucc($succ) {
         $this->succ = (bool) $succ;
+        return $this;
     }
     
     public function isSucc() {
@@ -18,6 +19,7 @@ class ActionView extends JsonView
     
     public function setMsg($msg) {
         $this->msg = $msg;
+        return $this;
     }
     
     public function getMsg() {
@@ -25,7 +27,8 @@ class ActionView extends JsonView
     }
     
     public function addData(array $data) {
-        array_merge_recursive($this->addedData, $data);
+        $this->addedData = array_merge_recursive($this->addedData, $data);
+        return $this;
     }
     
     public function getAddedData() {

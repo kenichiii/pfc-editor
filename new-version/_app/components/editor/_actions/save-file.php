@@ -12,10 +12,10 @@ class saveFile extends ActionController
    
             $fs = new \PFC\Editor\Sources($_POST['root']);
 
-             $path = $_POST['path'];
-             $text = $_POST['code'];
-             $enc  = $_POST['encoding'];
-             $notConfirmedOverWrite = isset($_POST['confirmedOverwrite']) && $_POST['confirmedOverwrite']=='yes' ? false : true;
+             $path = filter_input(INPUT_POST, 'path');
+             $text = filter_input(INPUT_POST, 'code');
+             $enc  = filter_input(INPUT_POST, 'encoding');
+             $notConfirmedOverWrite = filter_input(INPUT_POST, 'confirmedOverwrite') == 'yes' ? false : true;
 
              if($enc!=='UTF-8')
                {
