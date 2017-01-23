@@ -31,6 +31,12 @@ class Config
  * THEME
  */
         const theme = "classic-blue";
+        
+/*
+ * THEME
+ */
+        const nologin = true;
+        
 /*
  * SOURCES
  */

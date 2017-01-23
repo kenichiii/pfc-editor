@@ -32,6 +32,11 @@ class Config
      *  THEME
      */
     const theme = "dark";
+    
+    /*
+     *  NO LOGIN
+     */
+    const nologin = true;    
      
     /*
      * SOURCES

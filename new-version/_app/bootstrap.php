@@ -16,6 +16,7 @@ namespace {
  use PFC\Editor\AppLogin;
  use PFC\Editor\AppSess;
  use PFC\Editor\Router;
+ use PFC\Editor\Config;
  
 //get application autoload, settings and libraries
  require_once 'bootstrap/master.php';        
@@ -27,7 +28,7 @@ namespace {
  //check if is installed 
   
  //public services   
-  if(AppLogin::isLogged() 
+  if((Config::nologin || AppLogin::isLogged()) 
     || App::isServerTimeRequest() || App::isLoginActionRequest()
     ) {       
       
