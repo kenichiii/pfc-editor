@@ -9,12 +9,13 @@ namespace {
  //shortcut App 
  use PFC\Editor\AppLogin;
  use PFC\Editor\AppSess;
+ use PFC\Editor\Config;
  
  //start private session
  session_start();
  AppSess::start();
   
-  if(!AppLogin::isLogged()) {
+  if(!Config::nologin && !AppLogin::isLogged()) {
       die('NOT ALLOWED - NO USER');
   }
   
