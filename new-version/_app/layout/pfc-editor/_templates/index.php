@@ -30,12 +30,11 @@ use PFC\Editor\Config;
       
                  
         <!-- pfc EDITOR -->        
-        <link href="pfc-editor/layout/css/layout.css" rel="stylesheet" type="text/css"/>
-        <link href="pfc-editor/layout/css/theme/<?php echo Config::theme; ?>.css" rel="stylesheet" type="text/css"/>
+        <link href="pfc-editor/layout/css/layout.css" rel="stylesheet" type="text/css"/>        
               
+        <!-- CODE EDITOR -->
         <link href="pfc-editor/editor/css/extensions.css" rel="stylesheet" type="text/css"/>
-        <link href="pfc-editor/editor/css/fileactions.css" rel="stylesheet" type="text/css"/>      
-      
+        <link href="pfc-editor/editor/css/fileactions.css" rel="stylesheet" type="text/css"/>            
       
         <!-- PAGES -->
         <link href="pfc-editor/pages/pfc-editor/editor-about/about.css" rel="stylesheet" type="text/css"/>
@@ -48,7 +47,8 @@ use PFC\Editor\Config;
         <link href="pfc-editor/sections/css/sources.css" rel="stylesheet" type="text/css"/>
         <link href="pfc-editor/sections/css/extensions.css" rel="stylesheet" type="text/css"/>
         
-        
+        <!-- THEME -->
+        <link href="pfc-editor/theme/<?php echo Config::theme; ?>/styles.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
 
@@ -181,7 +181,7 @@ use PFC\Editor\Config;
             
     <script src="pfc-editor/pfc-editor.js" type="text/javascript"></script>
 
-    <script src="pfc-editor/editor/ace.editor.js" type="text/javascript"></script>                            
+    <script src="pfc-editor/theme/<?php echo Config::theme; ?>/ace.editor.js" type="text/javascript"></script>                            
     <script src="pfc-editor/editor/ace.editor.config.js"></script>             
             
     <!-- TOOLS -->        
