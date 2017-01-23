@@ -36,9 +36,7 @@ namespace {
                                 '/users/default-user/sandbox'
                             );
       
-        if(Router::isSandboxRequest()
-          || Router::isAjaxRequest() || Router::isActionRequest()      
-                ) {                        
+        if(Router::isSandboxRequest()) {                        
             //include requested file from sandbox
     	    require App::getRequestFilePath();    
             exit;

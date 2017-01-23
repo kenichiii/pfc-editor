@@ -6,7 +6,7 @@ class HtmlView extends TextView
 {
     public function headers()
     {
-        \header('Content-type: text/html');
+        header('Content-type: text/html');
     }
     
     public function render()

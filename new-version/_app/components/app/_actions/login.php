@@ -1,30 +1,46 @@
 <?php
 
-namespace PFC\Editor;       
+namespace pfcEditor\Component\Action\app;
 
-//do login if login form is submited
-$login = \filter_input(\INPUT_POST, 'login');
-$passw = \filter_input(\INPUT_POST, 'pwd');
-$pin = \filter_input(\INPUT_POST, 'pin');
+use PFC\Editor\Component\ActionController;
+use PFC\Editor\AppLogin;
+use PFC\Editor\AppSess;
 
-    if($login && $passw && AppLogin::verify($login, $passw, $pin)) {
-        AppLogin::setUserLoggedIn($login, $passw);    
-        AppSess::set('pfc-login', true);
-         
-        echo \json_encode(['succ' => 'yes']);
+class login extends ActionController
+{
     
-    } elseif(AppLogin::isFreeForLoging()) {       
-             echo \json_encode([
-               'succ' => 'no',
-               'reason' => 'creditials'
-             ]);
+   public function indexAction() 
+   {      
+
+        //do login if login form is submited
+        $login = filter_input(\INPUT_POST, 'login');
+        $passw = filter_input(\INPUT_POST, 'pwd');
+        $pin = filter_input(\INPUT_POST, 'pin');
+
+        if($login && $passw && AppLogin::verify($login, $passw, $pin)) {
+            AppLogin::setUserLoggedIn($login, $passw);    
+            AppSess::set('pfc-login', true);
+         
+            $this->getResponse()
+                ->setSucc(true);
+     
+        } elseif(AppLogin::isFreeForLoging()) {       
+            $this->getResponse()
+                ->setSucc(false)  
+                //->setMsg('Succesfully saved')
+                ->addData(['reason' => 'creditials']);
              
-    } else {
-             echo \json_encode([
-               'succ' => 'no',
-               'reason' => 'banned',
-               'bannedToTime' => \date('G:i:s', AppLogin::getBannedToTime())
-             ]);       
+        } else {
+            $this->getResponse()
+                ->setSucc(false)  
+                //->setMsg('Succesfully saved')
+                ->addData([
+                    'reason' => 'banned',
+                    'bannedToTime' => \date('G:i:s', AppLogin::getBannedToTime()),
+                        ]);
+        }                                               
     }
+
+}        
 
 

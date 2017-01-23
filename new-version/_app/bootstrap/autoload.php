@@ -72,30 +72,28 @@ function autoload($class)
             if ($isController) {
                                                                                                                                                                                                        
                 $scriptName = $pies[(count($pies)-1)];    
-                    
-                //do subtype folder rewrites and script rewrites    
-                if ($pies[1] === 'Ajax') {                    
-                    unset($pies[1]);
-                    unset($pies[(count($pies)-1)]);
+                unset($pies[(count($pies)-1)]);
+                
+                //do subtype folder rewrites and script rewrites                   
+                if (isset($pies[2]) && $pies[2] === 'Ajax') {                             
+                    unset($pies[2]);
                     $pies[] = '_ajax';
                     $pies[] = $scriptName;
-                } elseif ($pies[1] === 'Action') {
-                    unset($pies[1]);
-                    unset($pies[(count($pies)-1)]);
+                } elseif (isset($pies[2]) && $pies[2] === 'Action') {
+                    unset($pies[2]);
                     $pies[] = '_actions';
                     $pies[] = $scriptName;                     
-                } elseif ($pies[1] === 'Pjs') { 
-                    unset($pies[1]);
-                    unset($pies[(count($pies)-1)]);
+                } elseif (isset($pies[2]) && $pies[2] === 'Pjs') { 
+                    unset($pies[2]);
                     $pies[] = '_pjs';
                     $pies[] = $scriptName;
-                } elseif ($pies[1] === 'Pcss') {                      
-                    unset($pies[1]);
-                    unset($pies[(count($pies)-1)]);
+                } elseif (isset($pies[2]) && $pies[2] === 'Pcss') {                      
+                    unset($pies[2]);
                     $pies[] = '_pcss'; 
                     $pies[] = $scriptName;                     
                 } else {            
                     //controller is file main
+                    $pies[] = $scriptName;                     
                     $pies[] = 'controller';
                 }                                                                          
             }

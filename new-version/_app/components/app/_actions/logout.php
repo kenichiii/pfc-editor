@@ -1,8 +1,19 @@
 <?php
 
-    \PFC\Editor\AppLogin::logout();
+namespace pfcEditor\Component\Action\app;
+
+use PFC\Editor\Component\ActionController;
+use PFC\Editor\AppLogin;
+use PFC\Editor\AppFile;
+
+class logout extends ActionController
+{
     
-    \PFC\Editor\AppFile::sendRedirectHeaders('./');
-    
-    
+   public function indexAction() 
+   {     
+       AppLogin::logout();
+       
+       AppFile::sendRedirectHeaders('./');
+   }
+}
 

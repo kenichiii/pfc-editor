@@ -8,22 +8,32 @@ use PFC\Editor\Component\View\TextView;
 
 class pfcController 
 {       
-    protected static $VIEW_CLASS_NAME = '\\PFC\Editor\\Component\\View\\pfcView';
+    protected $VIEW_CLASS_NAME = '\\PFC\Editor\\Component\\View\\pfcView';
     
-    protected $view;
+    protected $view = null;
     
     public function __construct()
     {
-        $this->setView(
-            new self::$VIEW_CLASS_NAME(
-                \str_replace('\\', '/', \get_called_class()
-                        )
-                ));
+        
     }
     
     public function getView()
     {
+          
+        if($this->view === null) {
+            $this->setView(
+                new $this->VIEW_CLASS_NAME(
+                    str_replace('\\', '/', get_called_class()
+                        )
+                    ));    
+        }
+        
         return $this->view;
+    }
+    
+    public function getResponse()
+    {
+        return $this->getView();
     }
     
     public function setView(iView $view)
@@ -36,17 +46,21 @@ class pfcController
     {
         $this->preDispatch();
         
-        $view = $this->indexAction();
+        $view = $this->indexAction();                
+        
+        if ($view !== null && !($view instanceOf iView)) {            
+            $this->setView(
+                    new TextView(
+                            is_string($view) 
+                            ? $view 
+                            : json_encode($view)
+                          )
+                    );
+        }
         
         $this->postDispatch();
         
-        if ($view === null) {
-            return $this->getView();
-        } elseif ($view instanceOf iView) {
-            return $view;
-        } else {
-            return new TextView(is_string($view) ? $view : json_encode($view));
-        }
+        return $this->getView();
     }
     
     protected function preDispatch()

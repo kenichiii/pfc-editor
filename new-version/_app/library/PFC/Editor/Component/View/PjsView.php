@@ -6,7 +6,7 @@ class PjsView extends pfcView
 {
     public function headers()
     {
-        \header('Content-type: text/javascript');
+        header('Content-type: text/javascript');
     }
     
     public function render()

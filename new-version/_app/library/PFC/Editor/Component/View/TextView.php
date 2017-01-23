@@ -13,7 +13,7 @@ class TextView implements iView
     
     public function headers()
     {
-        \header('Content-type: text/plain');
+        header('Content-type: text/plain');
     }
     
     public function render()
