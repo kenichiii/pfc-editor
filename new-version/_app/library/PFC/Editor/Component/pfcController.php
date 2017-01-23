@@ -21,11 +21,19 @@ class pfcController
     {
           
         if($this->view === null) {
-            $this->setView(
-                new $this->VIEW_CLASS_NAME(
-                    str_replace('\\', '/', get_called_class()
-                        )
-                    ));    
+            switch($this->VIEW_CLASS_NAME) {
+                case "HTML": $class = '\\PFC\Editor\\Component\\View\\HtmlView'; break;
+                case "JSON": $class = '\\PFC\Editor\\Component\\View\\JsonView'; break;
+                case "TEXT": $class = '\\PFC\Editor\\Component\\View\\TextView'; break;
+                case "ACTION": $class = '\\PFC\Editor\\Component\\View\\ActionView'; break;
+                case "PCSS": $class = '\\PFC\Editor\\Component\\View\\PcssView'; break;
+                case "PJS": $class = '\\PFC\Editor\\Component\\View\\PjsView'; break;
+                default:
+                $class = $this->VIEW_CLASS_NAME;
+                    break;            
+            }
+            
+            $this->setView(new $class(str_replace('\\', '/', get_called_class())));    
         }
         
         return $this->view;

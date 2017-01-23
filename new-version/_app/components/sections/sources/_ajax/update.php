@@ -1,23 +1,37 @@
 <?php
 
-@set_time_limit(0);
+namespace pfcEditor\Component\Ajax\sections\sources;
 
-$dd = json_decode($_POST['dir']);
+use PFC\Editor\Component\AjaxController;
 
-if($dd->root)
+class update extends AjaxController
 {
-	$root = $dd->root;  
-  
-$fs = new \PFC\Editor\Sources($root);
+   protected $VIEW_CLASS_NAME = "HTML";
+           
+   public function indexAction() 
+   {           
+        @set_time_limit(0);
 
-$dirs = explode('/',$_SERVER['REQUEST_URI']);
-$actualDir = $dirs[count($dirs)-2];
-  
-$dir = $dd->path;
+        $dd = json_decode(filter_input(INPUT_POST, 'dir'));
 
-$opendirs = $dd->openedDirs;  
-  
-echo $fs->printDir($dir,$opendirs);  
-  
+        if($dd->root)
+        {
+                $root = $dd->root;  
+
+        $fs = new \PFC\Editor\Sources($root);
+
+        $dirs = explode('/',filter_input(INPUT_SERVER, 'REQUEST_URI'));
+        $actualDir = $dirs[count($dirs)-2];
+
+        $dir = $dd->path;
+
+        $opendirs = $dd->openedDirs;  
+
+        $output = $fs->printDir($dir,$opendirs);  
+
+        }
+        else $output = "no root provided";
+        
+        $this->getResponse()->setData($output);
+   }
 }
-else echo "no root provided";
