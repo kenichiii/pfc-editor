@@ -30,6 +30,8 @@ paths for source code trees are located at /_app/config/Sources.php
 
 new version:
 
+ - new version is set to have nologin mode on, run only from localhost or change system settings class const nologin = true;
+
 user account + setttings pfcUserData\Config\Settings file is /_data/users/[logged-user-login-name]/Config/Settings.php
 
 ace editor default theme file is /web/pfc-editor/theme/[pfcUserData\Config\Settings::theme]/ace.editor.config.js
