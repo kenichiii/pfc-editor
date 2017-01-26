@@ -13,7 +13,7 @@ class logout extends ActionController
    {     
        AppLogin::logout();
        
-       AppFile::sendRedirectHeaders('./');
+       return self::redirect('__HOME__');       
    }
 }
 

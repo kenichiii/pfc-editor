@@ -18,6 +18,7 @@ return [
     
   //sources  
   'Workspace' => 'Pracovní adresář',  
+  'Minimalize' => 'Minimalizovat',
   'Loading dir...' => 'Nahrávám adresář...',   
     //context-menu
     'Paste' => 'Vložit',

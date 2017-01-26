@@ -35,7 +35,7 @@ namespace PFC\Editor;
   //if user is logged or nologin mode  
   if((AppLogin::isLogged()) 
     //or public services        
-    || Router::isServerTimeRequest() || Router::isLoginActionRequest()
+    || Router::isServerTimeRequest() || Router::isLoginActionRequest()    
     ) {       
       
         /*
@@ -66,7 +66,7 @@ namespace PFC\Editor;
          */                    
         if(Router::isSandboxRequest()) {                        
             //include requested file from sandbox
-    	    require Router::getRequestFilePath();    
+    	    require Router::getSandboxRequestFilePath();    
             exit;
             
         } else {

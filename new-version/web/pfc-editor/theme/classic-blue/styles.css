@@ -60,6 +60,12 @@ a.pfc-editor-page-href:hover, a#pfc-editor-admin-href:hover {
     color: greenyellow;
 }
 
+#pfc-lang-switcher {
+    background-color:black;
+    color:#ddd;
+}
+
+
 /*
    EDITOR
 */
@@ -113,6 +119,10 @@ a.pfc-editor-dialog-tab-close:hover {
 
 .pfc-editor-dialog-page {
     color: #ddd;
+}
+
+.pfc-editor-dialog-page h2 {
+    padding-top: 10px;
 }
 
 .pfc-editor-unsaved-file {

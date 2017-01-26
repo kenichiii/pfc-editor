@@ -7,7 +7,7 @@ class App {
     protected static $ins = null;
     
     protected $lang = 'en';
-    protected $dict = [];
+    protected $dict = null;
     
     public static function ins()
     {
@@ -20,7 +20,30 @@ class App {
     
     public function __construct($lang) 
     {                    
-        $this->setLang($lang);        
+        $this->setLang($lang);                                                 
+    }
+    
+    /*
+     * LANGUAGES
+     */
+    public function getLanguages()
+    {
+        $langs = [];
+        foreach(new \DirectoryIterator(APPLICATION_PATH.'/_langs') as $lang) {
+            if($lang->isFile()) {
+                $langs []= preg_replace('/(\.php)$/', '', $lang->getFilename());
+            }
+        }
+        return $langs;
+    }
+    
+    public function loadDictionary()
+    {
+        if(file_exists(APPLICATION_PATH.'/_langs/'.$this->getLang().'.php')) {
+           $this->setDictionary(require APPLICATION_PATH.'/_langs/'.$this->getLang().'.php');
+        } else {
+           $this->setDictionary([]);
+        }
     }
     
     public function setLang($lang) 
@@ -35,13 +58,9 @@ class App {
     }
     
     public function getDictionary()
-    {
-        if($this->dict === null) { 
-            if(file_exists(APPLICATION_PATH.'/_langs/'.$lang.'.php')) {
-                $this->setDictionary(require APPLICATION_PATH.'/_langs/'.$lang.'.php');
-            } else {
-                $this->dict = [];
-            }
+    {        
+        if($this->dict === null) {
+            $this->loadDictionary();
         }
         
         return $this->dict;

@@ -5,6 +5,7 @@ namespace PFC\Editor\Component;
 
 use PFC\Editor\Component\View\iView;
 use PFC\Editor\Component\View\TextView;
+use PFC\Editor\AppFile;
 
 class pfcController 
 {       
@@ -15,6 +16,16 @@ class pfcController
     public function __construct()
     {
       
+    }
+    
+    public static function redirect($url)
+    {
+        if($url === '__HOME__') {
+            $url = './';
+        }
+        
+        AppFile::sendRedirectHeaders('./');
+        exit;
     }
     
     public function getView()

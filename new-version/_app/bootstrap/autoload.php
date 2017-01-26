@@ -105,8 +105,9 @@ function autoload($class)
             $appFileScript = implode('/', $pies) .'.php';
             if (file_exists($appFileScript)) {
                 require_once $appFileScript;                
-            }            
-            return;
+            } else {
+                throw new \Exception("NOT EXISTING FILE {$appFileScript} FOR {$class}");
+            }                                                
         } //if pies[0] === pfcApp
     }
     

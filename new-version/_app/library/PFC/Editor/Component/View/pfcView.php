@@ -83,6 +83,7 @@ class pfcView implements iView
     
     protected static function getTemplatePath($name, $tplName = null)
     {
+        
         $pies = \explode('/', $name);        
 
             if (\count($pies) > 1) {
@@ -94,19 +95,14 @@ class pfcView implements iView
             }
             
                      
-            if (\count($pies) > 2 && \in_array($pies[2], ['Ajax','Pcss','Pjs'])) {
-                    $type = $pies[2];
-                    unset($pies[2]);
-                    $scriptName = $pies[(count($pies)-1)];    
-                    if ($type === 'Ajax') {
-                        $pies[(count($pies)-1)] = '_ajax';
-                    } elseif ($type === 'Pjs') {
-                        $pies[(count($pies)-1)] = '_pjs';
-                    } else {
-                        $pies[(count($pies)-1)] = '_pcss';
-                    }
+            if (\count($pies) > 2 && \in_array($pies[2], ['Ajax','Action','Pcss','Pjs'])) {                    
+                    $scriptName = $pies[(count($pies)-1)];
+                    
                     $pies[] = '_templates';
-                    $pies[] = $tplName ?: $scriptName;                    
+                    $pies[] = $tplName ? $scriptName.'/'.$tplName : $scriptName;  
+                    
+                    unset($pies[(count($pies)-3)]);
+                    unset($pies[2]);
             } else {
                     $pies[] = '_templates';                    
                     if ($tplName !== null) {
@@ -121,20 +117,24 @@ class pfcView implements iView
                 unset($pies[0]); 
                  
                 $path = \PFC\Editor\APPLICATION_PATH .'/'
-                        . \preg_replace_callback(
+                        . preg_replace_callback(
                                 '/([a-z0-9]){1}([A-Z]){1}([a-z]){1}/',
                                 function ($matches) {
                                     return $matches[1] .'-'
-                                            . \strtolower($matches[2])
+                                            . strtolower($matches[2])
                                             . $matches[3]
                                         ;
                                 },
-                                \implode('/', $pies) . '.php'
+                                implode('/', $pies)
                     );                                               
                                 
-               // if (\file_exists($path)) {
-                    return $path;                    
-               // }               
+                if(file_exists($path.'_'.\PFC\Editor\App::ins()->getLang().'.php')) {
+                    return $path.'_'.\PFC\Editor\App::ins()->getLang().'.php';                    
+                } elseif(file_exists($path.'.php')) {
+                    return $path.'.php';
+                } else {
+                    throw new \Exception('Not existing template path: '.$path.'.php');
+                }            
                 
             } else {
                //????   

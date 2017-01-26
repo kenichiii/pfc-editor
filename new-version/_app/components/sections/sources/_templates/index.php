@@ -5,7 +5,7 @@
                 
                         <header class="pfc-editor-section-header">
                           <div class="pfc-editor-section-header-inner">
-                            <a class="pfc-editor-section-minify-href" title="Minimalize" href="#">X</a>                  
+                              <a class="pfc-editor-section-minify-href" title="<?php echo _tr('Minimalize'); ?>" href="#">X</a>                  
                             <ul>
                                 <?php 
                                       $ki=0;  
@@ -15,7 +15,7 @@
                                                 <a rel="<?php echo $s['path']; ?>" 
                                                    class="<?php if($ki===0)echo 'pfc-editor-section-active '; ?> pfc-sources-main-href" 
                                                    href="#pfc-sources-<?php echo $s['name']; ?>">
-                                                       <?php echo _($s['title']); ?>
+                                                       <?php echo _tr($s['title']); ?>
                                                 </a>
                                             </li>
                                 <?php
@@ -36,7 +36,7 @@
                                             <div id="pfc-sources-<?php echo $s['name']; ?>" 
                                                  <?php if($ki>0)echo 'style="display:none;"'; ?> 
                                                  class="pfc-editor-section-panel-body">
-                                                    <?php echo _('Loading dir...'); ?>
+                                                    <?php echo _tr('Loading dir...'); ?>
                                             </div>
 
                                 <?php
@@ -50,6 +50,6 @@
                 
             <?php } ?>
 
-            <?php $this->template('context-menu'); ?>
+            <?php echo $this->template('context-menu'); ?>
 
             

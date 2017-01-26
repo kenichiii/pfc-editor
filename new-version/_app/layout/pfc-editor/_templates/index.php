@@ -54,7 +54,7 @@ use pfcUserData\Config\Settings;
     <body class="<?php echo Settings::theme; ?>">
 
         <div id="pfc-editor-booting">
-            <?php echo _('booting pfc editor. please wait...'); ?>
+            <?php echo _tr('booting pfc editor. please wait...'); ?>
             <div id="pfc-editor-booting-holder">
               <div id="pfc-editor-booting-inner">
                 <div id="pfc-editor-booting-prct"></div>
@@ -127,6 +127,9 @@ use pfcUserData\Config\Settings;
     <!-- javascript  -->    
     
     <script type="text/javascript" src="vendor/jquery/jquery.js"></script>
+    <script type="text/javascript">
+        jQuery.noConflict();
+    </script>    
     <script type="text/javascript" src="vendor/jquery_ui/jquery-ui.min.js"></script>                           
               
     <script type="text/javascript" src="vendor/CalcSS3/CalcSS3.js"></script>
@@ -139,7 +142,9 @@ use pfcUserData\Config\Settings;
     <script type="text/javascript" src="vendor/fileTree/jqueryFileTree.js"></script>
       
       	<script  type="text/javascript">
-            $('#pfc-editor-booting-prct').css('width','18px');
+            (function($) {    
+                  $('#pfc-editor-booting-prct').css('width','18px');
+              })(jQuery);
       	</script>
       		
     <!-- load ace -->
@@ -153,7 +158,9 @@ use pfcUserData\Config\Settings;
     <!-- end ace editor -->  
 
         <script  type="text/javascript">
-            $('#pfc-editor-booting-prct').css('width','50px');
+            (function($) {    
+                    $('#pfc-editor-booting-prct').css('width','50px');
+                })(jQuery);
         </script>
 
                     
@@ -166,7 +173,9 @@ use pfcUserData\Config\Settings;
     
             
         <script  type="text/javascript">
-            $('#pfc-editor-booting-prct').css('width','88px');
+          (function($) {      
+                $('#pfc-editor-booting-prct').css('width','88px');
+            })(jQuery);
         </script>
         
         
@@ -178,7 +187,8 @@ use pfcUserData\Config\Settings;
 
     <script src="pfc-editor/editor/ace.editor.js"></script>             
     <script src="pfc-editor/theme/<?php echo Settings::theme; ?>/ace.editor.config.js" type="text/javascript"></script>                               
-            
+    <script src="<?php echo Router::editorlinkpjs('ace-editor-config'); ?>" type="text/javascript"></script>                               
+    
     <!-- TOOLS -->        
     <script src="pfc-editor/tools/defaultApps/tools.js" type="text/javascript"></script>
     <script src="pfc-editor/tools/defaultApps/snippets/snippets.js" type="text/javascript"></script>
@@ -187,7 +197,9 @@ use pfcUserData\Config\Settings;
     <script src="pfc-editor/sections/sources.js" type="text/javascript"></script>
       
         <script  type="text/javascript">
-            $('#pfc-editor-booting-prct').css('width','108px');
+          (function($) {      
+                 $('#pfc-editor-booting-prct').css('width','108px');
+            })(jQuery);
         </script>
       
     <!-- PAGES -->        
@@ -203,12 +215,14 @@ use pfcUserData\Config\Settings;
     <script src="pfc-editor/pages/webterminal/webterminal.js" type="text/javascript"></script> 
       
         <script  type="text/javascript">
-            $('#pfc-editor-booting-prct').css('width','128px');
+          (function($) {    
+                $('#pfc-editor-booting-prct').css('width','128px');
+            })(jQuery);     
         </script>
             
 <!-- pfc editor BOOTSTRAP -->            
 <script type="text/javascript"> 
-      
+(function(window, $) {      
     //configure
         //editor
         pfcSoundsManager.on = <?php echo Settings::sounds ?  'true':'false'; ?>;
@@ -278,6 +292,7 @@ use pfcUserData\Config\Settings;
         },500);                                        
     });                                                                                
 
+})(window, jQuery);
 </script>
             
             

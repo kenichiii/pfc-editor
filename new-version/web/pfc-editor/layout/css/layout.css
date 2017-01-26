@@ -123,6 +123,17 @@ a#pfc-sources-editor-href
     float: right;    
 }
 
+#pfc-lang-switcher-holder {
+    float:right;
+    display:block;
+    padding-right:10px;    
+}
+
+#pfc-lang-switcher {
+    padding-right:5px;
+}
+
+
 /* LEFT PANEL */
 
 #pfc-editor-sections {

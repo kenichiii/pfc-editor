@@ -18,6 +18,7 @@ return [
     
   //sources  
   'Workspace' => 'Workspace',  
+  'Minimalize' => 'Minimalize',
   'Loading dir...' => 'Loading dir...',   
     //context-menu
     'Paste' => 'Paste',

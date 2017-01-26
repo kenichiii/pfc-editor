@@ -12,5 +12,5 @@ class PjsView extends pfcView
     public function render()
     {
         return parent::render();
-    }
+    }        
 }

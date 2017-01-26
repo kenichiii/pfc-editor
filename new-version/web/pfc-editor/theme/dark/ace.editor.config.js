@@ -1,16 +1,14 @@
 
 
 $.pfcEditor.editor.aceEditorOptions = {
-
+    
 /** keyboard bindings **/
-keyboardBindings: "default", //"default","emacs","vim" 
-
+//keyboardBindings: "default", //"default","emacs","vim" 
 
 /** editor options **/
-
 //selectionStyle: "line"|"text"
-highlightActiveLine: true,
-highlightSelectedWord: true,
+//highlightActiveLine: true,
+//highlightSelectedWord: true,
 //readOnly: 
 //cursorStyle: "ace"|"slim"|"smooth"|"wide"
 //mergeUndoDeltas: false true "always"
@@ -18,9 +16,7 @@ highlightSelectedWord: true,
 //wrapBehavioursEnabled: 
 //autoScrollEditorIntoView: // this is needed if editor is inside scrollable page
 
-
 /** renderer options **/
-
 //hScrollBarAlwaysVisible:
 //vScrollBarAlwaysVisible:
 //highlightGutterLine:
@@ -30,12 +26,12 @@ highlightSelectedWord: true,
 ////printMarginColumn: number //80
 //printMargin:
 //fadeFoldWidgets:
-showFoldWidgets: true,
-showLineNumbers: true,
+//showFoldWidgets: true,
+//showLineNumbers: true,
 //showGutter:
 //displayIndentGuides:
-fontSize: "130%",
-fontFamily: "monospace",//Ace can display only monospace fonts, The issue you describe can happen either if something changes font of the editor to non monospace, or assigns different fonts to different parts of the editor. 
+//fontSize: "130%",
+//fontFamily: "monospace",//Ace can display only monospace fonts, The issue you describe can happen either if something changes font of the editor to non monospace, or assigns different fonts to different parts of the editor. 
 //maxLines: 
 //minLines:
 //scrollPastEnd: 
@@ -44,18 +40,15 @@ theme: "ace/theme/twilight",
 
 
 /** mouseHandler options **/
-
 //scrollSpeed: number
 //dragDelay:  number
 //dragEnabled:
 //focusTimout: number
 //tooltipFollowsMouse:
-        
-        
+                
 /** session options **/
-
 //firstLineNumber: number
-overwrite: false,
+//overwrite: false,
 //newLineMode:
 //useWorker:
 //useSoftTabs:
@@ -64,17 +57,15 @@ overwrite: false,
 //foldStyle:
 //mode: path to a mode e.g "ace/mode/text"
 
-
-
-
 /** editor options defined by extensions **/
-
 //enableMultiselect: 
 //enableEmmet: 
-enableBasicAutocompletion: true,
-enableSnippets: true,
-enableLiveAutocompletion: false
+//enableBasicAutocompletion: true,
+//enableSnippets: true,
+//enableLiveAutocompletion: false
 //spellcheck:
 //useElasticTabstops:        
 
+
+    somelastproperty: true
 };

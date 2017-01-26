@@ -16,8 +16,8 @@ class Config
      *   Project
      */
     const SALT = 'fdsjpoghJHASMPOHhHdsgio sgaiyssadagysgys2434082373648-593529ěřšá=řěšéýá=šěžčíéšžčžščí';        
-    const name = 'pfc-v0.1beta';    
-        
+    const name = 'pfc-v0.1beta';        
+    
     /*
      * NOLOGIN
      */
