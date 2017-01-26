@@ -37,6 +37,23 @@ class pfcView implements iView
         return $output;
     }
     
+    protected function template($name, array $data = [])
+    {
+        foreach ($data as $paramName => $paramValue)
+        {
+            ${$paramName} = $paramValue;
+        }
+        
+        ob_start();
+        
+        require self::getTemplatePath($this->getPath(), $name);
+        
+        $output = ob_get_contents();
+        ob_end_clean();
+        
+        return $output;        
+    }
+    
     protected function component($path)
     {
         $controllerClassName =  "\\pfcEditor\\Component\\". \preg_replace_callback(

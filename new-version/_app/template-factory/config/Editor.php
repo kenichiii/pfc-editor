@@ -32,6 +32,12 @@ class Config
      *  THEME
      */
     const theme = "dark";
+
+        
+    /*
+     *  THEME
+     */
+    const lang = "en";
     
     /*
      *  NO LOGIN

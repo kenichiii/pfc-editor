@@ -16,53 +16,18 @@ class Config
     *   Project
     */
     const SALT = 'fdsjpoghJHASMPOHhHdsgio sgaiyssadagysgys2434082373648-593529ěřšá=řěšéýá=šěžčíéšžčžščí';    
-    const name = 'pfc-v0.1beta';
-    
-    /*
-    *  Assets address
-    */
-    const assetsUrl = './';
-    
-    /*
- 	*  Sounds
-	*/
-	const sounds = true;     
-/*
- * THEME
- */
-        const theme = "classic-blue";
+    const name = 'pfc-v0.1beta';    
         
 /*
- * THEME
+ * NOLOGIN
  */
-        const nologin = true;
+    const nologin = true;
         
-/*
- * SOURCES
- */
-  const SourcesLastModificationChecker = true;
-  const SourcesLastModificationCheckerInterval = 1700;      
-        
- /*
-  * EDITOR
-  */       
-   const EditorLastModificationChecker = true;
-   const EditorLastModificationCheckerInterval = 8000; //ms
-   
-  /**
-   *  ADMINER
-   */ 
-   const isAdminerMultiPage = true;
    
    
     /*
     *  System passwords
-    */
-    const authEmail = 'your@email.com';        
-    const authLogin = 'pfclogin';        
-    const authPwd = '6939775ef065962b6605cc17b1d38c46';
-    const authPin = 'pfc[G][i]';
-    
+    */    
     const crypting = "simple";
     
     const BcryptRounds = 12;

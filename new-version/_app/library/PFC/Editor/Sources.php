@@ -26,9 +26,9 @@ class Sources extends \PFC\FileSystem\FileSystem {
     protected $rootName;
   
     public function __construct($name) {
-      if(isset(\PFC\Editor\Config\Sources::$paths[$name]))
+      if(isset(Config\Sources::getPaths()[$name]))
         {
-          $this->setRootPath(\PFC\Editor\Config\Sources::$paths[$name]['root']);        
+          $this->setRootPath(Config\Sources::getPaths()[$name]['root']);        
           $this->rootName = $name;
         }      	
       else {

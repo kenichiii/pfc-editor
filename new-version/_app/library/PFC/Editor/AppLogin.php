@@ -10,14 +10,21 @@
 
 namespace PFC\Editor;
 
-use \PFC\Editor\AppSess;
-use \PFC\Editor\AppCryptor;
-use \PFC\Editor\Config as AppConfig;
+use PFC\Editor\AppSess;
+use PFC\Editor\AppCryptor;
+use pfcUserData\Config\Settings as settings;
 
 class AppLogin
 {
     const BAN_TIME_LENGTH = 600; //60*10
-  
+    
+    public static function getLoggedUserLogin()
+    {
+        return isset(AppSess::ins()['pfc-login-username'])
+            ? AppSess::ins()['pfc-login-username']
+            : '__GUEST__';
+    }
+    
     public static function verify($login,$pwd,$pin)
     {
       	  //AppSess::set('pfc-login', false);   	
@@ -27,11 +34,11 @@ class AppLogin
           AppLogin::setFreeForLogingAccess();  
         
       return   
-        $login == AppConfig::authLogin
-        && AppCryptor::getIns()->verify($pwd,AppConfig::authPwd) 
+        $login == settings::authLogin
+        && AppCryptor::getIns()->verify($pwd, settings::authPwd) 
         && AppCryptor::verifyDateFloatingPin($pin)
         && self::isFreeForLoging()
-        ;
+       ;
     }    
     
     protected static $freeForLoging = true;
@@ -100,11 +107,17 @@ class AppLogin
 
     }
     
-    public static function setUserLoggedIn($pwd) {
+    public static function setUserLoggedIn($login, $pwd) {
         AppSess::set('pfc-login', true);   
+        AppSess::set('pfc-login-username', $login);   
     }
     
     public static function isLogged() {
+      
+      if(Config::nologin) {
+          return true;
+      }  
+        
       $sess = AppSess::ins();  
               
         $test = isset($sess['pfc-login']) && $sess['pfc-login'] ? true : false;

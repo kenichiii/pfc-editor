@@ -27,6 +27,9 @@ function autoload($class)
     elseif(file_exists(LIBRARY_PATH.'/'.$class.".php"))
       { require_once LIBRARY_PATH.'/'.$class.".php"; return; }
     
+    elseif(preg_match('/^(pfcUserData\/)/', $class)) 
+      { require_once preg_replace('/^(pfcUserData)/', USER_DATA_PATH, $class).".php"; }    
+      
     else 
     {
         //test for application

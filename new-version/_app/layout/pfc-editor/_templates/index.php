@@ -2,7 +2,7 @@
 
 use PFC\Editor\Config\Sources;
 use PFC\Editor\Router;
-use PFC\Editor\Config;
+use pfcUserData\Config\Settings;
 
 ?>
 <!DOCTYPE html>
@@ -48,12 +48,13 @@ use PFC\Editor\Config;
         <link href="pfc-editor/sections/css/extensions.css" rel="stylesheet" type="text/css"/>
         
         <!-- THEME -->
-        <link href="pfc-editor/theme/<?php echo Config::theme; ?>/styles.css" rel="stylesheet" type="text/css"/>
+        <link href="pfc-editor/theme/<?php echo Settings::theme; ?>/styles.css" rel="stylesheet" type="text/css"/>
+        
     </head>
-    <body>
+    <body class="<?php echo Settings::theme; ?>">
 
         <div id="pfc-editor-booting">
-            booting pfc editor. please wait...
+            <?php echo _('booting pfc editor. please wait...'); ?>
             <div id="pfc-editor-booting-holder">
               <div id="pfc-editor-booting-inner">
                 <div id="pfc-editor-booting-prct"></div>
@@ -73,13 +74,7 @@ use PFC\Editor\Config;
         
          <aside id="pfc-editor-sections">   
             
-            <?php foreach(['sources','sandbox','editor'] as $srcs) { ?>                          
-            <section id="pfc-sources-<?php echo $srcs; ?>" class="pfc-editor-section">
-                <?php require 'components/sections/sources/left-panel-'.$srcs.'.php';?>
-            </section> <!-- pfc-sources-<?php echo $srcs; ?> -->
-            <?php } ?>
-
-            <?php require 'components/sections/sources/context-menu.php';?>
+            <?php echo $this->component('sections/sources'); ?>              
 
          </aside> 
          <!-- pfc-editor-sections -->
@@ -181,8 +176,8 @@ use PFC\Editor\Config;
             
     <script src="pfc-editor/pfc-editor.js" type="text/javascript"></script>
 
-    <script src="pfc-editor/theme/<?php echo Config::theme; ?>/ace.editor.js" type="text/javascript"></script>                            
-    <script src="pfc-editor/editor/ace.editor.config.js"></script>             
+    <script src="pfc-editor/editor/ace.editor.js"></script>             
+    <script src="pfc-editor/theme/<?php echo Settings::theme; ?>/ace.editor.config.js" type="text/javascript"></script>                               
             
     <!-- TOOLS -->        
     <script src="pfc-editor/tools/defaultApps/tools.js" type="text/javascript"></script>
@@ -216,14 +211,14 @@ use PFC\Editor\Config;
       
     //configure
         //editor
-        pfcSoundsManager.on = <?php echo Config::sounds ?  'true':'false'; ?>;
+        pfcSoundsManager.on = <?php echo Settings::sounds ?  'true':'false'; ?>;
         
         $.pfcEditor.editor.config.appSaveFileUrl =  "<?php echo Router::editorlinkaction('save-file'); ?>";
         $.pfcEditor.editor.config.getFileContentsUrl =  "<?php echo Router::editorlinkajax('get-file-contents'); ?>";
         $.pfcEditor.editor.config.checkLastModificationTimeCheckerUrl = "<?php echo Router::editorlinkajax('get-file-last-update'); ?>";
         
-        $.pfcEditor.editor.config.lastModificationTimeCheckerDelay = <?php echo Config::EditorLastModificationCheckerInterval; ?>;
-        $.pfcEditor.editor.config.lastModificationCheckerOn = <?php echo Config::EditorLastModificationChecker ?  'true':'false'; ?>;          
+        $.pfcEditor.editor.config.lastModificationTimeCheckerDelay = <?php echo Settings::EditorLastModificationCheckerInterval; ?>;
+        $.pfcEditor.editor.config.lastModificationCheckerOn = <?php echo Settings::EditorLastModificationChecker ?  'true':'false'; ?>;          
         
         //sandbox      
         $.pfcEditor.editor.config.sandboxUrl =  "?sandbox=";
@@ -237,39 +232,31 @@ use PFC\Editor\Config;
         $.pfcEditor.getPage('phpinfo').config.url = '<?php echo Router::pagelink('phpinfo'); ?>';
                 
         $.pfcEditor.getPage('adminer').config.url = '<?php echo Router::pagelink('adminer'); ?>';
-        $.pfcEditor.getPage('adminer').multi = <?php echo Config::isAdminerMultiPage ?  'true':'false'; ?>;
+        $.pfcEditor.getPage('adminer').multi = <?php echo Settings::isAdminerMultiPage ?  'true':'false'; ?>;
                 
         $.pfcEditor.getPage('webterminal').config.url = '<?php echo Router::pagelink('webterminal'); ?>';
-                
+        $.pfcEditor.getPage('webterminal').multi = <?php echo Settings::isTerminalMultiPage ?  'true':'false'; ?>;        
         
         //sections
             //SOURCES
-            <?php foreach(['sources','sandbox','editor'] as $srcs) { ?>
-            $.pfcEditor.addSection('#pfc-sources-<?php echo $srcs; ?>-href',$pfcEditorSources.factory({secid:'pfc-sources-<?php echo $srcs; ?>'}));
+            <?php foreach(Sources::getBySections() as $section => $paths) { ?>
+            $.pfcEditor.addSection('#pfc-sources-<?php echo $section; ?>-href',$pfcEditorSources.factory({secid:'pfc-sources-<?php echo $section; ?>'}));
             
-            $.pfcEditor.getSection('pfc-sources-<?php echo $srcs; ?>').config.updaterTimeout = <?php echo Config::SourcesLastModificationCheckerInterval; ?>;
-            $.pfcEditor.getSection('pfc-sources-<?php echo $srcs; ?>').config.lastModificationCheckerOn = <?php echo Config::SourcesLastModificationChecker ?  'true':'false'; ?>;
+            $.pfcEditor.getSection('pfc-sources-<?php echo $section; ?>').config.updaterTimeout = <?php echo Settings::SourcesLastModificationCheckerInterval; ?>;
+            $.pfcEditor.getSection('pfc-sources-<?php echo $section; ?>').config.lastModificationCheckerOn = <?php echo Settings::SourcesLastModificationChecker ?  'true':'false'; ?>;
 
-            $.pfcEditor.getSection('pfc-sources-<?php echo $srcs; ?>').config.opendirs = [
-                        <?php 
-                              foreach(Sources::$paths as $k=>$s) 
-                              { 
-                                if($s['section'] === $srcs) {  
-                                    ?>
+            $.pfcEditor.getSection('pfc-sources-<?php echo $section; ?>').config.opendirs = [
+                        <?php foreach($paths as $k=>$s) { ?>
                                                 {
                                                     //id: '<?php echo $s['name']; ?>',
                                                     target: '#pfc-sources-<?php echo $s['name']; ?>',
                                                     root: '<?php echo $s['name']; ?>',
                                                     path: '<?php echo $s['path']; ?>'  
                                                 },
-                                    <?php
-                                }
-                              }
-                        ?>                    
+                        <?php } ?>                    
                 ];
 
-            <?php } //foreach
-                    ?>
+            <?php } //foreach section ?>
                 
                    
     //loading bar move               

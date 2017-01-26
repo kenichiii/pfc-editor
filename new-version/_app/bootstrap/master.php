@@ -21,6 +21,8 @@ namespace {
      */
     date_default_timezone_set(Config::default_timezone);
 
+    //get translator function _();
+    require_once \PFC\Editor\LIBRARY_PATH . '/PFC/Editor/__translator.php';
 } 
 
 

@@ -12,11 +12,11 @@ class getDir extends AjaxController
    {       
             @set_time_limit(0);
 
-            $root = $_POST['root'];
+            $root = filter_input(INPUT_POST, 'root');
 
             $fs = new \PFC\Editor\Sources($root);
 
-            $dirs = explode('/',$_SERVER['REQUEST_URI']);
+            $dirs = explode('/',filter_input(INPUT_SERVER, 'REQUEST_URI'));
             $actualDir = $dirs[count($dirs)-2];
 
             $dir = $_POST['dir'];

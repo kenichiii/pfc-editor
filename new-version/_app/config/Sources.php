@@ -3,8 +3,8 @@
 namespace PFC\Editor\Config;
 
 class Sources
-{
-    public static $paths = array(
+{    
+    protected static $paths = [
 
           'public'=>array(
               'section'=>'sources',              
@@ -13,10 +13,7 @@ class Sources
               'root'=>\PFC\Editor\PUBLIC_PATH,
               'path'=>'../../../'
           ),
-        
-
-        
-
+               
           'sandbox-src'=>array(
               'section'=>'sandbox',
               'title'=>'Sandbox',
@@ -62,6 +59,41 @@ class Sources
                 'root'=>\PFC\Editor\APPLICATION_PATH,
                 'path'=>'./config/'              
           ),                                
-    );
+    ];
+ 
+    public static function getPaths()
+    {
+        return self::$paths;
+    }
     
+    public static function getBySections() 
+    {
+        $sections = [];
+        foreach(self::getPaths() as $path) {            
+            if(!isset($sections [$path['section']])) {
+                $sections [$path['section']]= [];
+            }
+            
+            $sections [$path['section']] [$path['name']]= $path;                            
+        }
+        
+      return $sections;  
+    }
+    
+    public static function getSections() 
+    {
+        $sections = [];
+        foreach(self::getPaths() as $path) {
+            if(!in_array($path['section'], $sections)) {
+                $sections []= $path['section'];
+            }
+        }
+        
+      return $sections;  
+    }
+    
+    public static function addPath($key, array $data) {        
+        self::$paths [$key]= $data;        
+    }    
 }
+

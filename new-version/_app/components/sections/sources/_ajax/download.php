@@ -5,9 +5,7 @@ namespace pfcEditor\Component\Ajax\sections\sources;
 use PFC\Editor\Component\AjaxController;
 
 class download extends AjaxController
-{
-   protected $VIEW_CLASS_NAME = "HTML";
-           
+{           
    public function indexAction() 
    { 
        

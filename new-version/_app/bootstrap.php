@@ -23,28 +23,48 @@ namespace {
   
  //start private session
  session_start();
- AppSess::start();
-  
+ AppSess::start();  
+ 
  //check if is installed 
-  
+ 
+ //set no login username
+ if(Config::nologin) {
+    AppSess::set('pfc-login-username', 'default-user');    
+ }
+ 
  //public services   
-  if((Config::nologin || AppLogin::isLogged()) 
-    || App::isServerTimeRequest() || App::isLoginActionRequest()
+  if((AppLogin::isLogged()) 
+    || Router::isServerTimeRequest() || Router::isLoginActionRequest()
     ) {       
-      
-                      defined('\PFC\Editor\SANDBOX_PATH')
-                        || define('PFC\Editor\SANDBOX_PATH', PFC\Editor\DATA_PATH.
-                                '/users/default-user/sandbox'
+
+                      defined('\PFC\Editor\USER_DATA_PATH')
+                        || define('PFC\Editor\USER_DATA_PATH', PFC\Editor\DATA_PATH.
+                                '/users/'.AppLogin::getLoggedUserLogin()
                             );
       
+                      defined('\PFC\Editor\SANDBOX_PATH')
+                        || define('PFC\Editor\SANDBOX_PATH', PFC\Editor\USER_DATA_PATH.
+                                '/sandbox'
+                            );
+
+                      defined('\PFC\Editor\MY_HOME_PATH')
+                        || define('PFC\Editor\MY_HOME_PATH', PFC\Editor\USER_DATA_PATH.
+                                '/my-home'
+                            );
+
+                      defined('\PFC\Editor\MY_NOTES_TXT_PATH')
+                        || define('PFC\Editor\MY_NOTES_TXT_PATH', PFC\Editor\USER_DATA_PATH.
+                                '/my-home/_notes.txt'
+                            );
+                      
         if(Router::isSandboxRequest()) {                        
             //include requested file from sandbox
-    	    require App::getRequestFilePath();    
+    	    require Router::getRequestFilePath();    
             exit;
             
         } else {
             //get controller class from request
-            $controllerClassName = App::getRequestControllerClass();           
+            $controllerClassName = Router::getRequestControllerClass();           
         }
     }      
   else {                     

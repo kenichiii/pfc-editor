@@ -3,151 +3,76 @@
 namespace PFC\Editor;
 
 class App {
-
-    public static function isLoginActionRequest()
+    
+    protected static $ins = null;
+    
+    protected $lang = 'en';
+    protected $dict = [];
+    
+    public static function ins()
     {
-        return Router::isAppRequest() && Router::isActionRequest() === 'login';//\filter_input(\INPUT_GET, '_app') && \filter_input(\INPUT_GET, 'action') === 'login';
-    }  
-
-    public static function isServerTimeRequest()
-    {
-        return Router::isAppRequest() && Router::isAjaxRequest() === 'server-time';//\filter_input(\INPUT_GET, '_app') && \filter_input(\INPUT_GET, 'ajax') === 'server-time';
-    }
-
-    public static function getRequestFilePath()
-    {      
-         $ajax = Router::isAjaxRequest();
-         $action = Router::isActionRequest();
-      
-       	 $app = Router::isAppRequest();
-         $page = Router::isPageRequest();
-         $tools = Router::isToolsRequest();
-      	 $editor = Router::isEditorRequest();
-      	 $section = Router::isSectionRequest();
-         $sandbox = Router::isSandboxRequest();
-       
-         if($page && $ajax) 
-         {
-             $r = 'components/pages/'.$page.'/_ajax/'.$ajax.'.php';
-         } elseif($page && $action) {
-             $r = 'components/pages/'.$page.'/_actions/'.$action.'.php';     
-         } elseif($page) {
-             $r = 'components/pages/'.$page.'/template.php';
-         }
-
-         elseif($section && $ajax)
-         {
-             return 'components/sections/'.$section.'/_ajax/'.$ajax.'.php';     
-         }
-         elseif($section && $action)
-         {   
-             return 'components/sections/'.$section.'/_actions/'.$action.'.php';     
-         }
-         
-         elseif($tools && $ajax) {
-             $r = 'components/tools/'.$tools.'/_ajax/'.$ajax.'.php';     
-         } elseif($tools && $action) {
-             $r = 'components/tools/'.$tools.'/_actions/'.$action.'.php';     
-         }
-
-
-         elseif($editor && $ajax) {
-             $r = 'components/editor/_ajax/'.$ajax.'.php';     
-         } elseif($editor && $action) {
-             $r = 'components/editor/_actions/'.$action.'.php';     
-         }
-            
-      
-         elseif($app && $ajax) {
-             $r = 'components/app/_ajax/'.$ajax.'.php';     
-         } elseif($app && $action) {
-             $r = 'components/app/_actions/'.$action.'.php';                
-         } 
-      
-      
-         elseif($sandbox) {
-            set_include_path(implode(PATH_SEPARATOR, array(
-                get_include_path(), 
-                SANDBOX_PATH
-            )));
-
-             $r = SANDBOX_PATH.'/'.$sandbox;     
-         } 
-      
-      
-      	 else {          
-            $r = 'layout/layout.php';                            
-         }
-
-      return $r;
+        if(self::$ins === null) {
+            self::$ins = new App(Config::lang);
+        }
+        
+        return self::$ins;
     }
     
-    public static function getRequestControllerClass()
-    {      
-         $ajax = Router::isAjaxRequest();
-         $action = Router::isActionRequest();
-      
-       	 $app = Router::isAppRequest();
-         $page = Router::isPageRequest();
-         $tools = Router::isToolsRequest();
-      	 $editor = Router::isEditorRequest();
-      	 $section = Router::isSectionRequest();
-         $sandbox = Router::isSandboxRequest();
-         
-         if($page && $ajax) 
-         {
-             $r = 'Components\\Ajax\\pages\\'.str_replace('/','\\',$page).'\\'.$ajax;
-         } elseif($page && $action) {
-             $r = 'Component\\Action\\pages\\'.str_replace('/','\\',$page).'\\'.$action;     
-         } elseif($page) {
-             $r = 'Component\\pages\\'.str_replace('/','\\',$page);
-         }
-
-         elseif($section && $ajax)
-         {
-             $r = 'Component\\Ajax\\sections\\'.str_replace('/','\\',$section).'\\'.$ajax;     
-         }
-         elseif($section && $action)
-         {   
-             $r = 'Component\\Action\\sections\\'.str_replace('/','\\',$section).'\\'.$action;     
-         }
-         
-         elseif($tools && $ajax) {
-             $r = 'Component\\Ajax\\tools\\'.str_replace('/','\\',$tools).'\\'.$ajax;     
-         } elseif($tools && $action) {
-             $r = 'Component\\Action\\tools\\'.str_replace('/','\\',$tools).'\\'.$action;     
-         }
-
-
-         elseif($editor && $ajax) {
-             $r = 'Component\\Ajax\\editor\\'.$ajax;     
-         } elseif($editor && $action) {
-             $r = 'Component\\Action\\editor\\'.$action;     
-         }
-            
-      
-         elseif($app && $ajax) {
-             $r = 'Component\\Ajax\\app\\'.$ajax;     
-         } elseif($app && $action) {
-             $r = 'Component\\Action\\app\\'.$action;                
-         } 
-      
-      
-         elseif($sandbox) {
-            return null;
-         } 
-      
-      
-      	 else {          
-            $r = 'Layout\\pfcEditor';                            
-         }
-
-      return '\\pfcEditor\\' . preg_replace_callback(
-                                    '/([a-zA-Z]){1}(-){1}([a-zA-Z0-9]){1}/',
-                                    function ($matches) {
-                                        return $matches[1] . strtoupper($matches[3]);
-                                    },
-                                $r
-                   );         
+    public function __construct($lang) 
+    {
+        if($lang !== null && file_exists(APPLICATION_PATH.'/_langs/'.$lang.'.php')) {
+           $this->setLang($lang);
+           //write config file
+        }
+    }
+    
+    public function setLang($lang) 
+    {
+        $this->lang = $lang;
+        return $this;
+    }
+    
+    public function getLang() 
+    {
+        return $this->lang;
+    }
+    
+    public function getDictionary()
+    {
+        if($this->dict === null) { 
+            if(file_exists(APPLICATION_PATH.'/_langs/'.$lang.'.php')) {
+                $this->setDictionary(require APPLICATION_PATH.'/_langs/'.$lang.'.php');
+            } else {
+                $this->dict = [];
+            }
+        }
+        
+        return $this->dict;
+    }
+    
+    public function addToDictionary(array $translations)
+    {
+        $this->dict = array_merge($this->dict, $translations);
+        return $this;
+    }
+    
+    public function setDictionary(array $dict)
+    {
+        $this->dict = $dict;
+        return $this;
+    }
+    
+    public static function translate($string, array $data = []) 
+    {
+        if(isset($this->getDictionary()[$string])) {
+            $string = $this->getDictionary()[$string];
+        }
+        
+        foreach($data as $key => $value) {
+            $string = str_replace('[[:'.$key.':]]', $value, $string);
+        }
+        
+        return $string;
     }
 }
+
