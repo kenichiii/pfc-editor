@@ -27,6 +27,23 @@ body {
     color: #ddd;
 }
 
+/* PFC EDITOR HOME PAGE */
+#pfc-editor-homepage-main-title, 
+#pfc-editor-logo,
+#pfc-editor-logo-close-tag {
+    color: lightskyblue;
+}
+
+#pfc-editor-homepage-main-title em,
+#pfc-editor-logo em {    
+    color: greenyellow;
+}
+
+#pfc-editor-homepage-main-title-version {
+    font-size: 0.75em;    
+    color: gray;
+}
+
 /* HEAD */
 
 #pfc-editor-head {
@@ -40,10 +57,6 @@ body {
 
 #pfc-editor-head a:hover {
     color: greenyellow;
-}
-
-a#pfc-editor-logo {    
-    color: lightcyan;   
 }
 
 #pfc-editor-menu li a {

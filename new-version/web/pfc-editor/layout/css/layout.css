@@ -88,6 +88,12 @@ a#pfc-editor-logo {
     float: left;
 }
 
+#pfc-editor-logo-close-tag {
+    float:right;
+    display:block;
+    padding-right:10px;
+}
+
 #pfc-editor-menu li {
     list-style: none;
     float: left;

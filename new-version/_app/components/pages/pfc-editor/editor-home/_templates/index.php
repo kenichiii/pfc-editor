@@ -1,9 +1,8 @@
 
 <br>
-<h1>
-  <span style="color:greenyellow;">pfc <em style="color:lightskyblue">lite</em></span> 
-  <span style="color:lightsteelblue;font-weight:normal;"><span style="color:greenyellow">editor</span> 
-  <span style="font-size:0.75em;">[[v0.1beta]]</span></span>
+<h1 id="pfc-editor-homepage-main-title">
+  pfc <em>editor</em>
+  <span id="pfc-editor-homepage-main-title-version">[[v0.1beta]]</span>
 </h1>
 
 <br>

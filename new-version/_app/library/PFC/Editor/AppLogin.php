@@ -10,9 +10,7 @@
 
 namespace PFC\Editor;
 
-use PFC\Editor\AppSess;
-use PFC\Editor\AppCryptor;
-use pfcUserData\Config\Settings as settings;
+use pfcUserData\Config\Settings;
 
 class AppLogin
 {
@@ -20,9 +18,20 @@ class AppLogin
     
     public static function getLoggedUserLogin()
     {
+         //set no login username
+        if(Config::nologin) {
+            return Config::defaultUsername;    
+        }
+        
+        if(Router::isLoginActionRequest()
+           && is_dir(DATA_PATH.'/'.filter_input(INPUT_POST, 'login'))     
+            ) {         
+            return filter_input(INPUT_POST, 'login');
+        }
+        
         return isset(AppSess::ins()['pfc-login-username'])
             ? AppSess::ins()['pfc-login-username']
-            : '__GUEST__';
+            : '_guest';
     }
     
     public static function verify($login,$pwd,$pin)
@@ -34,9 +43,9 @@ class AppLogin
           AppLogin::setFreeForLogingAccess();  
         
       return   
-        $login == settings::authLogin
-        && AppCryptor::getIns()->verify($pwd, settings::authPwd) 
-        && AppCryptor::verifyDateFloatingPin($pin)
+        $login == Settings::authLogin
+        && AppCryptor::getIns()->verify($pwd, Settings::authPwd) 
+        && AppCryptor::verifyDateFloatingPin($pin, Settings::authPin)
         && self::isFreeForLoging()
        ;
     }    
@@ -127,7 +136,8 @@ class AppLogin
     
     public static function logout() {
         self::setLoginTryies([]);   
-        AppSess::set('pfc-login',false);
+        AppSess::set('pfc-login', false);
+        AppSess::set('pfc-login-username', null);
     }
 }
 

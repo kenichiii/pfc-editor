@@ -41,19 +41,19 @@ class AppCryptor
         return new \PFC\Crypting\Bcrypt(AppConfig::BcryptRounds);
     }
     
-    public static function verifyDateFloatingPin($input) {
-        return $input == self::getDateFloatingPin() || $input == self::getDateFloatingPinSave();
+    public static function verifyDateFloatingPin($input, $auth) {
+        return $input == self::getDateFloatingPin($auth) || $input == self::getDateFloatingPinSave($auth);
     }
     
-    public static function getDateFloatingPin() { 
-        $pin = AppConfig::authPin;
+    public static function getDateFloatingPin($auth) { 
+        $pin = $auth;
         $pin = str_replace('[G]', date('G'), $pin);
         $pin = str_replace('[i]', date('i'), $pin);
         return $pin;         
     }
     
-    public static function getDateFloatingPinSave() { 
-        $pin = AppConfig::authPin;
+    public static function getDateFloatingPinSave($auth) { 
+        $pin = $auth;
         $mins = (intval(date('i'))+1);
         if($mins<10) 
         {

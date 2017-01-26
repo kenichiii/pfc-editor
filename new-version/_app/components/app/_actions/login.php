@@ -13,9 +13,9 @@ class login extends ActionController
    {      
 
         //do login if login form is submited
-        $login = filter_input(\INPUT_POST, 'login');
-        $passw = filter_input(\INPUT_POST, 'pwd');
-        $pin = filter_input(\INPUT_POST, 'pin');
+        $login = filter_input(INPUT_POST, 'login');
+        $passw = filter_input(INPUT_POST, 'pwd');
+        $pin = filter_input(INPUT_POST, 'pin');
 
         if($login && $passw && AppLogin::verify($login, $passw, $pin)) {
             AppLogin::setUserLoggedIn($login, $passw);    

@@ -13,7 +13,8 @@ return [
     'my home' => 'můj adresář',
     'logout' => 'odhlášení',
     'help' => 'nápověda',
-    'tools' => 'nástroje',                
+    'tools' => 'nástroje', 
+    'settings' => 'nastavení', 
     'editor' => 'editor',
     
   //sources  

@@ -13,7 +13,8 @@ return [
     'my home' => 'my home',
     'logout' => 'logout',
     'help' => 'help',
-    'tools' => 'tools',                
+    'tools' => 'tools',   
+    'settings' => 'settings',
     'editor' => 'editor',
     
   //sources  

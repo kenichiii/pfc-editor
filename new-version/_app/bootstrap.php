@@ -27,40 +27,40 @@ namespace PFC\Editor;
  
  //check if is installed 
  
- //set no login username
- if(Config::nologin) {
-    AppSess::set('pfc-login-username', Config::defaultUsername);    
- }
+
  
-  //if user is logged or nologin mode  
-  if((AppLogin::isLogged()) 
-    //or public services        
-    || Router::isServerTimeRequest() || Router::isLoginActionRequest()    
-    ) {       
-      
-        /*
+         /*
          * SET USER_DATA_PATHS
          */            
                       defined('\PFC\Editor\USER_DATA_PATH')
                         || define('PFC\Editor\USER_DATA_PATH', DATA_PATH.
                                 '/users/'.AppLogin::getLoggedUserLogin()
                             );
-      
-                      defined('\PFC\Editor\SANDBOX_PATH')
-                        || define('PFC\Editor\SANDBOX_PATH', USER_DATA_PATH.
+                            
+                      defined('\PFC\Editor\USER_DATA_SANDBOX_PATH')
+                        || define('PFC\Editor\USER_DATA_SANDBOX_PATH', USER_DATA_PATH.
                                 '/sandbox'
                             );
-
-                      defined('\PFC\Editor\MY_HOME_PATH')
-                        || define('PFC\Editor\MY_HOME_PATH', USER_DATA_PATH.
+                      
+                      defined('\PFC\Editor\USER_DATA_HOME_PATH')
+                        || define('PFC\Editor\USER_DATA_HOME_PATH', USER_DATA_PATH.
                                 '/my-home'
                             );
 
-                      defined('\PFC\Editor\MY_NOTES_TXT_PATH')
-                        || define('PFC\Editor\MY_NOTES_TXT_PATH', USER_DATA_PATH.
+                      defined('\PFC\Editor\USER_DATA_NOTES_TXT_PATH')
+                        || define('PFC\Editor\USER_DATA_NOTES_TXT_PATH', USER_DATA_PATH.
                                 '/my-home/_my_notes.txt'
-                            );
-      
+                            );         
+
+ 
+ 
+ 
+  //if user is logged or nologin mode  
+  if((AppLogin::isLogged()) 
+    //or public services        
+    || Router::isServerTimeRequest() || Router::isLoginActionRequest()    
+    ) {                                               
+                      
         /*
          * GET WANTED FILE AS CONTROLLER
          */                    

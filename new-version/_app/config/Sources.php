@@ -6,59 +6,85 @@ class Sources
 {    
     protected static $paths = [
 
-          'public'=>array(
+          /**
+           * DEFAULT WORKSPACE
+           */  
+          'public' => [
               'section'=>'sources',              
               'title'=>'Workspace',
               'name'=>'public',
               'root'=>\PFC\Editor\PUBLIC_PATH,
               'path'=>'../../../'
-          ),
+          ],
                
-          'sandbox-src'=>array(
+        
+          /**
+           * USER DATA SANDBOX 
+           */
+          'sandbox-src' => [
               'section'=>'sandbox',
               'title'=>'Sandbox',
               'name'=>'sandbox-src',
-              'root'=>\PFC\Editor\SANDBOX_PATH,
+              'root'=>\PFC\Editor\USER_DATA_SANDBOX_PATH,
               'path'=>'./'
-          ),          
+          ],          
 
+          /**
+           * USER DATA HOME 
+           */        
+          'my-home-src' => [
+              'section'=>'my-home',
+              'title'=>'MY HOME',
+              'name'=>'my-home-src',
+              'root'=>\PFC\Editor\USER_DATA_HOME_PATH,
+              'path'=>'./'
+          ],  
+          
+          
         
-
-          'pfc-public'=>array(
+         /**
+          * PFC EDITOR SOURCES
+          */
+        
+          'pfc-public' => [
               'section'=>'editor',
               'title'=>'Public',
               'name'=>'pfc-public',
               'root'=>\PFC\Editor\PUBLIC_PATH,
               'path'=>'./'
-          ),
-          'pfc-app'=>array(
+          ],
+        
+         'pfc-app' => [
                'section'=>'editor',
                 'title'=>'app',
                 'name'=>'pfc-app',
                 'root'=>\PFC\Editor\APPLICATION_PATH,
                 'path'=>'./'              
-          ),
-          'pfc-lib'=>array(
+          ],
+        
+          'pfc-lib' => [
                 'section'=>'editor',
                 'title'=>'lib',
                 'name'=>'pfc-lib',
                 'root'=>\PFC\Editor\LIBRARY_PATH,
                 'path'=>'./'              
-          ),
-          'pfc-data'=>array(
+          ],
+
+          'pfc-data' => [
                 'section'=>'editor',
                 'title'=>'data',
                 'name'=>'pfc-data',
                 'root'=>\PFC\Editor\DATA_PATH,
                 'path'=>'./'              
-          ),
-          'pfc-cfg'=>array(
+          ],
+        
+          'pfc-cfg' => [
                 'section'=>'editor',
                 'title'=>'cfg',
                 'name'=>'pfc-cfg',
                 'root'=>\PFC\Editor\APPLICATION_PATH,
                 'path'=>'./config/'              
-          ),                                
+          ],                                
     ];
  
     public static function getPaths()
@@ -92,8 +118,8 @@ class Sources
       return $sections;  
     }
     
-    public static function addPath($key, array $data) {        
-        self::$paths [$key]= $data;        
+    public static function addPath(array $data) {        
+        self::$paths [$data['name']]= $data;        
     }    
 }
 

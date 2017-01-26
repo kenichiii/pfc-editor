@@ -24,7 +24,7 @@
                     <li><a id="pfc-sources-my-home-href" href="#pfc-sources-my-home"><?php echo _tr('my home'); ?></a></li>
                 </ul>            
               	
-                <span id="pfc-editor-logo-close-tag" style="float:right;display:block;padding-right:10px;color:#ddd">:]]</span>
+                <span id="pfc-editor-logo-close-tag">:]]</span>
                 
                 <?php if(!Config::nologin) { ?>
                 <a id="pfc-editor-logout-href" class="pfc-editor-page-href" href="<?php echo Router::applinkaction('logout'); ?>"><?php echo _tr('logout'); ?></a>
