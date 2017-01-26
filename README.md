@@ -20,7 +20,14 @@ Open this web address(your web folder + unpacked folder name) ie. http://somedom
 
 For new version you have to move contents of web folder to root folder(also change paths in index.php) or set this folder as public where index.php is located.
 
-Path for source code trees are located at /_app/config/Sources.php
+- both version
+system settings file is /_app/config/Editor.php
+paths for source code trees are located at /_app/config/Sources.php
+
+- new version
+user account + setttings pfcUserData\Config\Settings file is /_data/users/<logged-user-login-name>/Config/Settings.php
+ace editor default theme file is /web/pfc-editor/theme/<pfcUserData\Config\Settings::theme>/ace.editor.config.js
+ace editor config file is /_data/users/default-user/Config/AceEditorSettings.php
 
 ---------------------------------------
 
