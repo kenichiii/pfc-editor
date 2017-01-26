@@ -40,7 +40,7 @@ ace editor config file is /_data/users/default-user/Config/AceEditorSettings.php
 ===============================
 
 Use this account to login:
- - login: pfclogin
+ - login: default-user
  - password: pfcpassword
  - pin: pfc[hours][minutes]
  
