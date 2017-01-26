@@ -9,7 +9,7 @@ return [
     'sandbox' => 'sandbox',
     'adminer' => 'adminer',
     'terminal' => 'terminal',
-    'notes.txt' => 'notes.txt',                    
+    'my notes' => 'notes.txt',                    
     'my home' => 'my home',
     'logout' => 'logout',
     'help' => 'help',

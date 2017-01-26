@@ -9,7 +9,7 @@
 */
 
 //get global namespace
-namespace {
+namespace PFC\Editor;
 
  //shortcut App 
  use PFC\Editor\App;
@@ -29,34 +29,41 @@ namespace {
  
  //set no login username
  if(Config::nologin) {
-    AppSess::set('pfc-login-username', 'default-user');    
+    AppSess::set('pfc-login-username', Config::defaultUsername);    
  }
  
- //public services   
+  //if user is logged or nologin mode  
   if((AppLogin::isLogged()) 
+    //or public services        
     || Router::isServerTimeRequest() || Router::isLoginActionRequest()
     ) {       
-
+      
+        /*
+         * SET USER_DATA_PATHS
+         */            
                       defined('\PFC\Editor\USER_DATA_PATH')
-                        || define('PFC\Editor\USER_DATA_PATH', PFC\Editor\DATA_PATH.
+                        || define('PFC\Editor\USER_DATA_PATH', DATA_PATH.
                                 '/users/'.AppLogin::getLoggedUserLogin()
                             );
       
                       defined('\PFC\Editor\SANDBOX_PATH')
-                        || define('PFC\Editor\SANDBOX_PATH', PFC\Editor\USER_DATA_PATH.
+                        || define('PFC\Editor\SANDBOX_PATH', USER_DATA_PATH.
                                 '/sandbox'
                             );
 
                       defined('\PFC\Editor\MY_HOME_PATH')
-                        || define('PFC\Editor\MY_HOME_PATH', PFC\Editor\USER_DATA_PATH.
+                        || define('PFC\Editor\MY_HOME_PATH', USER_DATA_PATH.
                                 '/my-home'
                             );
 
                       defined('\PFC\Editor\MY_NOTES_TXT_PATH')
-                        || define('PFC\Editor\MY_NOTES_TXT_PATH', PFC\Editor\USER_DATA_PATH.
-                                '/my-home/_notes.txt'
+                        || define('PFC\Editor\MY_NOTES_TXT_PATH', USER_DATA_PATH.
+                                '/my-home/_my_notes.txt'
                             );
-                      
+      
+        /*
+         * GET WANTED FILE AS CONTROLLER
+         */                    
         if(Router::isSandboxRequest()) {                        
             //include requested file from sandbox
     	    require Router::getRequestFilePath();    
@@ -66,11 +73,15 @@ namespace {
             //get controller class from request
             $controllerClassName = Router::getRequestControllerClass();           
         }
-    }      
-  else {                     
-          $controllerClassName = '\\pfcEditor\\Layout\\login';           
+        
+    } else { //not logged user                     
+        $controllerClassName = '\\pfcEditor\\Layout\\login';           
     }
      
+    
+/*
+ * RUN MCV APP LOGIC
+ */    
             //initialize controller                           
             $controller = new $controllerClassName;
          
@@ -83,6 +94,5 @@ namespace {
             //render view to client as string
             echo $view->render();
             
-} //end namespace
 
 

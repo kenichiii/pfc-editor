@@ -12,7 +12,7 @@
                     
                     <li><a id="pfc-editor-webterminal-href" class="pfc-editor-page-href" href="#"><?php echo _('terminal'); ?></a></li>
                     
-                    <li><a id="pfc-editor-notestxt-href" class="pfc-editor-file-href" href="#"><?php echo _('notes.txt'); ?></a></li>
+                    <li><a id="pfc-editor-notestxt-href" class="pfc-editor-file-href" href="#"><?php echo _('my notes'); ?></a></li>
                     
                     <li><a id="pfc-sources-my-home-href" href="#pfc-sources-my-home"><?php echo _('my home'); ?></a></li>
                 </ul>            

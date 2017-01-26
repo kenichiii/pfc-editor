@@ -8,16 +8,8 @@
 
 <br>
 <ul style="margin-left: 25px;">
-    <li>make apps as web console or adminer save -> access only for logged users => web/secure-script.php with index.php include wirhout bootsraping and require AppLogin to determine if user is logged else exit; => require this file in adminer,webconsole main script</li>
-    <li>divide editor Config into configs DATA</li>
     
-    <li>use new php backend + models User, Project(s), Sources</li>
-   
     <li>use new php backend with phpQuery for templates called in controllers -> class functionss before:render:after</li>
-    
-    <li>add hardcoded basic multiuser :=> make DATA user id depend -> private settings(config)<br> => make notes.txt file in DATA and add it as my notes into main menu(encrypted)</li>
-    
-    <li>(multi language support)</li>
    
     <li>app header, tools to config</li>
     
@@ -26,8 +18,6 @@
     <li>javascript router -> generate links for page, section, tools, ajax, action</li>
     
     <li>filepath onmouseover at editor tab use realpath</li>
-    
-    <li>move sources.css to layout AND TO classic-blue.css theme</li>
 </ul>
 
 <br>  

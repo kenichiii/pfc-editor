@@ -12,18 +12,15 @@ class App {
     public static function ins()
     {
         if(self::$ins === null) {
-            self::$ins = new App(Config::lang);
+            self::$ins = new App(\pfcUserData\Config\Settings::lang);
         }
         
         return self::$ins;
     }
     
     public function __construct($lang) 
-    {
-        if($lang !== null && file_exists(APPLICATION_PATH.'/_langs/'.$lang.'.php')) {
-           $this->setLang($lang);
-           //write config file
-        }
+    {                    
+        $this->setLang($lang);        
     }
     
     public function setLang($lang) 
@@ -62,7 +59,7 @@ class App {
         return $this;
     }
     
-    public static function translate($string, array $data = []) 
+    public function translate($string, array $data = []) 
     {
         if(isset($this->getDictionary()[$string])) {
             $string = $this->getDictionary()[$string];
