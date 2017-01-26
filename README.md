@@ -20,12 +20,29 @@ Open this web address(your web folder + unpacked folder name) ie. http://somedom
 
 For new version you have to move contents of web folder to root folder(also change paths in index.php) or set this folder as public where index.php is located.
 
-Path for source code trees are located at /_app/config/Sources.php
+both version:
 
----------------------------------------
+system settings file is /_app/config/Editor.php
+
+paths for source code trees are located at /_app/config/Sources.php
+
+----------------
+
+new version:
+
+ - is set to have nologin mode on, run only from localhost or change system settings class const nologin = true;
+
+user account + setttings pfcUserData\Config\Settings file is /_data/users/[logged-user-login-name]/Config/Settings.php
+
+ace editor default theme file is /web/pfc-editor/theme/[pfcUserData\Config\Settings::theme]/ace.editor.config.js
+
+ace editor config file is /_data/users/default-user/Config/AceEditorSettings.php
+
+
+===============================
 
 Use this account to login:
- - login: pfclogin
+ - login: default-user
  - password: pfcpassword
  - pin: pfc[hours][minutes]
  
@@ -41,7 +58,7 @@ Use this account to login:
     
   => server time is printed for support on login page  
 
-------------------------------------------
+===============================
 
 Enjoy working with pfc editor:
 - create or change files, folders in left panel sources using right click on main folder/tab, folders, files
