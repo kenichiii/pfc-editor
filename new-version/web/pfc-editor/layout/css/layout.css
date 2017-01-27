@@ -112,6 +112,8 @@ a#pfc-editor-logout-href,
 
 a#pfc-editor-help-href,
 
+a#pfc-editor-about-href,
+
 a#pfc-editor-specchars-href,
 
 a#pfc-editor-config-href,
@@ -132,7 +134,8 @@ a#pfc-sources-editor-href
 #pfc-lang-switcher-holder {
     float:right;
     display:block;
-    padding-right:10px;    
+    padding-right: 5px; 
+    padding-left: 10px;
 }
 
 #pfc-lang-switcher {

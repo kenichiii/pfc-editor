@@ -8,7 +8,7 @@
 	
             <nav>
                 
-                <a id="pfc-editor-logo" href="#">[[:pfc <em>editor</em></a>
+                <a id="pfc-editor-logo" href="#">[[:<em>free</em>Pad</a>
                 
                 <ul id="pfc-editor-menu">                    
                     <li><a class="pfc-editor-active-section-href" id="pfc-sources-sources-href" href="#pfc-sources-sources"><?php echo _tr('sources'); ?></a></li>
@@ -37,6 +37,9 @@
                         <?php } ?>
                     </select>
                 </span>
+                		<a id="pfc-editor-about-href" href="#" class="pfc-editor-page-href">
+				    <?php echo _tr('about'); ?>
+                                </a>
                 
                 <a id="pfc-editor-help-href" class="pfc-editor-page-href pfc-editor-help-href" href="#"><?php echo _tr('help'); ?></a>
                 

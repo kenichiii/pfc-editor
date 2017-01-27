@@ -14,6 +14,7 @@ return [
     'logout' => 'odhlášení',
     'help' => 'nápověda',
     'tools' => 'nástroje', 
+    'about' => 'o aplikaci',
     'settings' => 'nastavení', 
     'editor' => 'editor',
     

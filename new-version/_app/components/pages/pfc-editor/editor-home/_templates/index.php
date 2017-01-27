@@ -1,7 +1,7 @@
 
 <br>
 <h1 id="pfc-editor-homepage-main-title">
-  pfc <em>editor</em>
+  <em>free</em>Pad
   <span id="pfc-editor-homepage-main-title-version">[[v0.1beta]]</span>
 </h1>
 

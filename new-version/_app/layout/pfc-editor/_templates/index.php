@@ -9,7 +9,7 @@ use pfcUserData\Config\Settings;
 <html>
     <head>
         
-        <title>pfc editor</title>
+        <title>freePad</title>
         
         <meta charset="UTF-8">
         
@@ -54,7 +54,7 @@ use pfcUserData\Config\Settings;
     <body class="<?php echo Settings::theme; ?>">
 
         <div id="pfc-editor-booting">
-            <?php echo _tr('booting pfc editor. please wait...'); ?>
+            <?php echo _tr('booting freePad. please wait...'); ?>
             <div id="pfc-editor-booting-holder">
               <div id="pfc-editor-booting-inner">
                 <div id="pfc-editor-booting-prct"></div>

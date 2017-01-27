@@ -2,7 +2,7 @@
 
 return [
   //booting  
-  'booting pfc editor. please wait...' => 'booting pfc editor. please wait...',  
+  'booting freePad. please wait...' => 'booting FreePad. please wait...',  
   
   //main menu  
     'sources' => 'sources',
@@ -14,6 +14,7 @@ return [
     'logout' => 'logout',
     'help' => 'help',
     'tools' => 'tools',   
+    'about' => 'about',
     'settings' => 'settings',
     'editor' => 'editor',
     

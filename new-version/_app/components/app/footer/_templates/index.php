@@ -23,11 +23,7 @@
              </ul>
 
 
-             <span id="copy" style="width:auto">
-               
-				<a id="pfc-editor-about-href" href="#" class="pfc-editor-page-href">
-				    about[&copy; <?php echo date('Y'); ?>]
-			    </a>
-              
+             <span id="copy" style="width:auto">               		                 
+                &copy; <?php echo date('Y'); ?> FreePad
              </span>
 
