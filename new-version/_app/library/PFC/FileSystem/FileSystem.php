@@ -27,7 +27,7 @@ class FileSystem
     
     public function getLastModificationTime($path) 
     {
-        return filemtime($this->getPath($path));
+        return @filemtime($this->getPath($path));
     }
     
     
@@ -42,39 +42,39 @@ class FileSystem
     }    
     
     public function createNewFile($path,$contents) {
-       if( $f = fopen($this->getPath($path), "w") )
+       if( $f = @fopen($this->getPath($path), "w") )
        {
-            fwrite($f, $contents);
-            fclose($f);
+            @fwrite($f, $contents);
+            @fclose($f);
          return true;   
        } else return false;
     }
     
     public function createNewFolder($path) {
-       return mkdir($this->getPath($path));
+       return @mkdir($this->getPath($path));
     }
     
     public function renaming($oldname, $newname) {
-       return rename($this->getPath($oldname), $this->getPath($newname));
+       return @rename($this->getPath($oldname), $this->getPath($newname));
     }
     
     public function whatIsIt($path) {
-       return filetype($this->getPath($path));
+       return @filetype($this->getPath($path));
     }
     
     public function deleteFile($path) {
-       return unlink($this->getPath($path));               
+       return @unlink($this->getPath($path));               
     }
     
     private function deleteDir($path) 
     {
-         foreach(scandir($this->getPath($path)) as $file)
+         foreach(@scandir($this->getPath($path)) as $file)
          {
              if ('.' === $file || '..' === $file)
              {
                  continue;
              }
-             if (filetype($this->getPath($path).'/'.$file) == 'dir')
+             if (@filetype($this->getPath($path).'/'.$file) == 'dir')
              {
                  $this->deleteDir($path.'/'.$file);
              }
@@ -83,18 +83,18 @@ class FileSystem
                  unlink($this->getPath($path).'/'.$file);
              }                        
          }
-         return rmdir($this->getPath($path));
+         return @rmdir($this->getPath($path));
     }    
     
     public function delete($path)
     {
-        if(filetype($this->getPath($path)) == 'file')
+        if(@filetype($this->getPath($path)) == 'file')
         {
-            return  unlink($this->getPath($path));
+            return  @unlink($this->getPath($path));
         }
         else
         {
-            if(filetype($this->getPath(substr($path, 0, strlen($path) - 1))) == 'dir')
+            if(@filetype($this->getPath(substr($path, 0, strlen($path) - 1))) == 'dir')
             {
                 return $this->deleteDir(substr($path, 0, strlen($path) - 1));
             }
@@ -106,7 +106,7 @@ class FileSystem
     }
     
     public function createBackupFile($pathsource,$pathtarget) {
-       return copy($this->getPath($pathsource),$this->getPath($pathtarget));
+       return @copy($this->getPath($pathsource),$this->getPath($pathtarget));
     }
     
     public function security($path,$action,$newright)
@@ -118,26 +118,26 @@ class FileSystem
        }
        else
        {
-           return chmod($this->getPath($path),octdec($newright));
+           return @chmod($this->getPath($path),octdec($newright));
        }
     }
     
     public function writeFileContents($path,$contents) {
-        return file_put_contents($this->getPath($path), $contents);
+        return @file_put_contents($this->getPath($path), $contents);
     }
     
     public function getFileContents($path) {
-        return file_get_contents($this->getPath($path));
+        return @file_get_contents($this->getPath($path));
     }
     
     public function scandir($path) {
-        	$files = scandir($this->getPath($path));
+        	$files = @scandir($this->getPath($path));
                 natcasesort($files);
                 return $files;
     }
 
     public function filesize($path) {
-        	return filesize($this->getPath($path));
+        	return @filesize($this->getPath($path));
     }    
 
 public function foldersize($path) {
@@ -171,7 +171,7 @@ public static function formatSize($size) {
 
 public function file($path)
 {
-    return file($this->getPath($path));
+    return @file($this->getPath($path));
 }
 
 public function getLineWithString($fileName, $str) {
@@ -185,7 +185,7 @@ public function getLineWithString($fileName, $str) {
 }
 
 public function readFile($path) {
-  return readfile($this->getPath($path));
+  return @readfile($this->getPath($path));
 }  
   
 }
