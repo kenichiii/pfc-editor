@@ -1,5 +1,5 @@
 
-var PFC_LastWindowWidth = $(window).width();    
+var PFC_LastWindowWidth = jQuery(window).width();    
 
 (function ( $ ) {    
 
