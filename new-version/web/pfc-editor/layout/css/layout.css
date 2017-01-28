@@ -83,15 +83,17 @@ a#pfc-editor-logo {
     display: block;
     margin-left: 5px;
     padding: 10px;
-    padding-top: 3px;
-    padding-bottom: 3px;    
+    padding-top: 0;
+    padding-bottom: 0px;    
     float: left;
+    font-size: 110%;
 }
 
 #pfc-editor-logo-close-tag {
     float:right;
     display:block;
     padding-right:10px;
+    font-size: 110%;
 }
 
 #pfc-editor-menu li {

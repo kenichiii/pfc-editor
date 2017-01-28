@@ -47,18 +47,16 @@
          
          
          <div class="pfc-texts">
-             <div class="pfc-texts-alert-button">OK</div>
-             <div class="pfc-texts-popup-confirm-yes-button">YES</div>
-             <div class="pfc-texts-popup-confirm-no-button">NO</div>
+             <div class="pfc-texts-alert-button"><?php echo _tr('OK'); ?></div>
+             <div class="pfc-texts-popup-confirm-yes-button"><?php echo _tr('YES'); ?></div>
+             <div class="pfc-texts-popup-confirm-no-button"><?php echo _tr('NO'); ?></div>
          </div>
          
        
         
-        <div id="pfc-editor-waiting-box">
-            
-            Proccessing<br>
-            Please wait...
-            
+        <div id="pfc-editor-waiting-box">            
+            <?php echo _tr('Proccessing'); ?><br>
+            <?php echo _tr('Please wait...'); ?>            
         </div> 
 
         

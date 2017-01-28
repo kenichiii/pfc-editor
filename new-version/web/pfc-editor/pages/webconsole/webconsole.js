@@ -5,7 +5,7 @@
 
 
 var pfcEditorWebterminalPage = {
-    pageid: 'webterminal',
+    pageid: 'webconsole',
     title: 'SHELL TERMINAL',
     config: {
         url: ''

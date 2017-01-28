@@ -40,5 +40,19 @@ class Config
      * SERVER TIMEZONE
      */
     const default_timezone = "Europe/Prague";       
-                       
+ 
+    
+
+    /*
+     * SOURCES
+     */
+      const SourcesLastModificationChecker = true;
+      const SourcesLastModificationCheckerInterval = 1700;      
+
+     /*
+      * EDITOR
+      */       
+       const EditorLastModificationChecker = true;
+       const EditorLastModificationCheckerInterval = 8000; //ms
+
 }

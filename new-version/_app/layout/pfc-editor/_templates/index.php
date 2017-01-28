@@ -1,5 +1,6 @@
 <?php
 
+use PFC\Editor\Config;
 use PFC\Editor\Config\Sources;
 use PFC\Editor\Router;
 use pfcUserData\Config\Settings;
@@ -41,11 +42,11 @@ use pfcUserData\Config\Settings;
         <link href="pfc-editor/pages/pfc-editor/editor-config/config.css" rel="stylesheet" type="text/css"/>
         
         <!-- TOOLS -->
-        <link href="pfc-editor/tools/defaultApps/styles.css" rel="stylesheet" type="text/css"/>        
+        <link href="pfc-editor/tools/default-apps/styles.css" rel="stylesheet" type="text/css"/>        
       
         <!-- SECTIONS -->
-        <link href="pfc-editor/sections/css/sources.css" rel="stylesheet" type="text/css"/>
-        <link href="pfc-editor/sections/css/extensions.css" rel="stylesheet" type="text/css"/>
+        <link href="pfc-editor/sections/sources/css/sources.css" rel="stylesheet" type="text/css"/>
+        <link href="pfc-editor/sections/sources/css/extensions.css" rel="stylesheet" type="text/css"/>
         
         <!-- THEME -->
         <link href="pfc-editor/theme/<?php echo Settings::theme; ?>/styles.css" rel="stylesheet" type="text/css"/>
@@ -54,7 +55,7 @@ use pfcUserData\Config\Settings;
     <body class="<?php echo Settings::theme; ?>">
 
         <div id="pfc-editor-booting">
-            <?php echo _tr('booting freePad. please wait...'); ?>
+            <?php echo _tr('booting <em>free</em>Pad. please wait...'); ?>
             <div id="pfc-editor-booting-holder">
               <div id="pfc-editor-booting-inner">
                 <div id="pfc-editor-booting-prct"></div>
@@ -185,16 +186,16 @@ use pfcUserData\Config\Settings;
             
     <script src="pfc-editor/pfc-editor.js" type="text/javascript"></script>
 
-    <script src="pfc-editor/editor/ace.editor.js"></script>             
+    <script src="pfc-editor/editor/code.editor.js"></script>             
     <script src="pfc-editor/theme/<?php echo Settings::theme; ?>/ace.editor.config.js" type="text/javascript"></script>                               
     <script src="<?php echo Router::editorlinkpjs('ace-editor-config'); ?>" type="text/javascript"></script>                               
     
     <!-- TOOLS -->        
-    <script src="pfc-editor/tools/defaultApps/tools.js" type="text/javascript"></script>
-    <script src="pfc-editor/tools/defaultApps/snippets/snippets.js" type="text/javascript"></script>
+    <script src="pfc-editor/tools/default-apps/tools.js" type="text/javascript"></script>
+    <script src="pfc-editor/tools/default-apps/snippets/snippets.js" type="text/javascript"></script>
       
     <!-- SECTIONS -->  
-    <script src="pfc-editor/sections/sources.js" type="text/javascript"></script>
+    <script src="pfc-editor/sections/sources/sources.js" type="text/javascript"></script>
       
         <script  type="text/javascript">
           (function($) {      
@@ -231,8 +232,8 @@ use pfcUserData\Config\Settings;
         $.pfcEditor.editor.config.getFileContentsUrl =  "<?php echo Router::editorlinkajax('get-file-contents'); ?>";
         $.pfcEditor.editor.config.checkLastModificationTimeCheckerUrl = "<?php echo Router::editorlinkajax('get-file-last-update'); ?>";
         
-        $.pfcEditor.editor.config.lastModificationTimeCheckerDelay = <?php echo Settings::EditorLastModificationCheckerInterval; ?>;
-        $.pfcEditor.editor.config.lastModificationCheckerOn = <?php echo Settings::EditorLastModificationChecker ?  'true':'false'; ?>;          
+        $.pfcEditor.editor.config.lastModificationTimeCheckerDelay = <?php echo Config::EditorLastModificationCheckerInterval; ?>;
+        $.pfcEditor.editor.config.lastModificationCheckerOn = <?php echo Config::EditorLastModificationChecker ?  'true':'false'; ?>;          
         
         //sandbox      
         $.pfcEditor.editor.config.sandboxUrl =  "?sandbox=";
@@ -248,16 +249,16 @@ use pfcUserData\Config\Settings;
         $.pfcEditor.getPage('adminer').config.url = '<?php echo Router::pagelink('adminer'); ?>';
         $.pfcEditor.getPage('adminer').multi = <?php echo Settings::isAdminerMultiPage ?  'true':'false'; ?>;
                 
-        $.pfcEditor.getPage('webterminal').config.url = '<?php echo Router::pagelink('webterminal'); ?>';
-        $.pfcEditor.getPage('webterminal').multi = <?php echo Settings::isTerminalMultiPage ?  'true':'false'; ?>;        
+        $.pfcEditor.getPage('webconsole').config.url = '<?php echo Router::pagelink('webconsole'); ?>';
+        $.pfcEditor.getPage('webconsole').multi = <?php echo Settings::isWebConsoleMultiPage ?  'true':'false'; ?>;        
         
         //sections
             //SOURCES
             <?php foreach(Sources::getBySections() as $section => $paths) { ?>
             $.pfcEditor.addSection('#pfc-sources-<?php echo $section; ?>-href',$pfcEditorSources.factory({secid:'pfc-sources-<?php echo $section; ?>'}));
             
-            $.pfcEditor.getSection('pfc-sources-<?php echo $section; ?>').config.updaterTimeout = <?php echo Settings::SourcesLastModificationCheckerInterval; ?>;
-            $.pfcEditor.getSection('pfc-sources-<?php echo $section; ?>').config.lastModificationCheckerOn = <?php echo Settings::SourcesLastModificationChecker ?  'true':'false'; ?>;
+            $.pfcEditor.getSection('pfc-sources-<?php echo $section; ?>').config.updaterTimeout = <?php echo Config::SourcesLastModificationCheckerInterval; ?>;
+            $.pfcEditor.getSection('pfc-sources-<?php echo $section; ?>').config.lastModificationCheckerOn = <?php echo Config::SourcesLastModificationChecker ?  'true':'false'; ?>;
 
             $.pfcEditor.getSection('pfc-sources-<?php echo $section; ?>').config.opendirs = [
                         <?php foreach($paths as $k=>$s) { ?>
@@ -281,7 +282,7 @@ use pfcUserData\Config\Settings;
         setTimeout(function(){                            
             //open welcome page
             $('#pfc-editor-logo').trigger('click');
-            $('#pfc-editor-dialogs-heads a[href="#pfc-editor_editor-home"]').text('Welcome');
+            $('#pfc-editor-dialogs-heads a[href="#pfc-editor_editor-home"]').text('<?php echo _tr('Welcome'); ?>');
             
             //trigger opened left panel
             $('#pfc-sources-sources-href').trigger('click');

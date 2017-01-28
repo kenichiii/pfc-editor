@@ -21,10 +21,10 @@ class Sources
           /**
            * USER DATA SANDBOX 
            */
-          'sandbox-src' => [
-              'section'=>'sandbox',
+          'sandbox' => [
+              'section'=>'sandbox-src',
               'title'=>'Sandbox',
-              'name'=>'sandbox-src',
+              'name'=>'sandbox',
               'root'=>\PFC\Editor\USER_DATA_SANDBOX_PATH,
               'path'=>'./'
           ],          
@@ -32,10 +32,10 @@ class Sources
           /**
            * USER DATA HOME 
            */        
-          'my-home-src' => [
-              'section'=>'my-home',
+          'my-home' => [
+              'section'=>'my-home-src',
               'title'=>'MY HOME',
-              'name'=>'my-home-src',
+              'name'=>'my-home',
               'root'=>\PFC\Editor\USER_DATA_HOME_PATH,
               'path'=>'./'
           ],  

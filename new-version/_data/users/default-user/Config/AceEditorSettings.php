@@ -15,7 +15,7 @@ class AceEditorSettings
     /** renderer options **/
     const showFoldWidgets = true;
     const showLineNumbers = true;
-    const fontSize = '130%';    
+    const fontSize = '120%';    
     //Ace can display only monospace fonts, The issue you describe can happen either if something changes font of the editor to non monospace, or assigns different fonts to different parts of the editor. 
     const fontFamily = 'monospace';
         

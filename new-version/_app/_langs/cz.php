@@ -2,8 +2,18 @@
 
 return [
  //booting  
-  'booting pfc editor. please wait...' => 'nahrávám pfc editor. počkejte prosím...',  
+  'booting <em>free</em>Pad. please wait...' => 'nahrávám <em>free</em>Pad. počkejte prosím...',  
   
+    //UI
+    'Proccessing' => 'Zpracovávám',
+    'Please wait...' => 'Počkejte prosím...',
+    'OK' => 'OK',
+    'YES' => 'ANO',
+    'NO' => 'NE',  
+  
+  //HP
+    'Welcome' => 'Vítejte',
+    
   //main menu  
     'sources' => 'zdrojové kódy',
     'sandbox' => 'php pískoviště',
@@ -36,6 +46,28 @@ return [
     'Rename' => 'Přejmenovat',
     'Delete' => 'Smazat',
     'Attributes' => 'Atributy',
+
+    //tools
+    'color picker' => 'výběr barvy',
+    'calculator' => 'kalkulačka',
+    'color scheme generator' => 'generátor barevných schémat',
+    'special chars'  => 'speciální znaky',
+    'character codes' => 'znakové kódy',
+    'JS' => 'JS',
+    'PhpJS.org' => 'PhpJS.org',
+    'KEY CODE' => 'KÓD KLÁVESY',
+    'keypress' => 'keypress',
+    'keydown/up' => 'keydown/up',
+    'SERVER' => 'SERVER',
+    'phpinfo'  => 'phpinfo',       
     
+    
+
+   /**
+    * JAVASCRIPT
+    */ 
+    '__javascript__' => [
+        
+    ]    
 ];
 

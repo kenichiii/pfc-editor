@@ -123,7 +123,10 @@ class FileSystem
     }
     
     public function writeFileContents($path,$contents) {
-        return @file_put_contents($this->getPath($path), $contents);
+        //if(is_writable($this->getPath($path))) {
+        
+        return @file_put_contents($this->getPath($path), $contents)
+                || !$contents; //saving empty file return false
     }
     
     public function getFileContents($path) {

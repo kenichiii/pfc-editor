@@ -8,6 +8,13 @@
 <br>
 <ul style="margin-left: 25px;">
     
+    <li>make js pfcEditor.addPage selector independent -> listen .cssclass -> pageid to href</li>
+    <li>make default workspace->sources autodetect from REQUEST_URI</li>
+    <li>account informations required from return array -> multiuser get list of accounts</li>
+    <li>code editor make bottom mode info dblclick as file encoding - localy select mode</li>
+        <li>FIND LAST VERSION OF PEAR\System and use it for search in files</li>
+    <li>MAKE AJAX REQUESTS ASYNC</li>
+    <li>MAKE JS _tr + load lang mutations</li>
     <li>use new php backend with phpQuery for templates called in controllers -> class functionss before:render:after</li>
    
     <li>app header, tools to config</li>
@@ -22,6 +29,7 @@
 <br>  
 <div style="">
   <b>FINDED BUGS:</b><br>
+  - open file use realpath-> no duplicities<br>
   - close after open file is deleted dont work<br>
   - middle tab panel for editor -> close all dont close unsaved file => ask if you want<br>
   - pfcPrompt focus into input -> listen enter to trigger OK escape for STORNO -> pfcAlert, pfcConfirm enter/esc<br>

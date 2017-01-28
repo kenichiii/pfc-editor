@@ -10,7 +10,9 @@ class saveFile extends ActionController
    public function indexAction() 
    {
    
-            $fs = new \PFC\Editor\Sources($_POST['root']);
+            $fs = new \PFC\Editor\Sources(
+                filter_input(INPUT_POST,'root')
+              );
 
              $path = filter_input(INPUT_POST, 'path');
              $text = filter_input(INPUT_POST, 'code');

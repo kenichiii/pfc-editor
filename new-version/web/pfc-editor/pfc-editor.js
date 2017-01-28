@@ -163,6 +163,19 @@
             });
         },
         
+        addStandaloneFiles: function() {
+            $(function(){
+               $('.pfc-editor-file-href').click(function(){
+                  var path = $(this).attr('path');
+                  var root = $(this).attr('root');
+                  var ext  = $(this).attr('ext');
+                  
+                  $.pfcEditor.editor.openfile(path, root, ext);
+                  
+                  return false; 
+               }); 
+            });    
+        },
         
         getPageFormOptions: function(success) {
                  return     {
@@ -330,6 +343,8 @@
             
 
              this.addExternalPages();
+            
+             this.addStandaloneFiles();
             
              callback(this);
         } //init                                   

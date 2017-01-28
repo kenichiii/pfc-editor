@@ -10,6 +10,6 @@ nebo <a href="https://github.com/ajaxorg/ace" target="_blank">https://github.com
 <br>
                         <b>Ctrl + s</b>&nbsp;&nbsp;&nbsp;&nbsp; <i>uloží obsah otevřeného souboru</i>,<br><br>
                         <b>Ctrl + q</b>&nbsp;&nbsp;&nbsp;&nbsp; <i>lokální nastavení editoru zdrojových kódů</i>,<br><br>
-                        <b>Ctrl + SPACE</b>&nbsp;&nbsp;&nbsp;&nbsp; <i>automatické doplňování slov + zkratky kódů</i>,<br><br>
+                        <b>Ctrl + MEZERNÍK</b>&nbsp;&nbsp;&nbsp;&nbsp; <i>automatické doplňování slov + zkratky kódů</i>,<br><br>
                         <a href="https://github.com/ajaxorg/ace/wiki/Default-Keyboard-Shortcuts" target="_blank">Defaultní klávesové zkratky editoru</a>
       
