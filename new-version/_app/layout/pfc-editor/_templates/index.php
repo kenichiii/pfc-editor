@@ -212,7 +212,7 @@ use pfcUserData\Config\Settings;
             
     <script src="pfc-editor/pages/adminer/adminer.js" type="text/javascript"></script>            
             
-    <script src="pfc-editor/pages/webterminal/webterminal.js" type="text/javascript"></script> 
+    <script src="pfc-editor/pages/webconsole/webconsole.js" type="text/javascript"></script> 
       
         <script  type="text/javascript">
           (function($) {    

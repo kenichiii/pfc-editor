@@ -24,6 +24,6 @@
 
 
              <span id="copy" style="width:auto">               		                 
-                &copy; <?php echo date('Y'); ?> FreePad
+                &copy; <?php echo date('Y'); ?> <em>free</em>Pad
              </span>
 

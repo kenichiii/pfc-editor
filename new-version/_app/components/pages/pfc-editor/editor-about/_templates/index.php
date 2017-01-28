@@ -1,9 +1,9 @@
 
-<h2>pfc editor :: web development tool</h2>
+<h2><em>free</em>Pad :: web development tool</h2>
 <br>
 <p>
     
-    Copyright (&copy;) <?php echo date('Y'); ?> Martin Königsmark
+    &copy; <?php echo date('Y'); ?> Martin Königsmark
     <br> All rights reserved.
 </p>  
 <br> 
@@ -14,7 +14,7 @@
 <br>
 <br>
 
-<p><a href="http://pfceditor.kena23.cz/" target="_blank">pfc editor project homepage</a></p>
+<p><a href="http://freePad.kena23.cz/" target="_blank">project homepage</a></p>
 
 <br>
 <br>
