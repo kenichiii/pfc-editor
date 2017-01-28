@@ -4,7 +4,7 @@ free opensource php&amp;jquery online web developer editor :: online web ide
 This project will be designed architecture for project first phase - creating projects based basic editor allowing adding plugins.
 
 You can see first functional prototype of basic editor at
-http://freePad.kena23.cz/demo/
+http://freePad.kena23.cz/demo/web/
 
 For more information see:
 http://freePad.kena23.cz/
