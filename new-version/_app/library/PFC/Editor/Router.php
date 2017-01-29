@@ -274,7 +274,7 @@ class Router
       
       
       	 else {          
-            $r = 'Layout\\pfcEditor';                            
+            $r = 'Layout\\main';                            
          }
 
       return '\\pfcEditor\\' . preg_replace_callback(

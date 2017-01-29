@@ -1,14 +1,5 @@
 <?php
 
-/*
-    pfc editor :: online developnent tool
-    -------------------------------------
-    
-    Copyright (C) 2015  Martin Königsmark
-
-*/
-
-//get global namespace
 namespace PFC\Editor;
 
  //shortcut App 

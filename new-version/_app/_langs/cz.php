@@ -1,6 +1,24 @@
 <?php
 
 return [
+  //LOGIN PAGE  
+  'login' => 'login',
+  'server time' => 'serverový čas',
+  'BCRYPTING IS TURN ON, BUT NOT SUPPORTED BY SERVER' => 'BCRYPTING JE ZAPNUTÝ, ALE NENÍ PODPOROVÁN SERVEREM',
+  'reset password' => 'zresetujte heslo',
+  'wrong creditials provided' => 'neplatné přihlašovací údaje',
+  'banned until' => 'zakázán do',
+  'too much tryies' => 'příliš mnoho pokusů',
+  'Login' => 'Login',
+  'Password' => 'Heslo',
+  'Pin' => 'Pin',
+  'Email' => 'Email',
+  'Reset password' => 'Resetovat heslo',
+  'Login form' => 'Login formulář',
+  'unknowen login error' => 'neznámý login error',
+  'http error when running form' => 'http error v průběhu formuláře',      
+
+//MAIN    
  //booting  
   'booting <em>free</em>Pad. please wait...' => 'nahrávám <em>free</em>Pad. počkejte prosím...',  
   
@@ -18,7 +36,7 @@ return [
     'sources' => 'zdrojové kódy',
     'sandbox' => 'php pískoviště',
     'adminer' => 'adminer',
-    'terminal' => 'terminál',
+    'terminal' => 'webkonzole',
     'my notes' => 'moje poznámky',                    
     'my home' => 'můj adresář',
     'logout' => 'odhlášení',
@@ -55,7 +73,7 @@ return [
     'character codes' => 'znakové kódy',
     'JS' => 'JS',
     'PhpJS.org' => 'PhpJS.org',
-    'KEY CODE' => 'KÓD KLÁVESY',
+    'KEY CODE' => 'KL. KÓDY',
     'keypress' => 'keypress',
     'keydown/up' => 'keydown/up',
     'SERVER' => 'SERVER',

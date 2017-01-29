@@ -13,40 +13,40 @@ use PFC\Editor\Router;
 <html>
     
             <head>
+                <title>freePad <?php echo _tr('login'); ?></title>
                 <meta charset="utf-8">   
-                <style>
-                    body {
-                        background-color: black;
-                        color: #ddd;
-                    }
-                    input {
-                        background-color: #303030;
-                        color: lightskyblue;
-                    }
-                    
-                </style>    
+                <link type="text/css" href="application/theme/login.css">
             </head>  
-          <body>  
+          <body class="pfc-editor-layout-login">  
+            <br><br>
+                <div id="pfc-lang-switcher-holder" style="width:500px;text-align: right;">
+                    <select id="pfc-lang-switcher">
+                        <?php foreach(App::ins()->getLanguages() as $lang) { ?>
+                            <option value="<?php echo $lang; ?>"><?php echo $lang; ?></option>
+                        <?php } ?>
+                    </select>
+                </div>  
               
-            <h1>pfc editor login</h1>
+            <h1><em>free</em><span>Pad</span> <?php echo _tr('login'); ?></h1>
+            
             <br>
             <div>
-                server time: <span class="pfc-editor-server-time"><?php echo date('j.n.Y G:i:s'); ?></span>
+                <?php echo _tr('server time'); ?>: <span class="pfc-editor-server-time"><?php echo date('j.n.Y G:i:s'); ?></span>
             </div>
             <?php if(AppConfig::crypting==AppCryptor::USE_Bcrypt
                     && !Bcrypt::isEnabled()) { ?>
-                    <h4>BCRYPTING IS TURN ON, BUT NOT SUPPORTED BY SERVER</h4>
-                    reset password
+                    <h4><?php echo _tr('BCRYPTING IS TURN ON, BUT NOT SUPPORTED BY SERVER'); ?></h4>
+                    <?php echo _tr('reset password'); ?>
                     <?php } ?>
             <br>
             
-            <div class="error" style="display:none;color:lightred;">
-              wrong creditials provided<br><br>
+            <div class="error">
+              <?php echo _tr('wrong creditials provided'); ?><br><br>
             </div>
 
-                  <div class="banned" style="display:none;color:lightred;">
-                    banned until <span class="bannedToTime"></span>                    
-                    - too much tryies 
+                  <div class="banned">
+                    <?php echo _tr('banned until'); ?> <span class="bannedToTime"></span>                    
+                    - <?php echo _tr('too much tryies'); ?> 
                     <br> <br> 
                   </div>            
             
@@ -54,10 +54,10 @@ use PFC\Editor\Router;
            
             <div id="pfc-editor-login-form-holder">   
                 <form id="pfc-editor-login-form" method="post" action="<?php echo Router::applinkaction('login'); ?>">                
-                     Login: <input type="text" name="login"> 
-                     Password: <input type="password" name="pwd">
-                     Pin: <input type="password" name="pin">
-                    <input type="submit" value="login">
+                     <?php echo _tr('Login'); ?>: <input type="text" name="login"> 
+                     <?php echo _tr('Password'); ?>: <input type="password" name="pwd">
+                     <?php echo _tr('Pin'); ?>: <input type="password" name="pin">
+                    <input type="submit" value="<?php echo _tr('login'); ?>">
                 </form>  
                 <br>   
                 <!--a href="#">Forgotten password?</a-->                  
@@ -65,11 +65,11 @@ use PFC\Editor\Router;
             
             <div id="pfc-editor-forgotten-form-holder" style="display:none">   
                 <form method="post" action="<?php echo Router::applinkaction('forgotten'); ?>">                
-                     Email: <input type="text" name="email">
-                    <input type="submit" value="Reset password">
+                     <?php echo _tr('Email'); ?>: <input type="text" name="email">
+                    <input type="submit" value="<?php echo _tr('Reset password'); ?>">
                 </form>  
                 <br>   
-                <a href="#">Login form</a>
+                <a href="#"><?php echo _tr('Login form'); ?></a>
             </div>                   
             
             
@@ -109,7 +109,7 @@ use PFC\Editor\Router;
                         }
                       else
                         {
-                          alert('unknowen login error');
+                          alert('<?php echo _tr('unknowen login error'); ?>';
                         }
                     }
                   
@@ -122,7 +122,7 @@ use PFC\Editor\Router;
                                     },
                                     error: function(response, status, err){
                                         
-                                        alert('http error when running form');
+                                        alert('<?php echo _tr('http error when running form'); ?>');
                                     },
                                     dataType:  'json'
                             };

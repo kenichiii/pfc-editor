@@ -1,6 +1,25 @@
 <?php
 
 return [
+  //LOGIN PAGE  
+  'login' => 'login',
+  'server time' => 'server time',
+  'BCRYPTING IS TURN ON, BUT NOT SUPPORTED BY SERVER' => 'BCRYPTING IS TURN ON, BUT NOT SUPPORTED BY SERVER',
+  'reset password' => 'reset password',
+  'wrong creditials provided' => 'wrong creditials provided',
+  'banned until' => 'banned until',
+  'too much tryies' => 'too much tryies',
+  'Login' => 'Login',
+  'Password' => 'Password',
+  'Pin' => 'Pin',
+  'Email' => 'Email',
+  'Reset password' => 'Reset password',
+  'Login form' => 'Login form',
+  'unknowen login error' => 'unknowen login error',
+  'http error when running form' => 'http error when running form',  
+    
+            
+ //MAIN   
   //booting  
   'booting <em>free</em>Pad. please wait...' => 'booting <em>free</em>Pad. please wait...',  
 
