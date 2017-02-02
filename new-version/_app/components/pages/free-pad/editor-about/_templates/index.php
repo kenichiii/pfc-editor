@@ -1,5 +1,5 @@
 
-<h2><em>free</em>Pad :: web development tool</h2>
+<h2><em>free</em>Pad editor :: web development tool</h2>
 <br>
 <p>
     

@@ -19,7 +19,17 @@ $.pfcEditor.editor = {
           lastModificationCheckerOn: true          
         },    
         
+        editorBar: [],
+        addToEditorBar: function(bean) {
+            this.editorBar.push(bean);
+        },
+        removeFromEditorBar: function() {
+                
+        },
+        
         openfile:function(file_path,root,ext) {
+            this.addToEditorBar({type:'file',file_path:file_path,root:root,ext:ext});
+            
             var pfcEditorEditorThat = this;
             
                   $.pfcEditor.ui.showWaitingBox();    
@@ -117,12 +127,13 @@ $.pfcEditor.editor = {
                 init: function() {
                     
                     this.openDialogsTabsListeners();
-                    this.initKeySaveFile();
+                    this.initKeySaveFile();0
                 }
                 
             }, //ui
             
             addPage: function(page,ext) {
+                this.addToEditorBar({type:'page',page:page,ext:ext});
                 var params;
                 
                 //test if already open

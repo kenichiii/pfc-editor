@@ -346,6 +346,11 @@
             
              this.addStandaloneFiles();
             
+             //set ASYNC MODE
+             $.ajaxSetup({
+                    async: false
+                    });
+            
              callback(this);
         } //init                                   
                         

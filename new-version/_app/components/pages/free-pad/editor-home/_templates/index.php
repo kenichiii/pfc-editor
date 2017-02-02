@@ -1,7 +1,7 @@
 
 <br>
 <h1 id="pfc-editor-homepage-main-title">
-  <em>free</em>Pad
+  <em>free</em>Pad editor
   <span id="pfc-editor-homepage-main-title-version">[[v0.1beta]]</span>
 </h1>
 
@@ -19,7 +19,7 @@
    
     <li>app header, tools to config</li>
     
-    <li>projects -> default,html,php -> sources, pages(apps), tools</li>
+    <li>projects -> empty,html5,php -> sources, pages(apps), tools</li>
     
     <li>javascript router -> generate links for page, section, tools, ajax, action</li>
     

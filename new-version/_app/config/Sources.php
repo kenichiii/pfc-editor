@@ -14,7 +14,7 @@ class Sources
               'title'=>'Workspace',
               'name'=>'public',
               'root'=>\PFC\Editor\PUBLIC_PATH,
-              'path'=>'../../../'
+              'path'=>'../../'
           ],
                
         

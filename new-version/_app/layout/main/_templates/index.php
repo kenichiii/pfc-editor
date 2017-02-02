@@ -282,7 +282,7 @@ use pfcUserData\Config\Settings;
         setTimeout(function(){                            
             //open welcome page
             $('#pfc-editor-logo').trigger('click');
-            $('#pfc-editor-dialogs-heads a[href="#pfc-editor_editor-home"]').text('<?php echo _tr('Welcome'); ?>');
+            $('#pfc-editor-dialogs-heads a[href="#free-pad_editor-home"]').text('<?php echo _tr('Welcome'); ?>');
             
             //trigger opened left panel
             $('#pfc-sources-sources-href').trigger('click');
