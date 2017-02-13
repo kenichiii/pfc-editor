@@ -1,0 +1,69 @@
+
+
+
+/* File Extensions*/
+.pfc-editor-file-actions { background-image: url(../../../images/icons/files/file.png); background-repeat:no-repeat;background-position:3px 3px;  }
+.file-actions-page { background-image: url(../../../images/icons/files/directory.png); background-repeat:no-repeat;background-position:3px 3px;  }
+
+
+.file-actions-3gp { background-image: url(../../../images/icons/files/film.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-afp { background-image: url(../../../images/icons/files/code.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-afpa { background-image: url(../../../images/icons/files/code.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-asp { background-image: url(../../../images/icons/files/code.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-aspx { background-image: url(../../../images/icons/files/code.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-avi { background-image: url(../../../images/icons/files/film.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-bat { background-image: url(../../../images/icons/files/application.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-bmp { background-image: url(../../../images/icons/files/picture.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-c { background-image: url(../../../images/icons/files/code.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-cfm { background-image: url(../../../images/icons/files/code.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-cgi { background-image: url(../../../images/icons/files/code.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-com { background-image: url(../../../images/icons/files/application.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-cpp { background-image: url(../../../images/icons/files/code.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-css { background-image: url(../../../images/icons/files/css.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-doc { background-image: url(../../../images/icons/files/doc.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-exe { background-image: url(../../../images/icons/files/application.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-gif { background-image: url(../../../images/icons/files/picture.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-fla { background-image: url(../../../images/icons/files/flash.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-h { background-image: url(../../../images/icons/files/code.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-htm { background-image: url(../../../images/icons/files/html.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-html { background-image: url(../../../images/icons/files/html.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-jar { background-image: url(../../../images/icons/files/java.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-jpg { background-image: url(../../../images/icons/files/picture.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-jpeg { background-image: url(../../../images/icons/files/picture.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-js { background-image: url(../../../images/icons/files/script.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-lasso { background-image: url(../../../images/icons/files/code.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-log { background-image: url(../../../images/icons/files/txt.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-md { background-image: url(../../../images/icons/files/txt.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-m4p { background-image: url(../../../images/icons/files/music.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-mov { background-image: url(../../../images/icons/files/film.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-mp3 { background-image: url(../../../images/icons/files/music.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-mp4 { background-image: url(../../../images/icons/files/film.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-mpg { background-image: url(../../../images/icons/files/film.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-mpeg { background-image: url(../../../images/icons/files/film.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-ogg { background-image: url(../../../images/icons/files/music.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-pcx { background-image: url(../../../images/icons/files/picture.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-pdf { background-image: url(../../../images/icons/files/pdf.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-php { background-image: url(../../../images/icons/files/php.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-png { background-image: url(../../../images/icons/files/picture.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-ppt { background-image: url(../../../images/icons/files/ppt.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-psd { background-image: url(../../../images/icons/files/psd.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-pl { background-image: url(../../../images/icons/files/script.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-py { background-image: url(../../../images/icons/files/script.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-rb { background-image: url(../../../images/icons/files/ruby.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-rbx { background-image: url(../../../images/icons/files/ruby.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-rhtml { background-image: url(../../../images/icons/files/ruby.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-rpm { background-image: url(../../../images/icons/files/linux.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-ruby { background-image: url(../../../images/icons/files/ruby.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-sql { background-image: url(../../../images/icons/files/db.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-swf { background-image: url(../../../images/icons/files/flash.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-tif { background-image: url(../../../images/icons/files/picture.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-tiff { background-image: url(../../../images/icons/files/picture.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-txt { background-image: url(../../../images/icons/files/txt.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-vb { background-image: url(../../../images/icons/files/code.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-wav { background-image: url(../../../images/icons/files/music.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-aac { background-image: url(../../../images/icons/files/music.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-wmv { background-image: url(../../../images/icons/files/film.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-xls { background-image: url(../../../images/icons/files/xls.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-xml { background-image: url(../../../images/icons/files/code.png); background-repeat:no-repeat;background-position:3px 3px; }
+.file-actions-zip { background-image: url(../../../images/icons/files/zip.png); background-repeat:no-repeat;background-position:3px 3px; }
+
