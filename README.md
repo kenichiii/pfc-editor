@@ -1,4 +1,4 @@
-# freePad
+# freePad IDE
 free opensource php&amp;jquery online web developer editor :: online web ide
 
 This project will be designed architecture for project first phase - creating projects based basic editor allowing adding plugins.
