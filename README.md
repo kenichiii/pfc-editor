@@ -1,13 +1,13 @@
-# freePad IDE
+# idePad
 free opensource php&amp;jquery online web developer editor :: online web ide
 
 This project will be designed architecture for project first phase - creating projects based basic editor allowing adding plugins.
 
 You can see first functional prototype of basic editor at
-http://freePad.kena23.cz/demo/web/
+http://idePad.kena23.cz/demo/web/
 
 For more information see:
-http://freePad.kena23.cz/
+http://idePad.kena23.cz/
 
 
 # INSTALL DEMO/NEW VERSION
@@ -28,7 +28,7 @@ new version:
 ./_data/users/[logged-user-login-name]/Config/Settings.php
 
 - ace editor default theme file is:
-/web/pfc-editor/theme/[theme-name]/ace.editor.config.js
+./web/application/theme/[theme-name]/ace.editor.config.js
 
 - ace editor config file is:
 ./_data/users/default-user/Config/AceEditorSettings.php
