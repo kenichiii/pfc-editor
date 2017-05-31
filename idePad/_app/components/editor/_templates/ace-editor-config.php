@@ -73,8 +73,8 @@
 
 
             /** editor options defined by extensions **/
-            //enableMultiselect: ,
-            //enableEmmet: ,
+            //enableMultiselect: true,
+            enableEmmet: true,
             enableBasicAutocompletion: <?php echo AceEditorSettings::enableBasicAutocompletion ? 'true' : 'false'; ?>,
             enableSnippets: <?php echo AceEditorSettings::enableSnippets ? 'true' : 'false'; ?>,
             enableLiveAutocompletion:  <?php echo AceEditorSettings::enableLiveAutocompletion ? 'true' : 'false'; ?>,

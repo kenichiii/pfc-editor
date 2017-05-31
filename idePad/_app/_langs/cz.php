@@ -2,7 +2,8 @@
 
 return [
   //LOGIN PAGE  
-  'login' => 'login',
+  'login' => 'přihlášení',
+  'language' => 'jazyk',  
   'server time' => 'serverový čas',
   'BCRYPTING IS TURN ON, BUT NOT SUPPORTED BY SERVER' => 'BCRYPTING JE ZAPNUTÝ, ALE NENÍ PODPOROVÁN SERVEREM',
   'reset password' => 'zresetujte heslo',
@@ -20,7 +21,7 @@ return [
 
 //MAIN    
  //booting  
-  'booting <em>free</em>Pad. please wait...' => 'nahrávám <em>free</em>Pad. počkejte prosím...',  
+  'booting <em>ide</em>Pad. please wait...' => 'nahrávám <em>free</em>Pad. počkejte prosím...',  
   
     //UI
     'Proccessing' => 'Zpracovávám',
@@ -33,18 +34,18 @@ return [
     'Welcome' => 'Vítejte',
     
   //main menu  
-    'sources' => 'zdrojové kódy',
-    'sandbox' => 'php pískoviště',
-    'adminer' => 'adminer',
-    'terminal' => 'webkonzole',
-    'my notes' => 'moje poznámky',                    
-    'my home' => 'můj adresář',
-    'logout' => 'odhlášení',
-    'help' => 'nápověda',
-    'tools' => 'nástroje', 
-    'about' => 'o aplikaci',
-    'settings' => 'nastavení', 
-    'editor' => 'editor',
+    'Sources' => 'Zdrojové kódy',
+    'Sandbox' => 'Php pískoviště',
+    'Adminer' => 'Adminer',
+    'Webconsole' => 'Webkonzole',
+    'My notes' => 'Moje poznámky',                    
+    'My home' => 'Můj adresář',
+    'Logout' => 'Odhlášení',
+    'Help' => 'Nápověda',
+    'Tools' => 'Nástroje', 
+    'About' => 'O aplikaci',
+    'Settings' => 'Nastavení', 
+    'Editor src' => 'Editor src',
     
   //sources  
   'Workspace' => 'Pracovní adresář',  
@@ -66,18 +67,18 @@ return [
     'Attributes' => 'Atributy',
 
     //tools
-    'color picker' => 'výběr barvy',
-    'calculator' => 'kalkulačka',
-    'color scheme generator' => 'generátor barevných schémat',
-    'special chars'  => 'speciální znaky',
-    'character codes' => 'znakové kódy',
+    'Color picker' => 'Výběr barvy',
+    'Calculator' => 'Kalkulačka',
+    'Color scheme generator' => 'Generátor barevných schémat',
+    'Special chars'  => 'Speciální znaky',
+    'Character codes' => 'Znakové kódy',
     'JS' => 'JS',
     'PhpJS.org' => 'PhpJS.org',
     'KEY CODE' => 'KL. KÓDY',
-    'keypress' => 'keypress',
-    'keydown/up' => 'keydown/up',
+    'Keypress' => 'Keypress',
+    'Keydown/up' => 'Keydown/up',
     'SERVER' => 'SERVER',
-    'phpinfo'  => 'phpinfo',       
+    'Phpinfo'  => 'Phpinfo',       
     
     
 

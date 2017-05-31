@@ -11,9 +11,7 @@
                 <a id="pfc-editor-logo" href="#">[[:<em>ide</em>Pad</a>
                 
                 <ul id="pfc-editor-menu">                    
-                    <li><a class="pfc-editor-active-section-href" id="pfc-sources-sources-href" href="#pfc-sources-sources"><?php echo _tr('sources'); ?></a></li>
-
-                    <li><a id="pfc-sources-sandbox-href"  href="#pfc-sources-sandbox"><?php echo _tr('sandbox'); ?></a></li>                    
+                    <li><a class="pfc-editor-active-section-href" id="pfc-sources-sources-href" href="#pfc-sources-sources"><?php echo _tr('sources'); ?></a></li>                                       
                   
                     <li><a id="pfc-editor-adminer-href" class="pfc-editor-page-href" href="#"><?php echo _tr('adminer'); ?></a></li>
                     
@@ -35,12 +33,12 @@
                 </span>
                 
                 <?php if(!WebAppConfig::nologin()) { ?>
-                <a id="pfc-editor-logout-href" class="pfc-editor-page-href" href="<?php echo Router::applinkaction('logout'); ?>"><?php echo _tr('logout'); ?></a>
+                   <a id="pfc-editor-logout-href" class="pfc-editor-page-href" href="<?php echo Router::applinkaction('logout'); ?>"><?php echo _tr('logout'); ?></a>
                 <?php } ?>
                 
-                		<a id="pfc-editor-about-href" href="#" class="pfc-editor-page-href">
-				    <?php echo _tr('about'); ?>
-                                </a>
+                <a id="pfc-editor-about-href" href="#" class="pfc-editor-page-href">
+		    <?php echo _tr('about'); ?>
+                </a>
                 
                 <a id="pfc-editor-help-href" class="pfc-editor-page-href pfc-editor-help-href" href="#"><?php echo _tr('help'); ?></a>
                 

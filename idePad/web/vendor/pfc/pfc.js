@@ -222,7 +222,38 @@
             },custom ? custom : {}));                 
             
             return bean;
+       },
+       
+       getJSON: function(url) {
+           var deffer = {
+               resolved: false,
+               data: null,
+               resolve: function() {
+                   if(this.resolved) {
+                       return this.data;
+                   } else {
+                       
+                       
+                      return this.resolve();
+                                              
+                   }
+               },
+               promise: function(data) {
+                   this.data = data;
+                   this.resolved = true;
+               }
+           };
+           
+           $.getJSON(url, {}, function(json){
+               deffer.promise(json);
+           }).error(function(){
+               deffer.promise({error:true});
+           });
+           
+           return deffer.resolve();
        }
+       
+       
     };
 
 

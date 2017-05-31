@@ -1,6 +1,6 @@
 <?php
 
-namespace pfcEditor\Component\Ajax\editor;
+namespace idePad\Component\Ajax\editor;
 
 use PFC\Editor\Component\AjaxController;
 

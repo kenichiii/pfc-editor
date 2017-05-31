@@ -15,7 +15,12 @@ class App {
         $user_config = "\\{$appname}\\Config\UserData\Settings";
         
         if(self::$ins === null) {
-            self::$ins = new App($user_config::lang());
+            $lang = array_key_exists('lang', AppSess::ins()) 
+                    ? AppSess::ins()['lang'] 
+                    : $user_config::lang()
+                ;
+            
+            self::$ins = new App($lang);            
         }
         
         return self::$ins;

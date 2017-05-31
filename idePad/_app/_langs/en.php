@@ -3,6 +3,7 @@
 return [
   //LOGIN PAGE  
   'login' => 'login',
+  'language' => 'language',  
   'server time' => 'server time',
   'BCRYPTING IS TURN ON, BUT NOT SUPPORTED BY SERVER' => 'BCRYPTING IS TURN ON, BUT NOT SUPPORTED BY SERVER',
   'reset password' => 'reset password',
@@ -21,7 +22,7 @@ return [
             
  //MAIN   
   //booting  
-  'booting <em>free</em>Pad. please wait...' => 'booting <em>free</em>Pad. please wait...',  
+  'booting <em>ide</em>Pad. please wait...' => 'booting <em>free</em>Pad. please wait...',  
 
   //UI
     'Proccessing' => 'Proccessing',
@@ -34,18 +35,18 @@ return [
     'Welcome' => 'Welcome',
     
   //main menu  
-    'sources' => 'sources',
-    'sandbox' => 'sandbox',
-    'adminer' => 'adminer',
-    'terminal' => 'terminal',
-    'my notes' => 'notes.txt',                    
-    'my home' => 'my home',
-    'logout' => 'logout',
-    'help' => 'help',
-    'tools' => 'tools',   
-    'about' => 'about',
-    'settings' => 'settings',
-    'editor' => 'editor',
+    'Sources' => 'Sources',
+    'Sandbox' => 'Sandbox',
+    'Adminer' => 'Adminer',
+    'Webconsole' => 'Webconsole',
+    'My notes' => 'My notes',                    
+    'My home' => 'My home',
+    'Logout' => 'Logout',
+    'Help' => 'Help',
+    'Tools' => 'Tools',   
+    'About' => 'About',
+    'Settings' => 'Settings',
+    'Editor src' => 'Editor src',
     
   //sources  
   'Workspace' => 'Workspace',  
@@ -67,18 +68,18 @@ return [
     'Attributes' => 'Attributes',
     
    //tools
-    'color picker' => 'color picker',
-    'calculator' => 'calculator',
-    'color scheme generator' => 'color scheme generator',
-    'special chars'  => 'special chars',
-    'character codes' => 'character codes',
+    'Color picker' => 'Color picker',
+    'Calculator' => 'Calculator',
+    'Color scheme generator' => 'Color scheme generator',
+    'Special chars'  => 'Special chars',
+    'Character codes' => 'Character codes',
     'JS' => 'JS',
     'PhpJS.org' => 'PhpJS.org',
     'KEY CODE' => 'KEY CODE',
-    'keypress' => 'keypress',
-    'keydown/up' => 'keydown/up',
+    'Keypress' => 'Keypress',
+    'Keydown/up' => 'Keydown/up',
     'SERVER' => 'SERVER',
-    'phpinfo'  => 'phpinfo',   
+    'Phpinfo'  => 'Phpinfo',   
     
    /**
     * JAVASCRIPT

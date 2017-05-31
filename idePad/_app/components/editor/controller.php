@@ -1,6 +1,6 @@
 <?php 
 
-namespace pfcEditor\Component;
+namespace idePad\Component;
 
 use PFC\Editor\Component\ComponentController;
 

@@ -1,11 +1,16 @@
 <?php
 
-use PFC\Editor\Config as AppConfig;
-use PFC\Editor\AppCryptor;
+use idePad\Config\WebAppConfig;
+use idePad\Config\SourcesConfig;
+use idePad\Config\UserData\Settings;
+use idePad\Config\UserData\Account;
+
 use PFC\Crypting\Bcrypt;
-use PFC\Editor\AppLogin;
-use PFC\Editor\App;
-use PFC\Editor\Router;
+
+use PFC\WebApp\AppCryptor;
+use PFC\WebApp\AppLogin;
+use PFC\WebApp\App;
+use PFC\WebApp\Router;
 
 ?>
 
@@ -13,31 +18,31 @@ use PFC\Editor\Router;
 <html>
     
             <head>
-                <title>freePad <?php echo _tr('login'); ?></title>
+                <title>idePad <?php echo _tr('login'); ?></title>
                 <meta charset="utf-8">   
-                <link type="text/css" href="application/theme/login.css">
+                <link type="text/css" rel="stylesheet" href="application/theme/login.css" />
             </head>  
           <body class="pfc-editor-layout-login">  
-            <br><br>
-                <div id="pfc-lang-switcher-holder" style="width:500px;text-align: right;">
-                    <select id="pfc-lang-switcher">
-                        <?php foreach(App::ins()->getLanguages() as $lang) { ?>
-                            <option value="<?php echo $lang; ?>"><?php echo $lang; ?></option>
-                        <?php } ?>
-                    </select>
+          <div id="login-wrapper">  
+                <div id="pfc-lang-switcher-holder" style="width:245px;text-align: right;">
+                    <?php echo _tr('language'); ?>: 
+                        <?php foreach(App::ins()->getLanguages() as $key=>$lang) { ?>
+                            <?= $key > 0 ? ' | ' : ''; ?><a href="<?php echo Router::applinkajax('set-app-lang')?>&amp;lang=<?php echo $lang; ?>" class="<?= $lang === App::ins()->getLang() ? 'active' : ''; ?>">
+                                <?php echo $lang; ?>
+                            </a>
+                        <?php } ?>                    
                 </div>  
               
-            <h1><em>free</em><span>Pad</span> <?php echo _tr('login'); ?></h1>
+            <h1><em>ide</em><span>Pad</span> <?php echo _tr('login'); ?></h1>
             
             <br>
             <div>
                 <?php echo _tr('server time'); ?>: <span class="pfc-editor-server-time"><?php echo date('j.n.Y G:i:s'); ?></span>
             </div>
-            <?php if(AppConfig::crypting==AppCryptor::USE_Bcrypt
-                    && !Bcrypt::isEnabled()) { ?>
+            <?php if(WebAppConfig::crypting() === AppCryptor::USE_Bcrypt && !Bcrypt::isEnabled()) { ?>
                     <h4><?php echo _tr('BCRYPTING IS TURN ON, BUT NOT SUPPORTED BY SERVER'); ?></h4>
                     <?php echo _tr('reset password'); ?>
-                    <?php } ?>
+            <?php } ?>
             <br>
             
             <div class="error">
@@ -54,9 +59,9 @@ use PFC\Editor\Router;
            
             <div id="pfc-editor-login-form-holder">   
                 <form id="pfc-editor-login-form" method="post" action="<?php echo Router::applinkaction('login'); ?>">                
-                     <?php echo _tr('Login'); ?>: <input type="text" name="login"> 
-                     <?php echo _tr('Password'); ?>: <input type="password" name="pwd">
-                     <?php echo _tr('Pin'); ?>: <input type="password" name="pin">
+                     <div style="margin-bottom:5px;display:none;"><span style="float:left;display:block;width:60px"><?php echo _tr('Login'); ?>:</span> <input type="text" value="default-user" name="login"></div>
+                     <div style="margin-bottom:5px"><span style="float:left;display:block;width:90px"><?php echo _tr('Password'); ?>:</span> <input type="password" name="pwd"></div>
+                     <div style="margin-bottom:10px"><span style="float:left;display:block;width:90px"><?php echo _tr('Pin'); ?>:</span> <input type="password" name="pin"></div>
                     <input type="submit" value="<?php echo _tr('login'); ?>">
                 </form>  
                 <br>   
@@ -71,7 +76,7 @@ use PFC\Editor\Router;
                 <br>   
                 <a href="#"><?php echo _tr('Login form'); ?></a>
             </div>                   
-            
+          </div>  
             
                 <script type="text/javascript" src="vendor/jquery/jquery.js"></script>
                 <script type="text/javascript" src="vendor/jquery_form/jquery.form.js"></script>
@@ -109,7 +114,7 @@ use PFC\Editor\Router;
                         }
                       else
                         {
-                          alert('<?php echo _tr('unknowen login error'); ?>';
+                          alert('<?php echo _tr('unknowen login error'); ?>');
                         }
                     }
                   

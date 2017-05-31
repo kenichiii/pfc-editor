@@ -1,6 +1,6 @@
 <?php
 
-namespace pfcEditor\Component\Action\editor;
+namespace idePad\Component\Action\editor;
 
 use PFC\Editor\Component\ActionController;
 

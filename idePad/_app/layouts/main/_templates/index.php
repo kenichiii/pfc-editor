@@ -55,7 +55,7 @@ use idePad\Config\UserData\Account;
 
         <div class="idePad-booting">
           <div class="idePad-booting-inner-holder">  
-            <?php echo _tr('booting <em>free</em>Pad IDE... please wait...'); ?>
+            <?php echo _tr('booting <em>ide</em>Pad... please wait...'); ?>
             <div class="idePad-booting-holder">
               <div class="idePad-booting-inner">
                 <div class="idePad-booting-prct"></div>
@@ -83,8 +83,8 @@ use idePad\Config\UserData\Account;
     <section class="idePad-webapp-content">      
         <?php //echo $this->component('editor'); ?>    
     </section>                            
-    <!-- MAIN -->     
-      
+    <!-- MAIN -->         
+    
     <footer class="idePad-webapp-footer">
         <?php echo $this->component('application/footer'); ?>        
     </footer>    

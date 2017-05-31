@@ -182,6 +182,11 @@ class Router
     {
         return Router::isAppRequest() && Router::isAjaxRequest() === 'server-time';
     }
+    
+    public static function isChangeLanguageRequest()
+    {
+        return Router::isAppRequest() && Router::isAjaxRequest() === 'set-app-lang';
+    }
 
     public static function getSandboxRequestFilePath()
     {      
@@ -258,13 +263,13 @@ class Router
             
       
          elseif($app && $ajax) {
-             $r = 'Component\\Ajax\\app\\'.$ajax;     
+             $r = 'Component\\Ajax\\application\\'.$ajax;     
          } elseif($app && $action) {
-             $r = 'Component\\Action\\app\\'.$action;                
+             $r = 'Component\\Action\\application\\'.$action;                
          } elseif($app && $pjs) {
-             $r = 'Component\\Pjs\\app\\'.$pjs;                
+             $r = 'Component\\Pjs\\application\\'.$pjs;                
          } elseif($app && $pcss) {
-             $r = 'Component\\Pcss\\app\\'.$pcss;                
+             $r = 'Component\\Pcss\\application\\'.$pcss;                
          } 
       
       

@@ -22,7 +22,11 @@ class AppSess {
          $_SESSION[self::getSessionName()][$index]=$value;        
     }
     
-    public static function ins() {       
+    public static function ins() {  
+        if (!isset($_SESSION[self::getSessionName()]) || !is_array($_SESSION[self::getSessionName()])) {
+             $_SESSION[self::getSessionName()] = [];
+        }
+         
         return $_SESSION[self::getSessionName()];
     }
     

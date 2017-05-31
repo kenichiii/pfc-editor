@@ -1,13 +1,12 @@
 <?php 
 
-namespace pfcEditor\Component\Ajax\app;
+namespace idePad\Component\Ajax\application;
 
-use PFC\Editor\Component\AjaxController;
-use PFC\Editor\Component\View\TextView;
+use PFC\WebApp\Component\AjaxController;
 
 class serverTime extends AjaxController
 {
-   protected $VIEW_CLASS_NAME = '\\PFC\\Editor\\Component\\View\\HtmlView';
+   protected $VIEW_CLASS_NAME = '\\PFC\\WebApp\\Component\\View\\HtmlView';
    
    public function indexAction() 
    {

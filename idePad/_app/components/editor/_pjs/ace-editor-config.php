@@ -1,6 +1,6 @@
 <?php
 
-namespace pfcEditor\Component\Pjs\editor;
+namespace idePad\Component\Pjs\editor;
 
 use PFC\Editor\Component\PjsController;
 

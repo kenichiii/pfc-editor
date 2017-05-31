@@ -64,19 +64,19 @@ function autoload($class)
                 unset($pies[(count($pies)-1)]);
                 
                 //do subtype folder rewrites and script rewrites                   
-                if (isset($pies[2]) && $pies[2] === 'Ajax') {                             
+                if (isset($pies[2]) && $pies[2] === 'ajax') {                             
                     unset($pies[2]);
                     $pies[] = '_ajax';
                     $pies[] = $scriptName;
-                } elseif (isset($pies[2]) && $pies[2] === 'Action') {
+                } elseif (isset($pies[2]) && $pies[2] === 'action') {
                     unset($pies[2]);
                     $pies[] = '_actions';
                     $pies[] = $scriptName;                     
-                } elseif (isset($pies[2]) && $pies[2] === 'Pjs') { 
+                } elseif (isset($pies[2]) && $pies[2] === 'pjs') { 
                     unset($pies[2]);
                     $pies[] = '_pjs';
                     $pies[] = $scriptName;
-                } elseif (isset($pies[2]) && $pies[2] === 'Pcss') {                      
+                } elseif (isset($pies[2]) && $pies[2] === 'pcss') {                      
                     unset($pies[2]);
                     $pies[] = '_pcss'; 
                     $pies[] = $scriptName;                     

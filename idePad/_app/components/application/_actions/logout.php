@@ -1,10 +1,10 @@
 <?php
 
-namespace pfcEditor\Component\Action\app;
+namespace idePad\Component\Action\application;
 
-use PFC\Editor\Component\ActionController;
-use PFC\Editor\AppLogin;
-use PFC\Editor\AppFile;
+use PFC\WebApp\Component\ActionController;
+use PFC\WebApp\AppLogin;
+use PFC\WebApp\AppFile;
 
 class logout extends ActionController
 {

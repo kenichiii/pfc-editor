@@ -16,34 +16,33 @@ namespace PFC\WebApp;
          /*
          * SET USER_DATA_PATHS
          */            
-                      defined('\PFC\WebApp\USER_DATA_PATH')
-                        || define('PFC\WebApp\USER_DATA_PATH', DATA_PATH.
-                                '/users/'.AppLogin::getLoggedUserLogin()
-                            );
+        defined('\PFC\WebApp\USER_DATA_PATH')
+            || define('PFC\WebApp\USER_DATA_PATH', 
+                DATA_PATH . '/users/' . AppLogin::getLoggedUserLogin()
+            );
                             
-                      defined('\PFC\WebApp\USER_DATA_SANDBOX_PATH')
-                        || define('PFC\WebApp\USER_DATA_SANDBOX_PATH', USER_DATA_PATH.
-                                '/sandbox'
-                            );
+        defined('\PFC\WebApp\USER_DATA_SANDBOX_PATH')
+            || define('PFC\WebApp\USER_DATA_SANDBOX_PATH', 
+                USER_DATA_PATH . '/sandbox'
+            );
                       
-                      defined('\PFC\WebApp\USER_DATA_HOME_PATH')
-                        || define('PFC\WebApp\USER_DATA_HOME_PATH', USER_DATA_PATH.
-                                '/my-home'
-                            );
+        defined('\PFC\WebApp\USER_DATA_HOME_PATH')
+            || define('PFC\WebApp\USER_DATA_HOME_PATH', 
+                USER_DATA_PATH . '/my-home'
+            );
 
-                      defined('\PFC\WebApp\USER_DATA_NOTES_TXT_PATH')
-                        || define('PFC\WebApp\USER_DATA_NOTES_TXT_PATH', USER_DATA_PATH.
-                                '/my-home/_my_notes.txt'
-                            );         
-
- 
- 
- 
+        defined('\PFC\WebApp\USER_DATA_NOTES_TXT_PATH')
+            || define('PFC\WebApp\USER_DATA_NOTES_TXT_PATH', 
+                USER_DATA_PATH . '/my-home/_my_notes.txt'
+            );         
+   
   //if user is logged or nologin mode  
   if((AppLogin::isLogged()) 
     //or public services        
-    || Router::isServerTimeRequest() || Router::isLoginActionRequest()    
-    ) {                                               
+    || Router::isServerTimeRequest() 
+    || Router::isLoginActionRequest() 
+    || Router::isChangeLanguageRequest()
+   ) {                                               
                       
         /*
          * GET WANTED FILE AS CONTROLLER
