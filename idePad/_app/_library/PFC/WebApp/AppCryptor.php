@@ -10,7 +10,7 @@ class AppCryptor
     protected static $cry=null;
     public static function getIns() {
         $appname = APPNAME;
-        $config = "\\{$appname}\\Config\WebAppConfig";
+        $config = "\\{$appname}\\Config\\WebAppConfig";
         
         if(self::$cry===null)
         {
@@ -27,14 +27,14 @@ class AppCryptor
 
     public static function getSimple() {
         $appname = APPNAME;
-        $config = "\\{$appname}\\Config\WebAppConfig";
+        $config = "\\{$appname}\\Config\\WebAppConfig";
         
         return new \PFC\Crypting\Simple($config::SALT());
     }
   
     public static function getBcrypt() {
         $appname = APPNAME;
-        $config = "\\{$appname}\\Config\WebAppConfig";
+        $config = "\\{$appname}\\Config\\WebAppConfig";
         
         return new \PFC\Crypting\Bcrypt($config::BcryptRounds());
     }

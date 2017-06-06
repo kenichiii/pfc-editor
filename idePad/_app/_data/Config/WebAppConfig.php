@@ -11,13 +11,13 @@ return [
     /*
      * NOLOGIN
      */
-    'nologin' => false,//$_SERVER['REMOTE_ADDR'] === '127.0.0.1' || $_SERVER['REMOTE_ADDR'] === '::1' ? true : false,        
+    'nologin' => $_SERVER['REMOTE_ADDR'] === '127.0.0.1' || $_SERVER['REMOTE_ADDR'] === '::1' ? true : false,        
     'default_username' => 'default-user',
        
     /*
      *  System passwords
      */    
-    'crypting' => "simple", //bcrypt
+    'crypting' => "bcrypt", //bcrypt|simple
     'BcryptRounds' => 12,
                 
    /*
