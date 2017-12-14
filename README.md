@@ -16,7 +16,7 @@ Copy sources into existing web-folder/webhosting with PHP 7+ (and mod_rewrite) s
 No database is needed.
 
 
-new version:
+"working" version:
 
 - system settings file is: 
 ./_app/config/Editor.php
@@ -51,6 +51,10 @@ Use this account to login:
     -> in 16:55:21 pin will be pfc1655
     
   => server time is printed for support on login page  
+
+  => you can use http://url.address.dom/path-to-root/web/pwdgen.php 
+     to generate password and save it into /_data/users/default-user/Settings.php 
+     as const authPwd = 'generated-string';
 
 ==========================================================
 
