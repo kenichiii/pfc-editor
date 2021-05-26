@@ -1,4 +1,0 @@
-
-RewriteEngine on
-
-#RewriteRule !^((pfc-editor)|(vendor)) index.php
