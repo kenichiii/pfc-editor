@@ -1,0 +1,15 @@
+
+
+                    body {
+                        background-color: black;
+                        color: #ddd;
+                    }
+                    h1 {font-weight: normal;}
+                    h1 em {color:yellowgreen;}
+                    h1 span {color:lightskyblue;}
+                    input {
+                        background-color: #303030;
+                        color: lightskyblue;
+                    }
+                    .error, .banned {display:none;color:lightred;}
+

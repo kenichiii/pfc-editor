@@ -1,0 +1,32 @@
+
+
+                    body {
+                        background-color: black;
+                        color: #ddd;
+                        padding: 10%;
+                        font-family: verdana;
+                    }
+                    
+                    #login-wrapper {
+                        padding:5%;
+                        box-shadow: 2px 2px 1px yellowgreen;
+                        float: left;
+                        background-color: #303030;
+                    }                    
+                    
+                    h1 {font-weight: normal;}
+                    h1 em {color:yellowgreen;}
+                    h1 span {color:lightskyblue;}
+                    input {
+                        background-color: #303030;
+                        color: lightskyblue;
+                    }
+                    .error, .banned {display:none;color:lightred;}
+
+#pfc-lang-switcher-holder, #pfc-lang-switcher-holder a {    
+    color:#ddd;
+    text-decoration: none;
+}
+
+#pfc-lang-switcher-holder a.active {color: lightskyblue;}
+
