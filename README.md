@@ -6,9 +6,6 @@ This project will be designed architecture for project first phase - creating pr
 You can see first functional prototype of basic editor at
 http://www.kena23.cz/demo/
 
-For more information see:
-http://idePad.kena23.cz/
-
 
 # INSTALL DEMO/NEW VERSION
 
