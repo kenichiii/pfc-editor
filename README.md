@@ -1,10 +1,13 @@
 # pfc editor
+18.3.24. - The project has been stoped for a while, but now I want to continue, but plan to rewrite project into Nette framework
+and integrate it into my another project nette-cms as part of administration, but want to make it work independently to cms-nette project 
+
 free opensource php&amp;jquery online web developer editor :: online web ide
 
 This project will be designed architecture for project first phase - creating projects based basic editor allowing adding plugins.
 
 You can see first functional prototype of basic editor at
-http://www.kena23.cz/demo/
+http://pfc-editor.webcerka.cz/web/
 
 
 # INSTALL DEMO/NEW VERSION
